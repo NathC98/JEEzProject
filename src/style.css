@@ -13,7 +13,7 @@ html {
 form {
   background-color:white;
   border: 3px solid #f1f1f1;
-  margin: 4% 33%
+  margin: 4% 33%;
 }
 
 /* Full-width inputs */
@@ -78,6 +78,28 @@ img.avatar {
 span.psw {
   float: right;
   padding-top: 16px;
+}
+
+#container_accueil_admin #container_accueil_admin_player{
+  background-color:white;
+  border: 3px solid #f1f1f1;
+  float:left;
+  width: 45%;
+  
+
+}
+
+#container_accueil_admin #container_accueil_admin_games{
+  background-color:white;
+  border: 3px solid #f1f1f1;
+  margin-left: 55%;
+
+}
+
+#container_accueil_admin {
+  background-color:white;
+  border: 3px solid #f1f1f1;
+  margin: 4% 10%
 }
 
 /* Change styles for span and cancel button on extra small screens */

@@ -2,8 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3b1c006e-56c4-47f3-851e-04b11398dde9" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/JEEprojetinscription.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/JEEprojetaccueiladmin.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/style.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -60,7 +61,7 @@
       <option name="presentableId" value="Default" />
       <updated>1584097606833</updated>
       <workItem from="1584097608884" duration="410000" />
-      <workItem from="1584690257874" duration="1178000" />
+      <workItem from="1584690257874" duration="1838000" />
     </task>
     <task id="LOCAL-00001" summary="page de login avec le css">
       <created>1584111388429</created>
@@ -69,7 +70,14 @@
       <option name="project" value="LOCAL" />
       <updated>1584111388429</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="page de formulaire d'inscription">
+      <created>1584691934548</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1584691934549</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -121,7 +129,8 @@
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="page de login avec le css" />
-    <option name="LAST_COMMIT_MESSAGE" value="page de login avec le css" />
+    <MESSAGE value="page de formulaire d'inscription" />
+    <option name="LAST_COMMIT_MESSAGE" value="page de formulaire d'inscription" />
   </component>
   <component name="WindowStateProjectService">
     <state x="361" y="72" key="#Project_Structure" timestamp="1584097652437">
@@ -132,10 +141,10 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="223" y="68" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1536.824@0.0.1536.824" timestamp="1584097619517" />
-    <state x="279" y="27" width="865" height="741" key="CommitChangelistDialog2" timestamp="1584111388015">
+    <state x="279" y="27" width="865" height="741" key="CommitChangelistDialog2" timestamp="1584691934155">
       <screen x="67" y="27" width="1299" height="741" />
     </state>
-    <state x="279" y="27" width="865" height="741" key="CommitChangelistDialog2/67.27.1299.741@67.27.1299.741" timestamp="1584111388015" />
+    <state x="279" y="27" width="865" height="741" key="CommitChangelistDialog2/67.27.1299.741@67.27.1299.741" timestamp="1584691934155" />
     <state x="549" y="168" key="FileChooserDialogImpl" timestamp="1584098019048">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
