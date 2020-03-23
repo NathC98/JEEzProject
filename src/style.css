@@ -102,6 +102,19 @@ span.psw {
   margin: 4% 10%
 }
 
+#container_player {
+  background-color:white;
+  border: 3px solid #f1f1f1;
+  margin: 4% 10%;
+}
+
+#add_games {
+  background-color:white;
+  border: 3px solid #f1f1f1;
+  margin-right: 60%;
+  margin-top: 15%
+}
+
 /* Change styles for span and cancel button on extra small screens */
 @media screen and (max-width: 300px) {
   span.psw {
