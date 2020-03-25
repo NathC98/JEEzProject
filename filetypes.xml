@@ -1,7 +1,7 @@
 <application>
-  <component name="FileTypeManager" version="17">
-    <extensionMap>
-      <mapping pattern="Servlet" type="PLAIN_TEXT" />
-    </extensionMap>
-  </component>
+	<component name="FileTypeManager" version="17">
+		<extensionMap>
+			<mapping pattern="Servlet" type="PLAIN_TEXT" />
+		</extensionMap>
+	</component>
 </application>
