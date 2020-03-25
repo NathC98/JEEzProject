@@ -1,3 +1,4 @@
+<%@ page pageEncoding="UTF-8" %>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -13,11 +14,25 @@
     <td width=24%><font size="+1">Supprimer</font></td>
     <td width=24%><font size="+1">Jouable</font></td>
   </tr>
-  <tr>
-    <td><font size="+1">Jack Russell</font></td>
-    <td><button type="button" class="cancelbtn">Supprimer</button></td>
-    <td><font size="+1">oui</font></td>
-  </tr>
+<% 
+	ArrayList<Game> games = (ArrayList<Game>) request.getAttribute(".....");
+	for(int i=0;i<games.size();i++){
+		system.out.println(
+		<tr>
+			<td>games.get(i).getName()</td>
+   			<td><button type="button" class="cancelbtn">Supprimer</button></td>);
+		if(games.get(i).getPlayable()){
+			system.out.println(
+				<td>oui</td>
+		</tr>);
+		}
+		else{
+			system.out.println(
+				<td>non</td>
+		</tr>);
+		}
+	}
+%>
 
 
 	</table>

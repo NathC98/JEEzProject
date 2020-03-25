@@ -1,3 +1,4 @@
+<%@ page pageEncoding="UTF-8" %>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,7 +9,7 @@
 <body>
 <div id="container_accueil_admin">
   <div class="imgcontainer">
-    <img src="https://lh3.googleusercontent.com/proxy/OxNgYrqmnZJZJGloGjjL_yp7lc9vFZHJuzE7SCaRoswCQNjlXVZG0PFkX560qoHgsqwd9XRAGCnoavDcmpllW8G-0REuiag5Jx4Fvb64ZqpK" alt="Avatar" class="avatar">
+    <img src="./logo.png" alt="Avatar" class="avatar">
   </div>
 <div id="container_accueil_admin_player">
 <img src="https://www.chanac.fr/content/uploads/2016/04/anonyme.jpg" width=88%>

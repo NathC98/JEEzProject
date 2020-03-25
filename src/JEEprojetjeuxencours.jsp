@@ -1,3 +1,4 @@
+<%@ page pageEncoding="UTF-8" %>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -14,12 +15,20 @@
     <td width=30%><font size="+1">Date/heure de début</font></td>
     <td width=30%><font size="+1">Mettre fin</button></td>
   </tr>
-  <tr>
-    <td>Jack Russell</td>
-    <td>Poodle</td>
-    <td>Streetdog</td>
-    <td><button type="button" class="cancelbtn">terminer le jeu</button></td>
-  </tr>
+  <% 
+	ArrayList<Partie> parties = (ArrayList<Partie>) request.getAttribute(".....");
+	for(int i=0;i<players.size();i++){
+		if(end==null){
+		system.out.println(
+		<tr>
+			<td>parties.get(i).getIdgame()//.getName()</td>
+   			<td>parties.get(i).getIdplayer//.getName()</td>
+    			<td>parties.get(i).getStart()</td>
+			<td><button type="button" class="cancelbtn">Mettre fin</button></td>
+		</tr>)
+	}
+	}
+%>
 
 
 	</table>
