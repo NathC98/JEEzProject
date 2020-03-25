@@ -54,7 +54,7 @@ public class JEEz_JDBC {
 RENVOI LA LISTE DES JOUEURS QUI
 
  */
-    public List<String> currentPlay(HttpServelRequest request) {
+    public  List<Play> currentPlay(HttpServelRequest request) {
 
         /*  Chargement du driver pour la BDD */
         try {
@@ -74,11 +74,17 @@ RENVOI LA LISTE DES JOUEURS QUI
          */
         try {
             Connection connexion = DriverManager.getConnection(url, utilisateur, motDePasse);
-            Statement statement = connexion.prepareCall("SELECT ");
+            Statement req = connexion.statement("SELECT * FROM Play where endDate = null");
             Resulset resultat = req.execute();
             /* Exécution d'une requête de lecture */
             while ( resultat.next() ) {
-                messages.add(resultat.getString("nom"));
+                Play partie = new Play();
+                Play.idPartie=resultat.getInt(1);
+                Play.start=resultat.getDate(2);
+                Play.
+
+
+
             }
             resultat.close();
             req.close();
