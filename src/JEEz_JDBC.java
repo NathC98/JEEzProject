@@ -23,15 +23,12 @@ public class JEEz_JDBC {
     private Connection connexion;
 
     /*
-    fonction connxioin
-
+    fonction connexion
 
     deconnexion
 
     requete
      */
-
-
     /*
     RENVOI LES JEUX DISPONIBLES AUX JOUEURS
      */
@@ -50,11 +47,7 @@ public class JEEz_JDBC {
         } catch ( SQLException e ) {
             e.getMessage());
         }
-
     }
-
-
-
 
     public ArrayList<String> playableGame(HttpServletRequest request) {
         /*
@@ -88,7 +81,6 @@ public class JEEz_JDBC {
     }
 /*
 RENVOI LA LISTE DES JOUEURS QUI
-
  */
     public ArrayList<Play> currentPlay(HttpServletRequest request) {
 
@@ -155,10 +147,6 @@ RENVOI LA LISTE DES JOUEURS QUI
         }
         return playcurrent;
     }
-
-
-
-
 
 /*
     public List<String> executerTests(HttpServletRequest request ) {
