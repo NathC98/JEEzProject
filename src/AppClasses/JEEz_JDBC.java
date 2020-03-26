@@ -13,7 +13,7 @@ import AppClasses.Play;
 public class JEEz_JDBC {
 
     private static String driver = "com.mysql.jdbc.Driver";
-    private static String url = "jdbc:mysql://localhost:3306/mydb" //seulement le pc de Louis a la BDD pour le moment
+    private static String url = "jdbc:mysql://localhost:3306/mydb"; //seulement le pc de Louis a la BDD pour le moment
     private static String user = "root"; //identifiant user bdd
     private static String pwd = "1234"; //mdp user bdd
     private static Connection connexion;
@@ -33,7 +33,7 @@ public class JEEz_JDBC {
             this.connexion = DriverManager.getConnection(this.url, this.user, this.pwd);
             this.statement=this.connexion.createStatement();
         } catch ( SQLException e ) {
-            e.getMessage());
+            e.printStackTrace();
         }
     }
 
@@ -41,7 +41,11 @@ public class JEEz_JDBC {
     Fonctionde déconnection de la base de donnée
      */
     public void Deconnection(){
-        this.connexion.close();
+       try{
+           this.connexion.close();
+       }catchcatch (SQLException e) {
+            e.printStackTrace();
+        }
     }
 
     /*

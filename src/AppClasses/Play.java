@@ -1,5 +1,36 @@
 package AppClasses;
 
+<<<<<<< HEAD
+public class Play {
+
+    private int idPlay;
+    private String start;
+    private String end;
+    private int idgame;
+    private int idPlayer;
+
+    public int getIdPlay() {
+        return idPlay;
+    }
+
+    public void setIdPlay(int idPlay) {
+        this.idPlay = idPlay;
+    }
+
+    public String getStart() {
+        return start;
+    }
+
+    public void setStart(String start) {
+        this.start = start;
+    }
+
+    public String getEnd() {
+        return end;
+    }
+
+    public void setEnd(String end) {
+=======
 import java.sql.Date;
 
 public class Play {
@@ -31,6 +62,7 @@ public class Play {
     }
 
     public void setEnd(Date end) {
+>>>>>>> branch 'master' of https://github.com/NathC98/JEEzProject.git
         this.end = end;
     }
 

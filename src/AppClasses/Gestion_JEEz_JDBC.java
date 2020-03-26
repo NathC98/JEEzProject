@@ -13,6 +13,42 @@ public class Gestion_JEEz_JDBC{
 		this.JEEz_JDBC.Connection();
 	}
 
+	public Player ConnectionPlayer(String login, String password){
+			Player p = new Player();
+			int identifiant = 0;
+
+			try {
+
+				String query="SELECT * FROM Identifiant WHERE (login= "+login+" AND password= "+password;
+				ResultSet rset=Query(query);
+
+				if(rset.next()) {
+					identifiant = rset.getInt("idIdentifiant");
+
+					query="SELECT * FROM Player WHERE Identifiant_idIdentifiant="+identifiant;
+					ResultSet rset2=Query(query);
+
+					if(rset2.next()){
+
+						Player p = new Player();
+						p.idPlayer=rset2.getInt("idPlayer");
+						p.date=rset2.getString("birthDate");
+						p.email=rset2.getString("email");
+						p.dateinscription=rset2.getString("InscriptionDate");
+						p.idIdentifiant=rset2.getInt("Identifiant_idIdentifiant");
+						p.ban=rset2.getInt("ban");
+					}
+				}
+
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
+			return person;
+		}
+
+
+
+
 	public String PlayTime(int idPlay){
 		try {
 			String query = "SELECT start FROM Play WHERE idPlay=" + idPlay; // On selectionne les parties en cour
@@ -20,14 +56,25 @@ public class Gestion_JEEz_JDBC{
 
 			String query2 = "SELECT end FROM Play WHERE idPlay=" + idPlay; // On selectionne les parties en cour
 			ResultSet rset2 = update(query2);
+
 			String start = rset1.getString(1);
 			String end = rset2.getString(2);
+
 			Date dateStart = formatter.parse(start);
 			Date dateEnd = formatter.parse(end);
+
 			long resInDays = ChronoUnit.DAYS.between(dateStart,dateEnd);
 			String resString = toString(resInDays);
 			return resString;
+
+			try{
+				rset1.close();
+				rset2.close();
+				this.JEEz_JDBC.Deconnection();
+			}
+
 		}
+
 	}
 
 
@@ -36,6 +83,11 @@ public class Gestion_JEEz_JDBC{
 		try {
 			String query = "UPDATE Player SET ban="+1+"WHERE idPlayer="+idPlayer; // On selectionne les parties en cour
 			ResultSet rset=update(query);
+			try{
+				rset.close();
+				this.JEEz_JDBC.Deconnection();
+			}
+
 		} catch ( SQLException e ) {
 		}
 	}
@@ -50,6 +102,10 @@ public class Gestion_JEEz_JDBC{
 		try {
 			String query = "UPDATE Play SET end="+end+"WHERE idPlay="+idPlay; // On informe la BDD de la date de fin pouyr la partie d'identifiant idPlay passé en paramètre
 			ResultSet rset=update(query);
+			try{
+				rset.close();
+				this.JEEz_JDBC.Deconnection();
+			}
 		} catch ( SQLException e ) {
 		}
 	}
@@ -67,6 +123,10 @@ public class Gestion_JEEz_JDBC{
 			String query = "SELECT COUNT(*) FROM Play where idPlayer="+idPlayer; // On selectionne les parties en cour
 			ResultSet rset=Query(query);
 			n=rset.getInt(1);
+			try{
+				rset.close();
+				this.JEEz_JDBC.Deconnection();
+			}
 		}
 		catch ( SQLException e ) {
 		}
@@ -90,15 +150,20 @@ public class Gestion_JEEz_JDBC{
 			while ( resultat.next() ) {
 				Play p = new Play();
 
-				p.idPlay = rest.getInt("idPlay");
-				g.start = rset.getString("start");
-				g.end = rset.getString("end");
-				g.idGame = rset.getString("idGame");
-				g.idPlayer = rset.getString("idPlayer")
-				listPlay.add(g);
+				p.idPlay = rset.getInt("idPlay");
+				p.start = rset.getString("start");
+				p.end = rset.getString("end");
+				p.idGame = rset.getString("idGame");
+				p.idPlayer = rset.getString("idPlayer")
+				listPlay.add(p);
+			}
+			try{
+				rset.close();
+				this.JEEz_JDBC.Deconnection();
 			}
 		}
 		catch ( SQLException e ) {
+			e.printStackTrace();
 		}
 
 		return listPlay;
@@ -127,8 +192,13 @@ public class Gestion_JEEz_JDBC{
 
 				gameplayable.add(g);
 			}
+			try{
+				rset.close();
+				this.JEEz_JDBC.Deconnection();
+			}
 
 		} catch ( SQLException e ) {
+			e.printStackTrace();
 		}
 		return gameplayable;
 	}
@@ -146,7 +216,7 @@ public class Gestion_JEEz_JDBC{
 			if(rset.next()) {
 				Player p = new Player();
 				p.idPlayer=rset.getInt("idPlayer");
-				p.date=set.getString("birthDate");
+				p.date=rset.getString("birthDate");
 				p.email=rset.getString("email");
 				p.dateinscription=rset.getString("InscriptionDate");
 				p.idIdentifiant=rset.getInt("Identifiant_idIdentifiant");
@@ -154,7 +224,7 @@ public class Gestion_JEEz_JDBC{
 				listPlayer.add(p);
 			}
 			try{
-				rest.close;
+				rset.close();
 				this.JEEz_JDBC.Deconnection();
 			}
 		} catch (SQLException e) {
