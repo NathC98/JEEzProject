@@ -38,7 +38,7 @@ public class Gestion_JEEz_JDBC{
 					}
 				}
  */
- */
+
 
 
 	public Player infoPlayer(int idPlayer) {
