@@ -12,7 +12,16 @@ import AppClasses.Play;
 
 public class JEEz_JDBC {
 
+    private String driver = "com.mysql.jdbc.Driver";
+    private String url = "jdbc:mysql://localhost:3306/mydb" //seulement le pc de Louis a la BDD pour le moment
+    private String user = "root"; //identifiant user bdd
+    private String pwd = "1234"; //mdp user bdd
+
+
     private ArrayList<String> gameplayable = new ArrayList<String>();
+    private ArrayList<Play> playcurrent = new ArrayList<Play>();
+
+
 
 
 
@@ -20,39 +29,36 @@ public class JEEz_JDBC {
     RENVOI LES JEUX DISPONIBLES AUX JOUEURS
      */
     public ArrayList<String> playableGame(HttpServletRequest request) {
+        /*
+            on remplit les informations pour l'url et l'utilisateur de la BDD
+        On initialise ce qui va nous servir pour communiquer avec la BDD
+         */
+
+        Connection connexion =null;
+        Statement stat = null;
+        ResultSet resultat=null;
 
         /*  Chargement du driver pour la BDD */
         try {
-            Class.forName("com.mysql.jdbc.Driver");
+            Class.forName(this.driver);
         }
         catch (ClassNotFoundException e) {
                      e.getMessage();
         }
-        /*
-            on remplit les informations pour l'url et l'utilisateur de la BDD
-         */
-        String url = "jdbc:mysql://localhost:3306/mydb";  //seulement le pc de Louis a la BDD pour le moment
-        String utilisateur = "root"; //identifiant user bdd
-        String motDePasse = "1234"; //mdp user bdd
-        /*
-        On initialise ce qui va nous servir pour communiquer avec la BDD
-         */
         try {
-            Connection connexion = DriverManager.getConnection(url, utilisateur, motDePasse);
-            
-            Statement stat = connexion.createStatement();
-            
-            ResultSet resultat = stat.executeQuery("SELECT playable_Game FROM ..");//TODO query à compléter en SQL
+            connexion = DriverManager.getConnection(this.url, this.user, this.pwd);
+            stat = connexion.createStatement();
+            resultat = stat.executeQuery("SELECT name FROM Game where playable=true"); // On selectionne le nom des jeux qui sont disponibles sur le site
             
             /* Exécution d'une requête de lecture */
             while ( resultat.next() ) {
             	gameplayable.add(resultat.getString("nom"));
             }
-            
+            /*
+            On ferme ce qui nous a servit
+             */
             resultat.close();
-            
             stat.close();
-            
             connexion.close();
             
         } catch ( SQLException e ) {
@@ -64,8 +70,6 @@ public class JEEz_JDBC {
 RENVOI LA LISTE DES JOUEURS QUI
 
  */
-    private ArrayList<Play> playcurrent = new ArrayList<Play>();
-    
     public ArrayList<Play> currentPlay(HttpServletRequest request) {
         /*  Chargement du driver pour la BDD */
         try {
@@ -90,8 +94,11 @@ RENVOI LA LISTE DES JOUEURS QUI
             /* Exécution d'une requête de lecture */
             while ( resultat.next() ) {
                 Play partie = new Play();
-                partie.idgame=resultat.getInt("id");
-                partie.start=resultat.getDate(2);
+               partie.idPlay=resultat.getInt("idPlay");;
+               partie.start=resultat.getInt("start");;
+               partie.end=null;
+               partie.idgame=resultat.getInt("idGame");;
+               partie.idPlayer=resultat.getInt("idPlayer");
                 playcurrent.add(partie);
             }
             resultat.close();
