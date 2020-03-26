@@ -3,7 +3,7 @@ package AppClasses;
 public class Game {
 
     private int idGame;
-    private String nom;
+    private String name;
     private int numberPlayerGame;
     private boolean playable;
 
@@ -15,12 +15,12 @@ public class Game {
         this.idGame = idGame;
     }
 
-    public String getNom() {
-        return nom;
+    public String getName() {
+        return name;
     }
 
-    public void setNom(String nom) {
-        this.nom = nom;
+    public void setName(String nom) {
+        this.name = nom;
     }
 
     public int getNumberPlayerGame() {
