@@ -1,3 +1,5 @@
+<%@ page import="AppClasses.*" %>
+<%@ page import="java.util.ArrayList" %>
 <%@ page pageEncoding="UTF-8" %>
 <!DOCTYPE html>
 <html lang="en">
@@ -16,7 +18,7 @@
     <td width=30%><font size="+1">Mettre fin</button></td>
   </tr>
   <% 
-	ArrayList<Play> plays = (ArrayList<Play>) request.getAttribute(".....");
+	ArrayList<Play> plays = (ArrayList<Play>) request.getAttribute("plays");
 	for(int i=0;i<plays.size();i++){
 		if(end==null){
 		system.out.println(

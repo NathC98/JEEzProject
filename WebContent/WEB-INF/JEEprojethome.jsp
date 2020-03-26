@@ -1,3 +1,5 @@
+<%@ page import="AppClasses.*" %>
+<%@ page import="java.util.ArrayList" %>
 <%@ page pageEncoding="UTF-8" %>
 <!DOCTYPE html>
 <html lang="en">
@@ -17,7 +19,7 @@
 <div id=containergame><font size="+2">Nos jeux</font>
 <li>
 <%
-	ArrayList<Game> games = (ArrayList<Game>) request.getAttribute("...");
+	ArrayList<Game> games = (ArrayList<Game>) request.getAttribute("games");
 	for(int i=0;i<games.size();i++){
 		system.out.println(<button id="gamebutton" type="submit">jouer games.get(i).getName()</button>
 

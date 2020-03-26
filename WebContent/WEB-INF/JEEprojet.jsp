@@ -1,3 +1,5 @@
+<%@ page import="AppClasses.*" %>
+<%@ page import="java.util.ArrayList" %>
 <%@ page pageEncoding="UTF-8" %>
 <!DOCTYPE html>
 <html lang="en">
