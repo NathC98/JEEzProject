@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3b1c006e-56c4-47f3-851e-04b11398dde9" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/JEEz_JDBC.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/JEEz_JDBC.java" afterDir="false" />
     </list>
@@ -194,11 +193,11 @@
       <screen x="0" y="34" width="1920" height="1046" />
     </state>
     <state x="768" y="244" width="374" height="632" key="#com.intellij.ide.util.MemberChooser/0.34.1920.1046@0.34.1920.1046" timestamp="1585178274213" />
-    <state x="279" y="27" width="1242" height="1046" key="CommitChangelistDialog2" timestamp="1585232931072">
-      <screen x="67" y="27" width="1299" height="741" />
+    <state x="374" y="34" width="1242" height="1046" key="CommitChangelistDialog2" timestamp="1585179164454">
+      <screen x="0" y="34" width="1920" height="1046" />
     </state>
     <state x="374" y="34" width="1242" height="1046" key="CommitChangelistDialog2/0.34.1920.1046@0.34.1920.1046" timestamp="1585179164454" />
-    <state x="279" y="27" width="865" height="741" key="CommitChangelistDialog2/67.27.1299.741@67.27.1299.741" timestamp="1585232931072" />
+    <state x="279" y="27" width="865" height="741" key="CommitChangelistDialog2/67.27.1299.741@67.27.1299.741" timestamp="1585159304119" />
     <state x="531" y="178" width="424" height="484" key="FileChooserDialogImpl" timestamp="1585079490011">
       <screen x="67" y="27" width="1299" height="741" />
     </state>
