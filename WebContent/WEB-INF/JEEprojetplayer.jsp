@@ -1,3 +1,5 @@
+<%@ page import="AppClasses.*" %>
+<%@ page import="java.util.ArrayList" %>
 <%@ page pageEncoding="UTF-8" %>
 <!DOCTYPE html>
 <html lang="en">
@@ -13,7 +15,7 @@
     <td width=21%><font size="+1">Pseudo</font></td>
     <td width=21%><font size="+1">Date d'inscription</font></td>
     <td width=21%><font size="+1">Nombre de parties jouées</font></td>
-    <td width=21%><font size="+1">interdire</button></td>
+	  <td width=21%><font size="+1"><button>interdire</button></font></td>
     <td width=21%><font size="+1">autorisation</font></td>
   </tr>
 <% 
@@ -21,23 +23,23 @@
 	int nbplays;
 	for(int i=0;i<players.size();i++){
 		nbplays = NumberPlay(players.get(i).getId());
-		system.out.println(
-		<tr>
-			<td>players.get(i).getPseudo()</td>
-   			<td>players.get(i).getInscriptiondate()</td>
-    			<td>nbplays</td>
+		out.println(
+		"<tr>"                                            +
+			"<td>players.get(i).getPseudo()</td>"         +
+   			"<td>players.get(i).getInscriptiondate()</td>"+
+    			"<td>nbplays</td>"                        +
     			
 		);
 		if(players.get(i).getBan()){
-			system.out.println(<td><button type="button" class="cancelbtn">suspendre</button></td>
-    			<td>oui</td>
-			</tr>
+			out.println("<td><button type=\"button\" class=\"cancelbtn\">suspendre</button></td>"+
+    			"<td>oui</td>"                                                                   +
+			"</tr>"                                                                              +
 		);
 		}
 		else{
-			system.out.println(<td><button type="button" class="cancelbtn">autoriser</button></td>
-    			<td>non</td>
-			</tr>
+			out.println("<td><button type=\"button\" class=\"cancelbtn\">autoriser</button></td>"+
+    			"<td>non</td>"                                                               +
+			"</tr>"                                                                          +
 		);
 		}
 	}

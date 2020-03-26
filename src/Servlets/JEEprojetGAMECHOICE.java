@@ -14,6 +14,7 @@ public class JEEprojetGAMECHOICE extends HttpServlet {
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        request.setAttribute("games",PlayableGame());
         this.getServletContext().getRequestDispatcher("web/WEB-INF/JEEprojetGAMECHOICE.jsp").forward(request,response);
     }
 }

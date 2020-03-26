@@ -3,16 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="3b1c006e-56c4-47f3-851e-04b11398dde9" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebContent/WEB-INF/JEEprojetaccueiladmin.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/WebContent/WEB-INF/JEEprojetaccueiladmin.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebContent/WEB-INF/JEEprojetGAMECHOICE.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/WebContent/WEB-INF/JEEprojetGAMECHOICE.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/WebContent/WEB-INF/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/WebContent/WEB-INF/style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Admnistrator.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Game.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Gestion_JEEz_JDBC.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Identifiant.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/JEEz_JDBC.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Play.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Player.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Player_has_Game.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Servlets/JEEprojetGAMECHOICE.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Servlets/JEEprojetGAMECHOICE.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -94,7 +87,7 @@
       <workItem from="1585253171275" duration="1425000" />
       <workItem from="1585254628895" duration="31000" />
       <workItem from="1585254702306" duration="38000" />
-      <workItem from="1585254786953" duration="144000" />
+      <workItem from="1585254786953" duration="2247000" />
     </task>
     <task id="LOCAL-00001" summary="page de login avec le css">
       <created>1584111388429</created>
@@ -208,7 +201,21 @@
       <option name="project" value="LOCAL" />
       <updated>1585254479037</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="acceuail admin et package appclasses">
+      <created>1585254969174</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1585254969174</updated>
+    </task>
+    <task id="LOCAL-00018" summary="acceuail admin et package appclasses">
+      <created>1585255011629</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1585255011629</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -270,7 +277,8 @@
     <MESSAGE value="servlet home et upload logo" />
     <MESSAGE value="upload image et changement path pour les jsp concernées" />
     <MESSAGE value="Imports dans les jsp et completage servlet" />
-    <option name="LAST_COMMIT_MESSAGE" value="Imports dans les jsp et completage servlet" />
+    <MESSAGE value="acceuail admin et package appclasses" />
+    <option name="LAST_COMMIT_MESSAGE" value="acceuail admin et package appclasses" />
   </component>
   <component name="WindowStateProjectService">
     <state x="361" y="72" key="#Project_Structure" timestamp="1584097652437">
@@ -285,11 +293,11 @@
       <screen x="0" y="34" width="1920" height="1046" />
     </state>
     <state x="768" y="244" width="374" height="632" key="#com.intellij.ide.util.MemberChooser/0.34.1920.1046@0.34.1920.1046" timestamp="1585178274213" />
-    <state x="279" y="27" width="1242" height="1046" key="CommitChangelistDialog2" timestamp="1585254968864">
+    <state x="279" y="27" width="1242" height="1046" key="CommitChangelistDialog2" timestamp="1585255011398">
       <screen x="67" y="27" width="1299" height="741" />
     </state>
     <state x="374" y="34" width="1242" height="1046" key="CommitChangelistDialog2/0.34.1920.1046@0.34.1920.1046" timestamp="1585179164454" />
-    <state x="279" y="27" width="865" height="741" key="CommitChangelistDialog2/67.27.1299.741@67.27.1299.741" timestamp="1585254968864" />
+    <state x="279" y="27" width="865" height="741" key="CommitChangelistDialog2/67.27.1299.741@67.27.1299.741" timestamp="1585255011398" />
     <state x="531" y="178" width="424" height="484" key="FileChooserDialogImpl" timestamp="1585236227286">
       <screen x="67" y="27" width="1299" height="741" />
     </state>
@@ -311,12 +319,12 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="249" y="0" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1584097684877" />
-    <state x="372" y="158" width="800" height="528" key="Vcs.Push.Dialog.v2" timestamp="1585254973481">
+    <state x="372" y="158" width="800" height="528" key="Vcs.Push.Dialog.v2" timestamp="1585255014447">
       <screen x="67" y="27" width="1299" height="741" />
     </state>
     <state x="361" y="146" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1584098188628" />
     <state x="451" y="219" key="Vcs.Push.Dialog.v2/0.34.1920.1046@0.34.1920.1046" timestamp="1585176165740" />
-    <state x="372" y="158" width="800" height="528" key="Vcs.Push.Dialog.v2/67.27.1299.741@67.27.1299.741" timestamp="1585254973481" />
+    <state x="372" y="158" width="800" height="528" key="Vcs.Push.Dialog.v2/67.27.1299.741@67.27.1299.741" timestamp="1585255014447" />
     <state x="372" y="224" key="com.intellij.ide.util.TipDialog" timestamp="1585236207826">
       <screen x="67" y="27" width="1299" height="741" />
     </state>

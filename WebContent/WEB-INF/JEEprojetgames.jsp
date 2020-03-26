@@ -19,19 +19,19 @@
 <% 
 	ArrayList<Game> games = (ArrayList<Game>) request.getAttribute("games");
 	for(int i=0;i<games.size();i++){
-		system.out.println(
-		<tr>
-			<td>games.get(i).getName()</td>
-   			<td><button type="button" class="cancelbtn">Supprimer</button></td>);
+		out.println(
+		"<tr>"                                                                    +
+			"<td>games.get(i).getName()</td>"                                     +
+   			"<td><button type=\"button\" class=\"cancelbtn\">Supprimer</button></td>");
 		if(games.get(i).getPlayable()){
-			system.out.println(
-				<td>oui</td>
-		</tr>);
+			out.println(
+				"<td>oui</td>" +
+		"</tr>");
 		}
 		else{
-			system.out.println(
-				<td>non</td>
-		</tr>);
+			out.println(
+				"<td>non</td>" +
+		"</tr>");
 		}
 	}
 %>

@@ -20,9 +20,9 @@
 <li>
 <%
 	ArrayList<Game> games = (ArrayList<Game>) request.getAttribute("games");
-	for(int i=0;i<games.size();i++){
-		system.out.println(<button id="gamebutton" type="submit">jouer games.get(i).getName()</button>
-
+	for(int i=0;i<games.size();i++) {
+        out.println("<button id=\"gamebutton\" type=\"submit\">jouer games.get(i).getName()</button>");
+    }
 %>
 </li>
 </div>  
