@@ -89,7 +89,23 @@ span.psw {
 
 }
 
+#container_accueil_admin #container_accueil_admin_current{
+  background-color:white;
+  border: 3px solid #f1f1f1;
+  float:left;
+  width: 45%;
+
+
+}
+
 #container_accueil_admin #container_accueil_admin_games{
+  background-color:white;
+  border: 3px solid #f1f1f1;
+  margin-left: 55%;
+
+}
+
+#container_accueil_admin #container_accueil_admin_ended{
   background-color:white;
   border: 3px solid #f1f1f1;
   margin-left: 55%;

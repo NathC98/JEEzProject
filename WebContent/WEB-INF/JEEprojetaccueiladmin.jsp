@@ -23,11 +23,11 @@
   <button type="player">Games gestion</button> 
 </div>
 
-<div id="container_accueil_admin_current_games">
+<div id="container_accueil_admin_current">
 <img src="./currentgames.png" width=90%>
   <button type="player">Current games</button> 
 </div>
-<div id="container_accueil_admin_ended_games">
+<div id="container_accueil_admin_ended">
 <img src="./endedgames.png" width=100%>
   <button type="player">Ended games</button> 
 </div>
