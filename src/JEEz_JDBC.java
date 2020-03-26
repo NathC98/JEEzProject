@@ -17,9 +17,6 @@ public class JEEz_JDBC {
     private String user = "root"; //identifiant user bdd
     private String pwd = "1234"; //mdp user bdd
 
-    private ArrayList<String> gameplayable = new ArrayList<String>();
-    private ArrayList<Play> playcurrent = new ArrayList<Play>();
-
     private Connection connexion;
 
     /*
