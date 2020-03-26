@@ -10,7 +10,6 @@ public class Gestion_JEEz_JDBC{
 	private JEEz_JDBC database = new JEEz_JDBC();
 	
 	public Gestion_JEEz_JDBC(){
-		this.JEEz_JDBC.Connection();
 	}
 
 /*
@@ -42,6 +41,7 @@ public class Gestion_JEEz_JDBC{
 
 
 	public Player infoPlayer(int idPlayer) {
+		this.JEEz_JDBC.Connection();
 
 		try {
 			String query = "SELECT * FROM Player WHERE idPlayer=" + idPlayer;
@@ -79,6 +79,7 @@ public class Gestion_JEEz_JDBC{
 
 
 	public ArrayList<int> Connect(String login, String password) {
+		this.JEEz_JDBC.Connection();
 		ArrayList<int> Info = new ArraList<int>();
 		int identifiant = 0;
 		int admin = 0;
@@ -91,7 +92,9 @@ public class Gestion_JEEz_JDBC{
 				admin = rset.getInt("admin");
 				Info.add(identifiant);
 				Info.add(admin);
-				return Info;
+
+			}else{
+				Info=null;
 			}
 		}catch(SQLException e){
 				e.printStackTrace();
@@ -103,7 +106,7 @@ public class Gestion_JEEz_JDBC{
 		e.printStackTrace();
 	}
 
-		return null;
+		return Info;
 	}
 
 
@@ -116,6 +119,7 @@ public class Gestion_JEEz_JDBC{
 	 */
 
 	public String PlayTime(int idPlay){
+		this.JEEz_JDBC.Connection();
 		try {
 			String query = "SELECT start FROM Play WHERE idPlay=" + idPlay; // On selectionne les parties en cour
 			ResultSet rset1 = update(query);
@@ -146,6 +150,7 @@ public class Gestion_JEEz_JDBC{
 
 
 	public void banPlayer(int idPlayer) {
+		this.JEEz_JDBC.Connection();
 		try {
 			String query = "UPDATE Player SET ban="+1+"WHERE idPlayer="+idPlayer; // On selectionne les parties en cour
 			ResultSet rset=update(query);
@@ -165,6 +170,7 @@ public class Gestion_JEEz_JDBC{
 	 */
 
 	public void EndGame(int idPlay, String end) {
+		this.JEEz_JDBC.Connection();
 
 		try {
 			String query = "UPDATE Play SET end="+end+"WHERE idPlay="+idPlay; // On informe la BDD de la date de fin pouyr la partie d'identifiant idPlay passé en paramètre
@@ -186,6 +192,7 @@ public class Gestion_JEEz_JDBC{
 	 */
 
 	public int NumberPlay(int idPlayer){
+		this.JEEz_JDBC.Connection();
 		int n =0;
 
 		try {
@@ -214,6 +221,7 @@ public class Gestion_JEEz_JDBC{
 	 */
 
 	public ArrayList<Play> ListPlay(){
+		this.JEEz_JDBC.Connection();
 		ArrayList<Play> listPlay = new  ArrayList<Play>();
 
 		try {
@@ -251,6 +259,7 @@ public class Gestion_JEEz_JDBC{
 	 */
 
 	public ArrayList<Game> PlayableGame() {
+		this.JEEz_JDBC.Connection();
 
 		ArrayList<Game> gameplayable = new ArrayList<Game>();
 		try {
@@ -285,6 +294,7 @@ public class Gestion_JEEz_JDBC{
 		RENVOI : ArrayList de Player contenant la liste de tous les joueurs
 	 */
 	public ArrayList<Player> ListPlayer() {
+		this.JEEz_JDBC.Connection();
 		ArrayList<Player> listPlayer = new ArrayList<Player>();
 		try {
 			String query="SELECT * FROM Player";
