@@ -39,10 +39,9 @@ public class Gestion_JEEz_JDBC{
  */
 
 
-
 	public Player infoPlayer(int idPlayer) {
 		this.JEEz_JDBC.Connection();
-
+		Player p = new Player();
 		try {
 			String query = "SELECT * FROM Player WHERE idPlayer=" + idPlayer;
 
@@ -56,8 +55,9 @@ public class Gestion_JEEz_JDBC{
 				p.setDateinscription(rset.getString("InscriptionDate"));
 				p.setIdIdentifiant(rset.getInt("Identifiant_idIdentifiant"));
 				p.setBan(rset.getInt("ban"));
-				listPlayer.add(p);
-
+			}
+			else{
+				p=null;
 			}
 		}
 
@@ -67,6 +67,7 @@ public class Gestion_JEEz_JDBC{
 		}catch ( SQLException e ) {
 			e.printStackTrace();
 		}
+		return p;
 	}
 
 		/*
