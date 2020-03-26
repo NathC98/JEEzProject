@@ -12,5 +12,10 @@ public class Gestion_JEEz_JDBC{
 		ArrayList<String> gameplayable = new ArrayList<String>();
 		return gameplayable
 	}
-	
+
+
+	/*
+
+
+	 */
 }
