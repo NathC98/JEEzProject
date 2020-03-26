@@ -90,4 +90,15 @@
         <url-pattern>/JEEprojetplayer</url-pattern>
     </servlet-mapping>
 
+    <servlet>
+        <servlet-name>JEEprojethome</servlet-name>
+        <servlet-class>Servlets.JEEprojethome</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>JEEprojethome</servlet-name>
+        <url-pattern>/JEEprojethome</url-pattern>
+    </servlet-mapping>
+
+
 </web-app>
