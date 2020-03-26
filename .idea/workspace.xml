@@ -3,7 +3,16 @@
   <component name="ChangeListManager">
     <list default="true" id="3b1c006e-56c4-47f3-851e-04b11398dde9" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/JEEz_JDBC.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/JEEz_JDBC.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebContent/WEB-INF/JEEprojet.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/WebContent/WEB-INF/JEEprojet.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebContent/WEB-INF/JEEprojetGAMECHOICE.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/WebContent/WEB-INF/JEEprojetGAMECHOICE.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebContent/WEB-INF/JEEprojetaccueiladmin.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/WebContent/WEB-INF/JEEprojetaccueiladmin.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebContent/WEB-INF/JEEprojetendgames.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/WebContent/WEB-INF/JEEprojetendgames.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebContent/WEB-INF/JEEprojetgames.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/WebContent/WEB-INF/JEEprojetgames.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebContent/WEB-INF/JEEprojethome.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/WebContent/WEB-INF/JEEprojethome.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebContent/WEB-INF/JEEprojetinscription.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/WebContent/WEB-INF/JEEprojetinscription.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebContent/WEB-INF/JEEprojetjeuxencours.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/WebContent/WEB-INF/JEEprojetjeuxencours.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebContent/WEB-INF/JEEprojetplayer.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/WebContent/WEB-INF/JEEprojetplayer.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebContent/WEB-INF/web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/WebContent/WEB-INF/web.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -65,6 +74,7 @@
       <workItem from="1585077996850" duration="65000" />
       <workItem from="1585079028633" duration="461000" />
       <workItem from="1585143755796" duration="3509000" />
+      <workItem from="1585233737955" duration="621000" />
     </task>
     <task id="LOCAL-00001" summary="page de login avec le css">
       <created>1584111388429</created>
@@ -122,7 +132,21 @@
       <option name="project" value="LOCAL" />
       <updated>1585176158331</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="push essai 2">
+      <created>1585233066452</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1585233066452</updated>
+    </task>
+    <task id="LOCAL-00010" summary="modif 1er jet servlet et deplacement servlets dans src">
+      <created>1585233821946</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1585233821946</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -178,7 +202,9 @@
     <MESSAGE value="page d'accueil admin et modif style.css" />
     <MESSAGE value="page d'accueil admin terminée, page gestion jeux, gestion player, jeux terminés et jeux en cours et modif style.css" />
     <MESSAGE value="Création de la classe JEEz_JDBC avec une méthode playableGame qui renvoie un tableau de String avec le nom des jeux disponibles sur le site" />
-    <option name="LAST_COMMIT_MESSAGE" value="Création de la classe JEEz_JDBC avec une méthode playableGame qui renvoie un tableau de String avec le nom des jeux disponibles sur le site" />
+    <MESSAGE value="push essai 2" />
+    <MESSAGE value="modif 1er jet servlet et deplacement servlets dans src" />
+    <option name="LAST_COMMIT_MESSAGE" value="modif 1er jet servlet et deplacement servlets dans src" />
   </component>
   <component name="WindowStateProjectService">
     <state x="361" y="72" key="#Project_Structure" timestamp="1584097652437">
@@ -193,11 +219,11 @@
       <screen x="0" y="34" width="1920" height="1046" />
     </state>
     <state x="768" y="244" width="374" height="632" key="#com.intellij.ide.util.MemberChooser/0.34.1920.1046@0.34.1920.1046" timestamp="1585178274213" />
-    <state x="374" y="34" width="1242" height="1046" key="CommitChangelistDialog2" timestamp="1585179164454">
+    <state x="374" y="34" width="1242" height="1046" key="CommitChangelistDialog2" timestamp="1585234750389">
       <screen x="0" y="34" width="1920" height="1046" />
     </state>
-    <state x="374" y="34" width="1242" height="1046" key="CommitChangelistDialog2/0.34.1920.1046@0.34.1920.1046" timestamp="1585179164454" />
-    <state x="279" y="27" width="865" height="741" key="CommitChangelistDialog2/67.27.1299.741@67.27.1299.741" timestamp="1585159304119" />
+    <state x="374" y="34" width="1242" height="1046" key="CommitChangelistDialog2/0.34.1920.1046@0.34.1920.1046" timestamp="1585234750389" />
+    <state x="279" y="27" width="865" height="741" key="CommitChangelistDialog2/67.27.1299.741@67.27.1299.741" timestamp="1585233821612" />
     <state x="531" y="178" width="424" height="484" key="FileChooserDialogImpl" timestamp="1585079490011">
       <screen x="67" y="27" width="1299" height="741" />
     </state>
@@ -211,30 +237,30 @@
       <screen x="67" y="27" width="1299" height="741" />
     </state>
     <state x="187" y="85" width="1039" height="622" key="MergeDialog/67.27.1299.741@67.27.1299.741" timestamp="1585159348033" />
-    <state x="421" y="114" width="580" height="564" key="MultipleFileMergeDialog" timestamp="1585159350705">
+    <state x="421" y="114" width="580" height="564" key="MultipleFileMergeDialog" timestamp="1585233868066">
       <screen x="67" y="27" width="1299" height="741" />
     </state>
-    <state x="421" y="114" width="580" height="564" key="MultipleFileMergeDialog/67.27.1299.741@67.27.1299.741" timestamp="1585159350705" />
+    <state x="421" y="114" width="580" height="564" key="MultipleFileMergeDialog/67.27.1299.741@67.27.1299.741" timestamp="1585233868066" />
     <state x="249" y="0" key="SettingsEditor" timestamp="1584097684877">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="249" y="0" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1584097684877" />
-    <state x="451" y="219" width="800" height="528" key="Vcs.Push.Dialog.v2" timestamp="1585176165740">
+    <state x="451" y="219" width="800" height="534" key="Vcs.Push.Dialog.v2" timestamp="1585234753120">
       <screen x="0" y="34" width="1920" height="1046" />
     </state>
     <state x="361" y="146" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1584098188628" />
-    <state x="451" y="219" key="Vcs.Push.Dialog.v2/0.34.1920.1046@0.34.1920.1046" timestamp="1585176165740" />
-    <state x="372" y="158" width="800" height="528" key="Vcs.Push.Dialog.v2/67.27.1299.741@67.27.1299.741" timestamp="1585159310313" />
-    <state x="372" y="224" key="com.intellij.ide.util.TipDialog" timestamp="1585159236479">
+    <state x="451" y="219" width="800" height="534" key="Vcs.Push.Dialog.v2/0.34.1920.1046@0.34.1920.1046" timestamp="1585234753120" />
+    <state x="372" y="158" width="800" height="528" key="Vcs.Push.Dialog.v2/67.27.1299.741@67.27.1299.741" timestamp="1585233826526" />
+    <state x="372" y="224" key="com.intellij.ide.util.TipDialog" timestamp="1585233736892">
       <screen x="67" y="27" width="1299" height="741" />
     </state>
-    <state x="372" y="224" key="com.intellij.ide.util.TipDialog/67.27.1299.741@67.27.1299.741" timestamp="1585159236479" />
-    <state x="723" y="453" width="464" height="166" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1585232421865">
+    <state x="372" y="224" key="com.intellij.ide.util.TipDialog/67.27.1299.741@67.27.1299.741" timestamp="1585233736892" />
+    <state x="723" y="453" width="454" height="160" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1585234928456">
       <screen x="0" y="34" width="1920" height="1046" />
     </state>
     <state x="578" y="330" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1536.824@0.0.1536.824" timestamp="1584098090936" />
-    <state x="723" y="453" width="464" height="166" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.34.1920.1046@0.34.1920.1046" timestamp="1585232421865" />
-    <state x="556" y="324" width="464" height="160" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/67.27.1299.741@67.27.1299.741" timestamp="1585159368720" />
+    <state x="723" y="453" width="464" height="166" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.34.1920.1046@0.34.1920.1046" timestamp="1585234928456" />
+    <state x="556" y="324" width="454" height="160" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/67.27.1299.741@67.27.1299.741" timestamp="1585233990518" />
     <state x="67" y="27" width="1289" height="741" key="new project wizard" timestamp="1585079484135">
       <screen x="67" y="27" width="1299" height="741" />
     </state>

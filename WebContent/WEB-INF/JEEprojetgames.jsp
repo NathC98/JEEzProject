@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <title>JEEz admin games gestion</title>
-    <link rel="stylesheet" type="text/css" href="./html/style.css">
+    <link rel="stylesheet" type="text/css" href="./style.css">
 </head>
 <body>
   <div id="container_player">
@@ -15,7 +15,7 @@
     <td width=24%><font size="+1">Jouable</font></td>
   </tr>
 <% 
-	ArrayList<Game> games = (ArrayList<Game>) request.getAttribute(".....");
+	ArrayList<Game> games = (ArrayList<Game>) request.getAttribute("games");
 	for(int i=0;i<games.size();i++){
 		system.out.println(
 		<tr>
