@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <title>JEEz inscription</title>
-    <link rel="stylesheet" type="text/css" href="./html/style.css">
+    <link rel="stylesheet" type="text/css" href="./style.css">
 </head>
 <body>
  <form action="action_page.php" method="post">
