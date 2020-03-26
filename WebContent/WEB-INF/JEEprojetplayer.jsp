@@ -18,12 +18,14 @@
   </tr>
 <% 
 	ArrayList<Player> players = (ArrayList<Player>) request.getAttribute(".....");
+	int nbplays;
 	for(int i=0;i<players.size();i++){
+		nbplays = NumberPlay(players.get(i).getId());
 		system.out.println(
 		<tr>
 			<td>players.get(i).getPseudo()</td>
    			<td>players.get(i).getInscriptiondate()</td>
-    			<td>NumberPlay(players.get(i).getId())</td>
+    			<td>nbplays</td>
     			
 		);
 		if(players.get(i).getBan()){
