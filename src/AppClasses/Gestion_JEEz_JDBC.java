@@ -42,6 +42,7 @@ public class Gestion_JEEz_JDBC{
 
 	public Player infoPlayer(int idPlayer) {
 		this.JEEz_JDBC.Connection();
+
 		try {
 			String query = "SELECT * FROM Player WHERE idPlayer=" + idPlayer;
 
@@ -91,7 +92,9 @@ public class Gestion_JEEz_JDBC{
 				admin = rset.getInt("admin");
 				Info.add(identifiant);
 				Info.add(admin);
-				return Info;
+
+			}else{
+				Info=null;
 			}
 		}catch(SQLException e){
 				e.printStackTrace();
@@ -103,7 +106,7 @@ public class Gestion_JEEz_JDBC{
 		e.printStackTrace();
 	}
 
-		return null;
+		return Info;
 	}
 
 
