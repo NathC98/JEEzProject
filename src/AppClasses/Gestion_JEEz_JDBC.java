@@ -13,8 +13,6 @@ public class Gestion_JEEz_JDBC{
 	}
 
 /*
-
-
 					if(admin==0) {
 						query2 = "SELECT * FROM Player WHERE Identifiant_idIdentifiant=" + identifiant;
 						ResultSet rset2 = Query(query2);
@@ -38,14 +36,18 @@ public class Gestion_JEEz_JDBC{
 				}
  */
 
+	/*
+                FONCTION infoPlayer
+                PARAMETRE login + password
+                RENVOI tableau d'entier, où le premier entier contient l'identifiant dans al classe Identifiant de la BDD, le deuxieme 0 ou 1 pour savoir si c'est un admin ou un joueur.
+                Si le login/password ne convient pas, renvoi null
+             */
 
 	public Player infoPlayer(int idPlayer) {
 		this.JEEz_JDBC.Connection();
 		Player p = new Player();
 		try {
 			String query = "SELECT * FROM Player WHERE idPlayer=" + idPlayer;
-
-
 			ResultSet rset = Query(query);
 			if (rset.next()) {
 				Player p = new Player();
@@ -60,7 +62,6 @@ public class Gestion_JEEz_JDBC{
 				p=null;
 			}
 		}
-
 		try{
 			rset.close();
 			this.JEEz_JDBC.Deconnection();
@@ -76,8 +77,6 @@ public class Gestion_JEEz_JDBC{
 			RENVOI tableau d'entier, où le premier entier contient l'identifiant dans al classe Identifiant de la BDD, le deuxieme 0 ou 1 pour savoir si c'est un admin ou un joueur.
 			Si le login/password ne convient pas, renvoi null
 		 */
-
-
 
 	public ArrayList<int> Connect(String login, String password) {
 		this.JEEz_JDBC.Connection();
@@ -109,8 +108,6 @@ public class Gestion_JEEz_JDBC{
 
 		return Info;
 	}
-
-
 
 	/*
 	FONCTION Playtime
