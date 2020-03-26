@@ -1,11 +1,13 @@
 package AppClasses;
 
+import java.sql.Date;
+
 public class Play {
 
-    private int idPlay;
-    private String start;
-    private String end;
-    private int idgame;
+	private int idPlay;
+    public Date start;
+    private Date end;
+    public int idgame;
     private int idPlayer;
 
     public int getIdPlay() {
@@ -16,19 +18,19 @@ public class Play {
         this.idPlay = idPlay;
     }
 
-    public String getStart() {
+    public Date getStart() {
         return start;
     }
 
-    public void setStart(String start) {
+    public void setStart(Date start) {
         this.start = start;
     }
 
-    public String getEnd() {
+    public Date getEnd() {
         return end;
     }
 
-    public void setEnd(String end) {
+    public void setEnd(Date end) {
         this.end = end;
     }
 
