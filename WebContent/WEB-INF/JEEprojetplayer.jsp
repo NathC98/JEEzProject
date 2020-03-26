@@ -23,7 +23,7 @@
 		<tr>
 			<td>players.get(i).getPseudo()</td>
    			<td>players.get(i).getInscriptiondate()</td>
-    			<td>players.get(i).getNbpartiesjouees()</td>
+    			<td>NumberPlay(players.get(i).getId())</td>
     			
 		);
 		if(players.get(i).getBan()){
