@@ -26,7 +26,7 @@
     			<td>players.get(i).getNbpartiesjouees()</td>
     			
 		);
-		if(players.get(i).getAutorisation()){
+		if(players.get(i).getBan()){
 			system.out.println(<td><button type="button" class="cancelbtn">suspendre</button></td>
     			<td>oui</td>
 			</tr>

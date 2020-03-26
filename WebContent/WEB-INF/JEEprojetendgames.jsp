@@ -17,8 +17,8 @@
     <td width=22%><font size="+1">Temps de jeu</button></td>
   </tr>
   <% 
-	ArrayList<Partie> parties = (ArrayList<Partie>) request.getAttribute(".....");
-	for(int i=0;i<players.size();i++){
+	ArrayList<Play> plays = (ArrayList<Play>) request.getAttribute("plays");
+	for(int i=0;i<plays.size();i++){
 		if(end!=null){
 		date tempsjeu = //parties.get(i).getEnd() - parties.get(i).getStart();
 		system.out.println(
