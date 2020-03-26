@@ -17,21 +17,15 @@ public class JEEz_JDBC {
     private String user = "root"; //identifiant user bdd
     private String pwd = "1234"; //mdp user bdd
 
-    private ArrayList<String> gameplayable = new ArrayList<String>();
-    private ArrayList<Play> playcurrent = new ArrayList<Play>();
-
     private Connection connexion;
 
     /*
-    fonction connxioin
-
+    fonction connexion
 
     deconnexion
 
     requete
      */
-
-
     /*
     RENVOI LES JEUX DISPONIBLES AUX JOUEURS
      */
@@ -50,11 +44,7 @@ public class JEEz_JDBC {
         } catch ( SQLException e ) {
             e.getMessage());
         }
-
     }
-
-
-
 
     public ArrayList<String> playableGame(HttpServletRequest request) {
         /*
@@ -88,7 +78,6 @@ public class JEEz_JDBC {
     }
 /*
 RENVOI LA LISTE DES JOUEURS QUI
-
  */
     public ArrayList<Play> currentPlay(HttpServletRequest request) {
 
@@ -155,10 +144,6 @@ RENVOI LA LISTE DES JOUEURS QUI
         }
         return playcurrent;
     }
-
-
-
-
 
 /*
     public List<String> executerTests(HttpServletRequest request ) {
