@@ -13,6 +13,23 @@ public class Gestion_JEEz_JDBC{
 		this.JEEz_JDBC.Connection();
 	}
 
+	public String PlayTime(int idPlay){
+		try {
+			String query = "SELECT start FROM Play WHERE idPlay=" + idPlay; // On selectionne les parties en cour
+			ResultSet rset1 = update(query);
+
+			String query2 = "SELECT end FROM Play WHERE idPlay=" + idPlay; // On selectionne les parties en cour
+			ResultSet rset2 = update(query2);
+			String start = rset1.getString(1);
+			String end = rset2.getString(2);
+			Date dateStart = formatter.parse(start);
+			Date dateEnd = formatter.parse(end);
+			long resInDays = ChronoUnit.DAYS.between(dateStart,dateEnd);
+			String resString = toString(resInDays);
+			return resString;
+		}
+	}
+
 
 
 	public void banPlayer(int idPlayer) {
