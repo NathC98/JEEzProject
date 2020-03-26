@@ -17,11 +17,11 @@
   <div class="container">
     <label for="uname"><b>Username</b></label>
 <br>
-    <input type="text" placeholder="Enter Username" name="uname" required>
+    <input type="text" placeholder="Enter Username" name="uname" id="uname" required>
 <br>
     <label for="psw"><b>Password</b></label>
 <br>
-    <input type="password" placeholder="Enter Password" name="psw" required>
+    <input type="password" placeholder="Enter Password" name="psw" id="psw" required>
 
     <button type="submit">Login</button>
 <br>
