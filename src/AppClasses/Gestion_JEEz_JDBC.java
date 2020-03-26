@@ -13,41 +13,107 @@ public class Gestion_JEEz_JDBC{
 		this.JEEz_JDBC.Connection();
 	}
 
-	public Player ConnectionPlayer(String login, String password){
-			Player p = new Player();
-			int identifiant = 0;
+/*
 
-			try {
 
-				String query="SELECT * FROM Identifiant WHERE (login= "+login+" AND password= "+password;
-				ResultSet rset=Query(query);
+					if(admin==0) {
+						query2 = "SELECT * FROM Player WHERE Identifiant_idIdentifiant=" + identifiant;
+						ResultSet rset2 = Query(query2);
 
-				if(rset.next()) {
-					identifiant = rset.getInt("idIdentifiant");
+						if (rset2.next()) {
 
-					query="SELECT * FROM Player WHERE Identifiant_idIdentifiant="+identifiant;
-					ResultSet rset2=Query(query);
-
-					if(rset2.next()){
-
-						Player p = new Player();
-						p.idPlayer=rset2.getInt("idPlayer");
-						p.date=rset2.getString("birthDate");
-						p.email=rset2.getString("email");
-						p.dateinscription=rset2.getString("InscriptionDate");
-						p.idIdentifiant=rset2.getInt("Identifiant_idIdentifiant");
-						p.ban=rset2.getInt("ban");
+							Player p = new Player();
+							p.setIdPlayer(rset2.getInt("idPlayer"));
+							p.setDate(rset2.getString("birthDate"));
+							p.setEmail(rset2.getString("email"));
+							p.setDateinscription(rset2.getString("InscriptionDate"));
+							p.setIdIdentifiant(rset2.getInt("Identifiant_idIdentifiant"));
+							p.setBan(rset2.getInt("ban"));
+						}
+						query3 = "SELECT * FROM Administrator WHERE Identifiant_idIdentifiant=" + identifiant;
+						ResultSet rset2 = Query(query3);
+						if (rset3.next()) {
+							Administrator
+						}
 					}
 				}
+ */
+ */
 
-			} catch (SQLException e) {
-				e.printStackTrace();
+
+	public Player infoPlayer(int idPlayer) {
+
+		try {
+			String query = "SELECT * FROM Player WHERE idPlayer=" + idPlayer;
+
+
+			ResultSet rset = Query(query);
+			if (rset.next()) {
+				Player p = new Player();
+				p.setIdPlayer(rset.getInt("idPlayer"));
+				p.setDate(rset.getString("birthDate"));
+				p.setEmail(rset.getString("email"));
+				p.setDateinscription(rset.getString("InscriptionDate"));
+				p.setIdIdentifiant(rset.getInt("Identifiant_idIdentifiant"));
+				p.setBan(rset.getInt("ban"));
+				listPlayer.add(p);
+
 			}
-			return person;
 		}
 
+		try{
+			rset.close();
+			this.JEEz_JDBC.Deconnection();
+		}catch ( SQLException e ) {
+			e.printStackTrace();
+		}
+	}
+
+		/*
+			FONCTION Connect
+			PARAMETRE login + password
+			RENVOI tableau d'entier, où le premier entier contient l'identifiant dans al classe Identifiant de la BDD, le deuxieme 0 ou 1 pour savoir si c'est un admin ou un joueur.
+			Si le login/password ne convient pas, renvoi null
+		 */
 
 
+
+	public ArrayList<int> Connect(String login, String password) {
+		ArrayList<int> Info = new ArraList<int>();
+		int identifiant = 0;
+		int admin = 0;
+
+		try {
+			String query = "SELECT * FROM Identifiant WHERE (login= " + login + " AND password= " + password;
+			ResultSet rset = Query(query);
+			if (rset.next()) {
+				identifiant = rset.getInt("idIdentifiant");
+				admin = rset.getInt("admin");
+				Info.add(identifiant);
+				Info.add(admin);
+				return Info;
+			}
+		}catch(SQLException e){
+				e.printStackTrace();
+		}
+		try{
+			rset.close();
+			this.JEEz_JDBC.Deconnection();
+		}catch(SQLException e){
+		e.printStackTrace();
+	}
+
+		return null;
+	}
+
+
+
+	/*
+	FONCTION Playtime
+	PARAMETRE entier idPlay, identifiant de la partie
+	RENVOI
+
+	 */
 
 	public String PlayTime(int idPlay){
 		try {
@@ -83,12 +149,13 @@ public class Gestion_JEEz_JDBC{
 		try {
 			String query = "UPDATE Player SET ban="+1+"WHERE idPlayer="+idPlayer; // On selectionne les parties en cour
 			ResultSet rset=update(query);
-			try{
-				rset.close();
-				this.JEEz_JDBC.Deconnection();
-			}
-
 		} catch ( SQLException e ) {
+		}
+		try{
+			rset.close();
+			this.JEEz_JDBC.Deconnection();
+		}catch ( SQLException e ) {
+			e.printStackTrace();
 		}
 	}
 
@@ -102,11 +169,13 @@ public class Gestion_JEEz_JDBC{
 		try {
 			String query = "UPDATE Play SET end="+end+"WHERE idPlay="+idPlay; // On informe la BDD de la date de fin pouyr la partie d'identifiant idPlay passé en paramètre
 			ResultSet rset=update(query);
-			try{
-				rset.close();
-				this.JEEz_JDBC.Deconnection();
-			}
 		} catch ( SQLException e ) {
+		}
+		try{
+			rset.close();
+			this.JEEz_JDBC.Deconnection();
+		}catch ( SQLException e ) {
+			e.printStackTrace();
 		}
 	}
 
@@ -123,12 +192,15 @@ public class Gestion_JEEz_JDBC{
 			String query = "SELECT COUNT(*) FROM Play where idPlayer="+idPlayer; // On selectionne les parties en cour
 			ResultSet rset=Query(query);
 			n=rset.getInt(1);
-			try{
-				rset.close();
-				this.JEEz_JDBC.Deconnection();
-			}
 		}
 		catch ( SQLException e ) {
+		}
+
+		try{
+			rset.close();
+			this.JEEz_JDBC.Deconnection();
+		}catch ( SQLException e ) {
+			e.printStackTrace();
 		}
 
 		return n;
@@ -147,23 +219,25 @@ public class Gestion_JEEz_JDBC{
 		try {
 			String query = "SELECT * FROM Play where end=null"; // On selectionne les parties en cour
 			ResultSet rset=Query(query);
-			while ( resultat.next() ) {
+			while ( rset.next() ) {
 				Play p = new Play();
 
-				p.idPlay = rset.getInt("idPlay");
-				p.start = rset.getString("start");
-				p.end = rset.getString("end");
-				p.idGame = rset.getString("idGame");
-				p.idPlayer = rset.getString("idPlayer")
+				p.setIdPlay(rset.getInt("idPlay"));
+				p.setStart(rset.getString("start"));
+				p.setEnd (rset.getString("end"));
+				p.setIdgame(rset.getInt("idGame"));
+				p.setIdPlayer(rset.getInt("idPlayer"));
 				listPlay.add(p);
 			}
 			try{
 				rset.close();
 				this.JEEz_JDBC.Deconnection();
+			}catch ( SQLException e ) {
+				e.printStackTrace();
 			}
+
 		}
 		catch ( SQLException e ) {
-			e.printStackTrace();
 		}
 
 		return listPlay;
@@ -182,19 +256,21 @@ public class Gestion_JEEz_JDBC{
 		try {
 			String query = "SELECT * FROM Game where playable=true"; // On selectionne le nom des jeux qui sont disponibles sur le site
 			ResultSet rset=Query(query);
-			while ( resultat.next() ) {
+			while ( rset.next() ) {
 				Game g = new Game();
 
-				g.idGame=rest.getInt("idGame");
-				g.name=rset.getString("name");
-				g.numberPlayerGame=rset.getInt("numPlayerInGame");
-				g.playable=rset.getInt("playable");
+				g.setIdGame(rset.getInt("idGame"));
+				g.setNom(rset.getString("name"));
+				g.setNumberPlayerGame(rset.getInt("numPlayerInGame"));
+				g.setPlayable(rset.getBoolean("playable"));
 
 				gameplayable.add(g);
 			}
 			try{
 				rset.close();
 				this.JEEz_JDBC.Deconnection();
+			}catch ( SQLException e ) {
+				e.printStackTrace();
 			}
 
 		} catch ( SQLException e ) {
@@ -215,12 +291,12 @@ public class Gestion_JEEz_JDBC{
 			ResultSet rset=Query(query);
 			if(rset.next()) {
 				Player p = new Player();
-				p.idPlayer=rset.getInt("idPlayer");
-				p.date=rset.getString("birthDate");
-				p.email=rset.getString("email");
-				p.dateinscription=rset.getString("InscriptionDate");
-				p.idIdentifiant=rset.getInt("Identifiant_idIdentifiant");
-				p.ban=rset.getInt("ban");
+				p.setIdPlayer(rset.getInt("idPlayer"));
+				p.setDate(rset.getString("birthDate"));
+				p.setEmail(rset.getString("email"));
+				p.setDateinscription(rset.getString("InscriptionDate"));
+				p.setIdIdentifiant(rset.getInt("Identifiant_idIdentifiant"));
+				p.setBan(rset.getInt("ban"));
 				listPlayer.add(p);
 			}
 			try{
