@@ -3,7 +3,6 @@ package AppClasses;
 public class Game {
 
     private int idGame;
-<<<<<<< HEAD
     private String nom;
     private int numberPlayerGame;
     private boolean playable;
@@ -22,7 +21,6 @@ public class Game {
 
     public void setNom(String nom) {
         this.nom = nom;
-=======
     private String name;
     private int numberPlayerGame;
     private boolean playable;
