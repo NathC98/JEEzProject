@@ -44,11 +44,11 @@
 <br>
 <label for="gname"><b>Nom du jeu</b></label>
 <br>
-    <input type="text" placeholder="Enter game name" name="gname" required>
+    <input type="text" placeholder="Enter game name" name="gname" id="gname" required>
 <br>
     <label for="playable"><b>Jouablilité</b></label>
 <br>
-    <input type="text" placeholder="Enter Yes or No" name="playable" required>
+    <input type="text" placeholder="Enter Yes or No" name="playable" id="playable" required>
 
     <button type="submit"><font size="+1">Ajouter</font></button>
   </div>
