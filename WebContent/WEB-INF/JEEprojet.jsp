@@ -1,12 +1,10 @@
-<%@ page import="AppClasses.*" %>
-<%@ page import="java.util.ArrayList" %>
 <%@ page pageEncoding="UTF-8" %>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <title>JEEz login</title>
-    <link rel="stylesheet" type="text/css" href="./style.css">
+    <link rel="stylesheet" type="text/css" href="./html/style.css">
 </head>
 <body>
  <form action="action_page.php" method="post">
