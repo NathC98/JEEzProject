@@ -17,37 +17,57 @@ public class JEEz_JDBC {
     private String user = "root"; //identifiant user bdd
     private String pwd = "1234"; //mdp user bdd
 
-
     private ArrayList<String> gameplayable = new ArrayList<String>();
     private ArrayList<Play> playcurrent = new ArrayList<Play>();
 
+    private Connection connexion;
+
+    /*
+    fonction connxioin
 
 
+    deconnexion
+
+    requete
+     */
 
 
     /*
     RENVOI LES JEUX DISPONIBLES AUX JOUEURS
      */
+
+    public void Connection(){
+
+        try {
+            Class.forName(this.driver);
+        }
+        catch (ClassNotFoundException e) {
+            e.getMessage();
+        }
+
+        try {
+            this.connexion = DriverManager.getConnection(this.url, this.user, this.pwd);
+        } catch ( SQLException e ) {
+            e.getMessage());
+        }
+
+    }
+
+
+
+
     public ArrayList<String> playableGame(HttpServletRequest request) {
         /*
             on remplit les informations pour l'url et l'utilisateur de la BDD
         On initialise ce qui va nous servir pour communiquer avec la BDD
          */
 
-        Connection connexion =null;
         Statement stat = null;
         ResultSet resultat=null;
 
         /*  Chargement du driver pour la BDD */
         try {
-            Class.forName(this.driver);
-        }
-        catch (ClassNotFoundException e) {
-                     e.getMessage();
-        }
-        try {
-            connexion = DriverManager.getConnection(this.url, this.user, this.pwd);
-            stat = connexion.createStatement();
+            stat = this.connexion.createStatement();
             resultat = stat.executeQuery("SELECT name FROM Game where playable=true"); // On selectionne le nom des jeux qui sont disponibles sur le site
             
             /* Exécution d'une requête de lecture */
@@ -70,6 +90,32 @@ public class JEEz_JDBC {
 RENVOI LA LISTE DES JOUEURS QUI
 
  */
+    public ArrayList<Play> currentPlay(HttpServletRequest request) {
+
+        try {
+            Connection connexion = DriverManager.getConnection(url, utilisateur, motDePasse);
+            Statement stat = connexion.createStatement();
+            ResultSet resultat = stat.executeQuery("SELECT * FROM Play where endDate = null");
+            /* Exécution d'une requête de lecture */
+            while ( resultat.next() ) {
+                Play partie = new Play();
+               partie.idPlay=resultat.getInt("idPlay");;
+               partie.start=resultat.getInt("start");;
+               partie.end=null;
+               partie.idgame=resultat.getInt("idGame");;
+               partie.idPlayer=resultat.getInt("idPlayer");
+                playcurrent.add(partie);
+            }
+            resultat.close();
+            stat.close();
+            connexion.close();
+        } catch ( SQLException e ) {
+        	e.getMessage() ;//FIXME problème de type si ajout dans playcurrent
+        }
+        return playcurrent;
+    }
+
+
     public ArrayList<Play> currentPlay(HttpServletRequest request) {
         /*  Chargement du driver pour la BDD */
         try {
@@ -94,21 +140,22 @@ RENVOI LA LISTE DES JOUEURS QUI
             /* Exécution d'une requête de lecture */
             while ( resultat.next() ) {
                 Play partie = new Play();
-               partie.idPlay=resultat.getInt("idPlay");;
-               partie.start=resultat.getInt("start");;
-               partie.end=null;
-               partie.idgame=resultat.getInt("idGame");;
-               partie.idPlayer=resultat.getInt("idPlayer");
+                partie.idPlay=resultat.getInt("idPlay");;
+                partie.start=resultat.getInt("start");;
+                partie.end=null;
+                partie.idgame=resultat.getInt("idGame");;
+                partie.idPlayer=resultat.getInt("idPlayer");
                 playcurrent.add(partie);
             }
             resultat.close();
             stat.close();
             connexion.close();
         } catch ( SQLException e ) {
-        	e.getMessage() ;//FIXME problème de type si ajout dans playcurrent
+            e.getMessage() ;//FIXME problème de type si ajout dans playcurrent
         }
         return playcurrent;
     }
+
 
 
 
