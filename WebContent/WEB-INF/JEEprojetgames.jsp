@@ -19,19 +19,19 @@
 <% 
 	ArrayList<Game> games = (ArrayList<Game>) request.getAttribute("games");
 	for(int i=0;i<games.size();i++){
-		system.out.println(
-		<tr>
-			<td>games.get(i).getName()</td>
-   			<td><button type="button" class="cancelbtn">Supprimer</button></td>);
+		out.println(
+		"<tr>"                                                                    +
+			"<td>games.get(i).getName()</td>"                                     +
+   			"<td><button type=\"button\" class=\"cancelbtn\">Supprimer</button></td>");
 		if(games.get(i).getPlayable()){
-			system.out.println(
-				<td>oui</td>
-		</tr>);
+			out.println(
+				"<td>oui</td>" +
+		"</tr>");
 		}
 		else{
-			system.out.println(
-				<td>non</td>
-		</tr>);
+			out.println(
+				"<td>non</td>" +
+		"</tr>");
 		}
 	}
 %>
@@ -44,11 +44,11 @@
 <br>
 <label for="gname"><b>Nom du jeu</b></label>
 <br>
-    <input type="text" placeholder="Enter game name" name="gname" required>
+    <input type="text" placeholder="Enter game name" name="gname" id="gname" required>
 <br>
     <label for="playable"><b>Jouablilité</b></label>
 <br>
-    <input type="text" placeholder="Enter Yes or No" name="playable" required>
+    <input type="text" placeholder="Enter Yes or No" name="playable" id="playable" required>
 
     <button type="submit"><font size="+1">Ajouter</font></button>
   </div>
