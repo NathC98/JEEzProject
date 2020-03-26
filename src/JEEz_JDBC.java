@@ -61,7 +61,7 @@ public class JEEz_JDBC {
 
     public void update(String query) {
         try {
-            PreparedStatement prepare = connexion.prepareStatement(query);
+            PreparedStatement prepare = this.connexion.prepareStatement(query);
             prepare.executeUpdate(query);
         } catch (SQLException e) {
             e.printStackTrace();

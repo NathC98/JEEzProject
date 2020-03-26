@@ -5,7 +5,6 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
-
 public class Gestion_JEEz_JDBC{
 
 	private JEEz_JDBC database = new JEEz_JDBC();
@@ -14,43 +13,75 @@ public class Gestion_JEEz_JDBC{
 		this.JEEz_JDBC.Connection();
 	}
 
-	public int numnberPlay(int idPlayer){
+
+
+	public void banPlayer(int idPlayer) {
+		try {
+			String query = "UPDATE Player SET ban="+1+"WHERE idPlayer="+idPlayer; // On selectionne les parties en cour
+			ResultSet rset=update(query);
+		} catch ( SQLException e ) {
+		}
+	}
+
+	/*
+		PROCEDURE EndGame
+		PARAMETRE identifiant du joueur, date de fin de partie
+	 */
+
+	public void EndGame(int idPlay, String end) {
+
+		try {
+			String query = "UPDATE Play SET end="+end+"WHERE idPlay="+idPlay; // On informe la BDD de la date de fin pouyr la partie d'identifiant idPlay passé en paramètre
+			ResultSet rset=update(query);
+		} catch ( SQLException e ) {
+		}
+	}
+
+	/*
+	FONCTION : NumberPlay
+	PARAMETRE : identifiant du joueur
+	RENVOI : le nombre total de parties jouées par le joueur
+	 */
+
+	public int NumberPlay(int idPlayer){
 		int n =0;
 
 		try {
 			String query = "SELECT COUNT(*) FROM Play where idPlayer="+idPlayer; // On selectionne les parties en cour
-			ResultSet rset=con.execute(query);
+			ResultSet rset=Query(query);
 			n=rset.getInt(1);
-			}
-
-		} catch ( SQLException e ) {
+		}
+		catch ( SQLException e ) {
 		}
 
 		return n;
 	}
 
 
-
-
+	/*
+		FONCTION 	ListPlay
+		PARAMETRE : aucun
+		RENVOI : ArrayList de Play contenant toutes les parties en cour
+	 */
 
 	public ArrayList<Play> ListPlay(){
 		ArrayList<Play> listPlay = new  ArrayList<Play>();
 
 		try {
 			String query = "SELECT * FROM Play where end=null"; // On selectionne les parties en cour
-			ResultSet rset=con.execute(query);
+			ResultSet rset=Query(query);
 			while ( resultat.next() ) {
 				Play p = new Play();
 
-				p.idPlay=rest.getInt("idPlay");
-				g.start=rset.getString("start");
-				g.end=rset.getString("end");
-				g.idGame=rset.getString("idGame");
-				g.idPlayer=rset.getString("idPlayer")
+				p.idPlay = rest.getInt("idPlay");
+				g.start = rset.getString("start");
+				g.end = rset.getString("end");
+				g.idGame = rset.getString("idGame");
+				g.idPlayer = rset.getString("idPlayer")
 				listPlay.add(g);
 			}
-
-		} catch ( SQLException e ) {
+		}
+		catch ( SQLException e ) {
 		}
 
 		return listPlay;
@@ -68,7 +99,7 @@ public class Gestion_JEEz_JDBC{
 		ArrayList<Game> gameplayable = new ArrayList<Game>();
 		try {
 			String query = "SELECT * FROM Game where playable=true"; // On selectionne le nom des jeux qui sont disponibles sur le site
-			ResultSet rset=con.execute(query);
+			ResultSet rset=Query(query);
 			while ( resultat.next() ) {
 				Game g = new Game();
 
@@ -94,7 +125,7 @@ public class Gestion_JEEz_JDBC{
 		ArrayList<Player> listPlayer = new ArrayList<Player>();
 		try {
 			String query="SELECT * FROM Player";
-			ResultSet rset=con.execute(query);
+			ResultSet rset=Query(query);
 			if(rset.next()) {
 				Player p = new Player();
 				p.idPlayer=rset.getInt("idPlayer");
