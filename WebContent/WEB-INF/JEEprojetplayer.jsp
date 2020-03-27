@@ -24,6 +24,7 @@
 <% 
 	ArrayList<Player> players = (ArrayList<Player>) request.getAttribute(".....");
 	int nbplays;
+	Gestion_JEEz_JDBC b = new Gestion_JEEz_JDBC();
 	for(int i=0;i<players.size();i++){
 		nbplays = NumberPlay(players.get(i).getId());
 		out.println("<tr>"+"<td>players.get(i).getPseudo()</td>"+

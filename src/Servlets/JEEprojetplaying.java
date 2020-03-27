@@ -6,18 +6,9 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
-import AppClasses.*;
 
-@WebServlet(name = " JEEprojetplaying")
-public class JEEprojet extends HttpServlet {
-    /**
-	 *
-	 */
-	private static final long serialVersionUID = 1L;
-
-	/*
-	Cette procédure permet l'authentification, et autorise ou non un joueur ou un administrateur à se connecter au site.
-	 */
+@WebServlet(name = "JEEprojetplaying")
+public class JEEprojetplaying extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
     }

@@ -100,5 +100,16 @@
         <url-pattern>/JEEprojethome</url-pattern>
     </servlet-mapping>
 
+    <servlet>
+        <servlet-name>JEEprojetplaying</servlet-name>
+        <servlet-class>Servlets.JEEprojetplaying</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>JEEprojetplaying</servlet-name>
+        <url-pattern>/JEEprojetplaying</url-pattern>
+    </servlet-mapping>
+
+
 
 </web-app>
