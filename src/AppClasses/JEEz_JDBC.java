@@ -43,12 +43,7 @@ public class JEEz_JDBC {
     public void Deconnection(){
        try{
            this.connexion.close();
-       }catch(SQLException e) {
-            e.printStackTrace();
-       }
-        try{
-            this.statement.close();
-        }catch(SQLException e) {
+       }catchcatch (SQLException e) {
             e.printStackTrace();
         }
     }
@@ -72,7 +67,6 @@ public class JEEz_JDBC {
         try {
             PreparedStatement prepare = this.connexion.prepareStatement(query);
             prepare.executeUpdate(query);
-            prepare.close();
         } catch (SQLException e) {
             e.printStackTrace();
         }

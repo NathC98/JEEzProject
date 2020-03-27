@@ -1,6 +1,5 @@
 package AppClasses;
 
-<<<<<<< HEAD
 public class Play {
 
     private int idPlay;
@@ -30,39 +29,6 @@ public class Play {
     }
 
     public void setEnd(String end) {
-=======
-import java.sql.Date;
-
-public class Play {
-
-	private int idPlay;
-    public Date start;
-    private Date end;
-    public int idgame;
-    private int idPlayer;
-
-    public int getIdPlay() {
-        return idPlay;
-    }
-
-    public void setIdPlay(int idPlay) {
-        this.idPlay = idPlay;
-    }
-
-    public Date getStart() {
-        return start;
-    }
-
-    public void setStart(Date start) {
-        this.start = start;
-    }
-
-    public Date getEnd() {
-        return end;
-    }
-
-    public void setEnd(Date end) {
->>>>>>> branch 'master' of https://github.com/NathC98/JEEzProject.git
         this.end = end;
     }
 

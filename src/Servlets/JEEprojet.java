@@ -9,6 +9,11 @@ import java.io.IOException;
 
 @WebServlet(name = " JEEprojet")
 public class JEEprojet extends HttpServlet {
+    /**
+	 *
+	 */
+	private static final long serialVersionUID = 1L;
+
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         Identifiant id = new Identifiant();
         String login  = request.getParameter("uname");
