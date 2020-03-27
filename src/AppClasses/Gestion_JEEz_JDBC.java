@@ -458,4 +458,12 @@ public class Gestion_JEEz_JDBC{
 		this.database.Deconnection();
 		return idPlay;
 	}
+
+	public void updatePlay(int idPlay, String end){
+		this.database.Connection();
+		String query = "UPDATE Play SET end='"+end+"'WHERE idPlay="+idPlay; // On selectionne les parties en cour
+		database.update(query);
+		this.database.Deconnection();
+
+	}
 }
