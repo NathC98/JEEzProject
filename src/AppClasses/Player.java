@@ -6,7 +6,6 @@ public class Player {
     private int idPlayer;
     private String date;
     private String email;
-    private String dateinscription;
     private int idIdentifiant;
     private boolean ban;
 
@@ -32,14 +31,6 @@ public class Player {
 
     public void setEmail(String email) {
         this.email = email;
-    }
-
-    public String getDateinscription() {
-        return dateinscription;
-    }
-
-    public void setDateinscription(String dateinscription) {
-        this.dateinscription = dateinscription;
     }
 
     public int getIdIdentifiant() {

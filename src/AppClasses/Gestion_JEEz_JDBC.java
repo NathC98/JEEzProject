@@ -36,7 +36,6 @@ public class Gestion_JEEz_JDBC{
 				p.setIdPlayer(rset.getInt("idPlayer"));
 				p.setDate(rset.getString("birthDate"));
 				p.setEmail(rset.getString("email"));
-				p.setDateinscription(rset.getString("InscriptionDate"));
 				p.setIdIdentifiant(rset.getInt("Identifiant_idIdentifiant"));
 				p.setBan(rset.getBoolean("ban"));
 			}
@@ -215,8 +214,8 @@ public class Gestion_JEEz_JDBC{
 				p.setIdPlay(rset.getInt("idPlay"));
 				p.setStart(rset.getString("start"));
 				p.setEnd (rset.getString("end"));
-				p.setIdgame(rset.getInt("idGame"));
-				p.setIdPlayer(rset.getInt("idPlayer"));
+				p.setIdgame(rset.getInt("Game_idGame"));
+				p.setIdPlayer(rset.getInt("Player_idPlayer"));
 				listPlay.add(p);
 			}
 			try{
@@ -287,7 +286,6 @@ public class Gestion_JEEz_JDBC{
 				p.setIdPlayer(rset.getInt("idPlayer"));
 				p.setDate(rset.getString("birthDate"));
 				p.setEmail(rset.getString("email"));
-				p.setDateinscription(rset.getString("InscriptionDate"));
 				p.setIdIdentifiant(rset.getInt("Identifiant_idIdentifiant"));
 				p.setBan(rset.getBoolean("ban"));
 				listPlayer.add(p);
