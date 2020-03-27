@@ -23,24 +23,16 @@
 	int nbplays;
 	for(int i=0;i<players.size();i++){
 		nbplays = NumberPlay(players.get(i).getId());
-		out.println(
-		"<tr>"                                            +
-			"<td>players.get(i).getPseudo()</td>"         +
-   			"<td>players.get(i).getInscriptiondate()</td>"+
-    			"<td>nbplays</td>"                        +
-    			
-		);
+		out.println("<tr>"+"<td>players.get(i).getPseudo()</td>"+
+		"<td>players.get(i).getInscriptiondate()</td>"+
+		"<td>nbplays</td>");
 		if(players.get(i).getBan()){
-			out.println("<td><button type=\"button\" class=\"cancelbtn\">suspendre</button></td>"+
-    			"<td>oui</td>"                                                                   +
-			"</tr>"                                                                              +
-		);
+			out.println("<td>"+"<button type=\"button\" class=\"cancelbtn\">suspendre</button>"+
+		"</td>"+"<td>oui</td>"+"</tr>");
 		}
 		else{
 			out.println("<td><button type=\"button\" class=\"cancelbtn\">autoriser</button></td>"+
-    			"<td>non</td>"                                                               +
-			"</tr>"                                                                          +
-		);
+		"<td>non</td>"+"</tr>");
 		}
 	}
 %>
