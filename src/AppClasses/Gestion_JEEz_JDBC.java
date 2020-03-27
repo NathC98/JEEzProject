@@ -249,7 +249,7 @@ public class Gestion_JEEz_JDBC{
 
 	public ArrayList<Game> PlayableGame() {
 		this.database.Connection();
-		ResultSet  =null;
+		ResultSet rset =null;
 		ArrayList<Game> gameplayable = new ArrayList<Game>();
 		try {
 			String query = "SELECT * FROM Game where playable=true"; // On selectionne le nom des jeux qui sont disponibles sur le site
