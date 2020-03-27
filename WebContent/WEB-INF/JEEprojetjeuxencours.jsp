@@ -27,8 +27,8 @@
 	String playername = null ;
 	String start = null ;
 	for(int i=0;i<plays.size();i++){
-		gamename = a.NameGameFromId(plays.get(i).getIdgame());
-		playername = a.NamePlayerFromId(plays.get(i).getIdPlayer());
+		gamename = a.gameFromPlay(plays.get(i).getIdgame());
+		playername = a.playerFromPlay(plays.get(i).getIdPlayer());
 		start = plays.get(i).getStart();
 		if(plays.get(i).getEnd() == null){
 		out.println(

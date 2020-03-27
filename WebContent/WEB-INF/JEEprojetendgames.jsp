@@ -32,8 +32,8 @@
 	for(int i=0;i<plays.size();i++){
 		if(plays.get(i).getEnd()!=null){
 		playtime = a.PlayTime(plays.get(i).getIdPlay());
-		gamename = a.NameGameFromId(plays.get(i).getIdgame());
-		nameplayer = a.NamePlayerFromId(plays.get(i).getIdPlayer());
+		gamename = a.gameFromPlay(plays.get(i).getIdgame());
+		nameplayer = a.playerFromPlay(plays.get(i).getIdPlayer());
 		start = plays.get(i).getStart();
 		end = plays.get(i).getEnd();
 			out.println(
