@@ -11,7 +11,7 @@
 <body>
 <font size="+3">Jeux en cours</font>
 
-<button id="end" onclick="window.location.href = './JEEprojetGAMECHOICE.jsp';" type="cancelbtn">Terminer le jeu</button>
+<button id="end" onclick="window.location.href = './JEEprojetGAMECHOICE';" type="cancelbtn">Terminer le jeu</button>
 
 <button type="player">Ajouter aux favoris</button>
 
