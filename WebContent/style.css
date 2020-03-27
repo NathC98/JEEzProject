@@ -142,6 +142,12 @@ span.psw {
   margin-top: -29%
 }
 
+#back {
+  background-color:white;
+  border: 3px solid #f1f1f1;
+  margin-right: 93%;
+}
+
 #containergamefav {
   background-color:white;
   border: 3px solid #f1f1f1;

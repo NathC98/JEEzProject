@@ -1,9 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="3b1c006e-56c4-47f3-851e-04b11398dde9" name="Default Changelist" comment="">
+    <list default="true" id="3b1c006e-56c4-47f3-851e-04b11398dde9" name="Default Changelist" comment="Boutons de retour a toutes les pages d'">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Servlets/JEEprojetaccueiladmin.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Servlets/JEEprojetaccueiladmin.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebContent/WEB-INF/JEEprojetGAMECHOICE.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/WebContent/WEB-INF/JEEprojetGAMECHOICE.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebContent/WEB-INF/JEEprojetaccueiladmin.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/WebContent/WEB-INF/JEEprojetaccueiladmin.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebContent/WEB-INF/JEEprojetendgames.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/WebContent/WEB-INF/JEEprojetendgames.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebContent/WEB-INF/JEEprojetgames.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/WebContent/WEB-INF/JEEprojetgames.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebContent/WEB-INF/JEEprojethome.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/WebContent/WEB-INF/JEEprojethome.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebContent/WEB-INF/JEEprojetinscription.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/WebContent/WEB-INF/JEEprojetinscription.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebContent/WEB-INF/JEEprojetjeuxencours.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/WebContent/WEB-INF/JEEprojetjeuxencours.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebContent/WEB-INF/JEEprojetplayer.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/WebContent/WEB-INF/JEEprojetplayer.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebContent/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/WebContent/style.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -240,7 +248,14 @@
       <option name="project" value="LOCAL" />
       <updated>1585259459737</updated>
     </task>
-    <option name="localTasksCounter" value="21" />
+    <task id="LOCAL-00021" summary="boutons qui renvoient a une url et playing">
+      <created>1585266169839</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1585266169839</updated>
+    </task>
+    <option name="localTasksCounter" value="22" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -304,7 +319,8 @@
     <MESSAGE value="Imports dans les jsp et completage servlet" />
     <MESSAGE value="petites modifs pour les ids" />
     <MESSAGE value="faute d efrappe modif" />
-    <option name="LAST_COMMIT_MESSAGE" value="faute d efrappe modif" />
+    <MESSAGE value="boutons qui renvoient a une url et playing" />
+    <option name="LAST_COMMIT_MESSAGE" value="boutons qui renvoient a une url et playing" />
   </component>
   <component name="WindowStateProjectService">
     <state x="361" y="72" key="#Project_Structure" timestamp="1584097652437">
@@ -319,12 +335,12 @@
       <screen x="0" y="34" width="1920" height="1046" />
     </state>
     <state x="768" y="244" width="374" height="632" key="#com.intellij.ide.util.MemberChooser/0.34.1920.1046@0.34.1920.1046" timestamp="1585178274213" />
-    <state x="279" y="27" width="1469" height="824" key="CommitChangelistDialog2" timestamp="1585266128640">
+    <state x="279" y="27" width="1469" height="824" key="CommitChangelistDialog2" timestamp="1585272298089">
       <screen x="67" y="27" width="1299" height="741" />
     </state>
     <state x="67" y="0" width="1469" height="824" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1585257242975" />
     <state x="374" y="34" width="1242" height="1046" key="CommitChangelistDialog2/0.34.1920.1046@0.34.1920.1046" timestamp="1585179164454" />
-    <state x="279" y="27" width="865" height="741" key="CommitChangelistDialog2/67.27.1299.741@67.27.1299.741" timestamp="1585266128640" />
+    <state x="279" y="27" width="865" height="741" key="CommitChangelistDialog2/67.27.1299.741@67.27.1299.741" timestamp="1585272298089" />
     <state x="93" y="93" width="1350" height="638" key="DiffContextDialog" timestamp="1585255908780">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -350,12 +366,12 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="249" y="0" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1584097684877" />
-    <state x="372" y="158" width="800" height="528" key="Vcs.Push.Dialog.v2" timestamp="1585259461711">
+    <state x="372" y="158" width="800" height="528" key="Vcs.Push.Dialog.v2" timestamp="1585266174030">
       <screen x="67" y="27" width="1299" height="741" />
     </state>
     <state x="361" y="146" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1585257503365" />
     <state x="451" y="219" key="Vcs.Push.Dialog.v2/0.34.1920.1046@0.34.1920.1046" timestamp="1585176165740" />
-    <state x="372" y="158" width="800" height="528" key="Vcs.Push.Dialog.v2/67.27.1299.741@67.27.1299.741" timestamp="1585259461711" />
+    <state x="372" y="158" width="800" height="528" key="Vcs.Push.Dialog.v2/67.27.1299.741@67.27.1299.741" timestamp="1585266174030" />
     <state x="372" y="224" key="com.intellij.ide.util.TipDialog" timestamp="1585236207826">
       <screen x="67" y="27" width="1299" height="741" />
     </state>
