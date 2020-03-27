@@ -19,9 +19,9 @@ public class JEEprojetended extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         Gestion_JEEz_JDBC b = new Gestion_JEEz_JDBC();
         String idjoueur = request.getParameter("id");
-        String idjeu = request.getParameter("idjeu");
+        int idjeu = Integer.parseInt(String)request.getParameter("idjeu"));
         Date end = new Date ();
-        b.updatePlay(idjeu,end);
+        b.updatePlay(idjeu,end.toString());
         request.setAttribute("games",b.PlayableGame());
         this.getServletContext().getRequestDispatcher("/WEB-INF/JEEprojetended.jsp").forward(request,response);
     }
