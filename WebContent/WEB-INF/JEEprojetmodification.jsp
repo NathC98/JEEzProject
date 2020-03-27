@@ -6,6 +6,9 @@
     <title>JEEz login</title>
     <link rel="stylesheet" type="text/css" href="./html/style.css">
 </head>
+<div id="back">
+    <button onclick="window.location.href = './JEEprojetGAMECHOICE';" type="button" class="cancelbtn">Retour</button>
+</div>
 <body>
  <form action="action_page.php" method="post">
   <div class="imgcontainer">
