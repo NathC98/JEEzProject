@@ -43,7 +43,7 @@ public class JEEz_JDBC {
     public void Deconnection(){
        try{
            this.connexion.close();
-       }catchcatch (SQLException e) {
+       }catch (SQLException e) {
             e.printStackTrace();
         }
     }
