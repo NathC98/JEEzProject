@@ -6,7 +6,7 @@
 <head>
     <meta charset="UTF-8">
     <title>JEEz login</title>
-    <link rel="stylesheet" type="text/css" href="./html/style.css">
+    <link rel="stylesheet" type="text/css" href="./style.css">
 </head>
 <div id="back">
     <button onclick="window.location.href = './JEEprojetGAMECHOICE';" type="button" class="cancelbtn">Retour</button>

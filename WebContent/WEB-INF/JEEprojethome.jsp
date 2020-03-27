@@ -21,8 +21,10 @@
 <li>
 <%
 	ArrayList<Game> games = (ArrayList<Game>) request.getAttribute("games");
+	String gamename = null ;
 	for(int i=0;i<games.size();i++) {
-        out.println("<button id=\"gamebutton\" onclick=\"window.location.href = './JEEprojet.jsp';\" type=\"submit\">\"jouer à \" + games.get(i).getName()</button>");
+	    gamename = games.get(i).getName();
+        out.println("<button id=\"gamebutton\" onclick=\"window.location.href = './JEEprojet';\" type=\"submit\">\"jouer à \" + gamename + \"</button>");
     }
 %>
 </li>

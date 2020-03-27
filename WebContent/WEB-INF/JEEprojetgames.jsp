@@ -44,6 +44,7 @@
 
 
 	</table>
+  <form action="JEEprojetgames" method="post">
   <div id="add_games">
 <font size="+2">Ajouter un jeu</font>
 <br>
@@ -58,6 +59,7 @@
 
     <button type="submit"><font size="+1">Ajouter</font></button>
   </div>
+  </form>
   </div>
 </body>
 </html>

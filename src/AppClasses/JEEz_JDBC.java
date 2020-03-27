@@ -6,18 +6,15 @@ import java.sql.ResultSet;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import java.sql.Statement;
-import java.util.ArrayList;
-
-import AppClasses.Play;
 
 public class JEEz_JDBC {
 
-    private static String driver = "com.mysql.jdbc.Driver";
-    private static String url = "jdbc:mysql://localhost:3306/mydb"; //seulement le pc de Louis a la BDD pour le moment
-    private static String user = "root"; //identifiant user bdd
-    private static String pwd = "1234"; //mdp user bdd
-    private static Connection connexion;
-    private static Statement statement;
+    private String driver = "com.mysql.jdbc.Driver";
+    private String url = "jdbc:mysql://localhost:3306/mydb?zeroDateTimeBehavior=CONVERT_TO_NULL&serverTimezone=UTC"; //seulement le pc de Louis a la BDD pour le moment
+    private String user = "root"; //identifiant user bdd
+    private String pwd = "Ellmancccel1a82!"; //mdp user bdd
+    private Connection connexion;
+    private Statement statement;
 
     /*
     Fonction de connexion à la base de donnée
