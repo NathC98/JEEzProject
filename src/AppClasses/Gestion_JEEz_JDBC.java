@@ -436,4 +436,11 @@ public class Gestion_JEEz_JDBC{
 		database.update(query);
 		this.database.Deconnection();
 	}
+
+	public void insertPlay(String start,int idGame, int idPlayer) {
+		this.database.Connection();
+		String query = "INSERT INTO Play VALUES (default," + start + ",null,"+idGame+", "+idPlay")";
+		database.update(query);
+		this.database.Deconnection();
+	}
 }
