@@ -14,7 +14,7 @@ public class JEEprojetgames extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         Gestion_JEEz_JDBC gestionnaire = new Gestion_JEEz_JDBC();
         String answerplay = request.getParameter("playable");
-        boolean playable = new boolean();
+        boolean playable = false;
 
         if(answerplay == "yes"){playable = true;}
         else if(answerplay == "no"){playable = false;}
