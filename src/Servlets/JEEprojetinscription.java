@@ -11,17 +11,17 @@ import java.time.*;
 @WebServlet(name = "JEEprojetinscription")
 public class JEEprojetinscription extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        Player player = new Player();
+
+        Gestion_JEEz_JDBC gestionnaire = new Gestion_JEEz_JDBC();
 
         //récupération de la date actuelle.
         Date actuelle = new Date();
         DateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
         String dat = dateFormat.format(actuelle);
 
-        player.setDate("" + request.getParameter("date"));
-        player.setEmail("" + request.getParameter("email"));
-        player.setDateinscription("" + dat);
-        player.inscription("" + request.getParameter("pseudo"), "" + request.getParameter("psw"));
+        //insertion du joueur dans la base de donnée à partir du gestionnaire.
+        gestionnaire.InsertPlayer("" + request.getParameter("pseudo"), "" + request.getParameter("psw"),
+                "" + request.getParameter("date"), "" + request.getParameter("email"), "" + dat);
 
         this.getServletContext().getRequestDispatcher("/WEB-INF/JEEprojet.jsp").forward(request,response);
 
