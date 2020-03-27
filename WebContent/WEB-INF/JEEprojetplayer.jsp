@@ -25,7 +25,7 @@
 	ArrayList<Player> players = (ArrayList<Player>) request.getAttribute("players");
 	int nbplays;
 	Gestion_JEEz_JDBC b = new Gestion_JEEz_JDBC();
-	String pseudo = null ;
+	int pseudo = -1 ;
 	String inscriptiondate = null ;
 	for(int i=0;i<players.size();i++){
 		nbplays = b.NumberPlay(players.get(i).getIdPlayer());
