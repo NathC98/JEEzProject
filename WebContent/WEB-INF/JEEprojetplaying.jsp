@@ -12,8 +12,24 @@
 <font size="+3">Jeux en cours</font>
 
 <button id="end" onclick="window.location.href = './JEEprojetGAMECHOICE';" type="cancelbtn">Terminer le jeu</button>
+<%
+    Gestion_JEEz_JDBC b = new Gestion_JEEz_JDBC();
+    ArrayList<Game> games = (ArrayList<Game>) request.getAttribute("games");
+    int id = (int) request.getAttribute("Identifiant");
+    ArrayList<Player_has_Game> phg = null;
+    for(int i=0;i<games.size();i++){
+        phg = b.GameFromPlayerHasGame(games.get(i).getIdGame());
+        for(int j=0;j<phg.size();j++) {
+            if (phg.get(j).getIdPlayer() == id && phg.get(j).isFavorite()) {
+                out.println("<button type=\"player\">Enlever des favoris</button>");
+            }
+            else{
+                out.println("<button type=\"player\">Ajouter aux favoris</button>");
+            }
+        }
+    }
+%>
 
-<button type="player">Ajouter aux favoris</button>
 
 </body>
 </html>
