@@ -91,7 +91,8 @@ public class Gestion_JEEz_JDBC{
 		ResultSet rset=null;
 
 		try {
-			String query = "SELECT * FROM Identifiant WHERE (login= " + login + " AND password= " + password;
+			String query = "SELECT * FROM Identifiant WHERE (login='" + login + "' AND password='" + password+"')";
+			System.out.println(query);
 			rset = database.Query(query);
 			if (rset.next()) {
 				identifiant = rset.getInt("idIdentifiant");
