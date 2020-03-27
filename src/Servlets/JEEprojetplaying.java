@@ -19,8 +19,8 @@ public class JEEprojetplaying extends HttpServlet {
     	Gestion_JEEz_JDBC b = new Gestion_JEEz_JDBC();
         int idjoueur = Integer.parseInt((String)request.getParameter("id"));
         int idjeu = Integer.parseInt((String)request.getParameter("idgame"));
-        request.setAttribute("Identifiant", idjoueur);
-        request.setAttribute("Idjeu", idjeu);
+        request.setAttribute("Identifiant", ""+idjoueur);
+        request.setAttribute("Idjeu", ""+idjeu);
         Date d = new Date();
         int idgame =  b.insertPlay(d.toString(),idjoueur,idjeu);
         request.setAttribute("games",b.PlayableGame());
