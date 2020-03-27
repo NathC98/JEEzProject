@@ -26,9 +26,9 @@ public class JEEprojet extends HttpServlet {
         request.setAttribute("Identifiant", "" + id.getIdIdentifiant());
         if (id.getAdmin() == 0){
             this.getServletContext().getRequestDispatcher("/WEB-INF/JEEprojetGAMECHOICE.jsp").forward(request,response);
-        }else{
+        }else if(id.getAdmin() == 1){
             this.getServletContext().getRequestDispatcher("/WEB-INF/JEEprojetaccueiladmin.jsp").forward(request,response);
-        }
+        }else{this.getServletContext().getRequestDispatcher("/WEB-INF/JEEprojet.jsp").forward(request,response);}
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
