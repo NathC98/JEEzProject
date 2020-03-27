@@ -25,8 +25,7 @@ public class JEEprojet extends HttpServlet {
         Identifiant id = new Identifiant();
         String login  = request.getParameter("uname");
         String psw = request.getParameter("psw");
-        /*id.connexion(login,psw);*/
-        id.setAdmin(1);
+        id.connexion(login,psw);
         if (id.getAdmin() == 0) {
             response.sendRedirect("./JEEprojetGAMECHOICE?id=" + id.getIdIdentifiant());
         }
