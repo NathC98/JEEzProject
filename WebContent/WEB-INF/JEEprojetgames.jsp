@@ -22,10 +22,12 @@
   </tr>
 <% 
 	ArrayList<Game> games = (ArrayList<Game>) request.getAttribute("games");
+	String gamename = null ;
 	for(int i=0;i<games.size();i++){
+		gamename = games.get(i).getName();
 		out.println(
 		"<tr>"                                                                    +
-			"<td>games.get(i).getName()</td>"                                     +
+			"<td>" + gamename + "</td>"                                     +
    			"<td><button type=\"button\" class=\"cancelbtn\">Supprimer</button></td>");
 		if(games.get(i).isPlayable()){
 			out.println(
