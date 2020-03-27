@@ -100,7 +100,8 @@ public class Gestion_JEEz_JDBC{
 				Info.add(admin);
 
 			}else{
-				Info=null;
+				Info.add(-1);
+				Info.add(-1);
 			}
 		}catch(SQLException e){
 			e.printStackTrace();

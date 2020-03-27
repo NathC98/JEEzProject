@@ -9,9 +9,11 @@
     <link rel="stylesheet" type="text/css" href="./style.css">
 </head>
 <body>
-Jeux en cours
+<font size="+3">Jeux en cours</font>
 
-<button onclick="window.location.href = './JEEprojetGAMECHOICE.jsp';" type="player">Terminer le jeu</button>
+<button id="end" onclick="window.location.href = './JEEprojetGAMECHOICE.jsp';" type="cancelbtn">Terminer le jeu</button>
+
+<button type="player">Ajouter aux favoris</button>
 
 </body>
 </html>

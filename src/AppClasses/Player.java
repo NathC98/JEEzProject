@@ -57,4 +57,33 @@ public class Player {
     public void setBan(boolean ban) {
         this.ban = ban;
     }
+
+    public void inscription(String login, String password){
+
+        String birthdate = this.date;
+        String mail = this.email;
+        String inscriptionDate = this.dateinscription;
+
+        this.database.Connection();
+        ResultSet rset=null;
+        try{
+            String query = "INSERT INTO Identifiant VALUES (default,"+login+","+password+",0"); // On selectionne les parties en cour
+            database.update(query);
+
+            String query2 = "SELECT * FROM Identifiant where login="+login+; // On selectionne les parties en cour
+            rset=database.Query(query2);
+            int id = rset.getInt(1);
+
+            String query3 = "INSERT INTO Player VALUES (default,"+birthdate+","+mail+","+id+","+inscriptionDate+",0"); // On selectionne les parties en cour
+            database.update(query);
+        }catch ( SQLException e ) {
+            e.printStackTrace();
+        }
+        try{
+            rset.close();
+            this.database.Deconnection();
+        }catch ( SQLException e ) {
+            e.printStackTrace();
+        }
+    }
 }
