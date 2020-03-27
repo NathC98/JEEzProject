@@ -452,7 +452,7 @@ public class Gestion_JEEz_JDBC{
 		ResultSet rset=null;
 		try{
 
-			query = "SELECT idPlay FROM Play where Game_idGame="+idGame+" AND Player_idPlayer="+idPlayer+"AND start='"+start+"'";
+			query = "SELECT idPlay FROM Play where Game_idGame="+idGame+" AND Player_idPlayer="+idPlayer+" AND start='"+start+"'";
 			rset = database.Query(query);
 			rset.next();
 			idPlay=rset.getInt(1);
