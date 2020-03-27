@@ -138,12 +138,12 @@ public class Gestion_JEEz_JDBC{
 
 
 
-			Date dateStart = Date.parse(start);
-			Date dateEnd = Date.parse(end);
+			LocalDate dateStart = LocalDate.parse(start);
+			LocalDate dateEnd = LocalDate.parse(end);
 
 			Period period = Period.between(dateStart, dateEnd);
 			int diff = period.getDays();
-			String resString = toString(diff);
+			resString = Integer.toString(diff);
 
 
 
@@ -329,25 +329,67 @@ public class Gestion_JEEz_JDBC{
 		return listPlayer;
 	}
 
+	public void Favorite(int idGame, int idPlayer){
+		this.database.Connection();
+		String query = "UPDATE Player_has_Game SET favorite=1 WHERE idPlayer="+idPlayer+" AND Game_idGame="+idGame; // On selectionne les parties en cour
+		database.update(query);
+		this.database.Deconnection();
+	}
+
+	public void updatePlayer(int idPlayer, String birthDate, String mail){
+
+		this.database.Connection();
+		String query = "UPDATE Player SET birthDate="+birthDate+" AND mail="+mail+" WHERE idPlayer="+idPlayer; // On selectionne les parties en cour
+		database.update(query);
+		this.database.Deconnection();
+	}
+
+
+	public void InsertPlayer(String login, String password, String birthdate, String mail, String inscriptionDate){
+
+		this.database.Connection();
+		ResultSet rset=null;
+		try{
+			String query = "INSERT INTO Identifiant VALUES (default,"+login+","+password+",0"; // On selectionne les parties en cour
+			database.update(query);
+
+			String query2 = "SELECT * FROM Identifiant where login="+login; // On selectionne les parties en cour
+			rset=database.Query(query2);
+			int id = rset.getInt(1);
+
+			String query3 = "INSERT INTO Player VALUES (default,"+birthdate+","+mail+","+id+","+inscriptionDate+",0"; // On selectionne les parties en cour
+			database.update(query);
+		}catch ( SQLException e ) {
+			e.printStackTrace();
+		}
+		try{
+			rset.close();
+			this.database.Deconnection();
+		}catch ( SQLException e ) {
+			e.printStackTrace();
+		}
+	}
+
 	/*
 	FONCTION GameFromPlayerHasGame
 	PARAMETRE idGame
 	Permet de récupérer la liste des joueurs ayant une partie en cours pour un jeu en particulier.
 	 */
+
 	public ArrayList<Player_has_Game> GameFromPlayerHasGame(int idGame){
 
 		this.database.Connection();
 		ArrayList<Player_has_Game> listPHG = new  ArrayList<Player_has_Game>();
 		ResultSet rset=null;
 		try {
-			String query = "SELECT * FROM Play_has_Game where Game_idGame="+idGame; // On selectionne les parties en cour
+			String query = "SELECT * FROM Player_has_Game where Game_idGame="+idGame; // On selectionne les parties en cour
 			rset=database.Query(query);
 			while ( rset.next() ) {
 				Player_has_Game phd = new Player_has_Game();
 				phd.setIdPlayer(rset.getInt("idPlayer"));
 				phd.setIdGame(rset.getInt("Game_idGame"));
-				setHighscore(rset.getInt("highscore"));
-				setFavorite(rset.getInt("favorite"));
+				phd.setHighscore(rset.getInt("highscore"));
+				phd.setFavorite(rset.getBoolean("favorite"));
 				listPHG.add(phd);
 			}
 			try{
@@ -361,5 +403,4 @@ public class Gestion_JEEz_JDBC{
 		}
 		return listPHG;
 	}
-
 }
