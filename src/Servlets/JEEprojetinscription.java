@@ -6,7 +6,9 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
-import java.time.*;
+import AppClasses.*;
+import java.util.*;
+import java.text.*;
 
 @WebServlet(name = "JEEprojetinscription")
 public class JEEprojetinscription extends HttpServlet {
