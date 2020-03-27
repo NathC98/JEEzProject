@@ -14,8 +14,8 @@
 </div>
 <div id=login>
 	<font size="+1">S'identifier pour jouer</font>
-    <button onclick="window.location.href = './JEEprojethome';" type="submit">Login</button>
-    <button onclick="window.location.href = './JEEprojet';" type="submit">Inscription</button>
+    <button onclick="window.location.href = './JEEprojet';" type="submit">Login</button>
+    <button onclick="window.location.href = './JEEprojetinscription';" type="submit">Inscription</button>
 </div>
 <div id=containergame><font size="+2">Nos jeux</font>
 <li>
