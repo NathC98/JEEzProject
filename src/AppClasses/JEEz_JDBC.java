@@ -19,6 +19,7 @@ public class JEEz_JDBC {
     /*
     Fonction de connexion à la base de donnée
      */
+
     public void Connection(){
         try {
             Class.forName(this.driver);

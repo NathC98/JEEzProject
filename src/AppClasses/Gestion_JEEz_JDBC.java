@@ -5,6 +5,9 @@ import java.sql.SQLException;
 import java.time.temporal.ChronoUnit;
 import java.util.ArrayList;
 import java.time.*;
+import java.time.Period;
+import java.sql.Date;
+
 
 public class Gestion_JEEz_JDBC{
 
@@ -13,30 +16,6 @@ public class Gestion_JEEz_JDBC{
 	public Gestion_JEEz_JDBC(){
 
 	}
-
-/*
-					if(admin==0) {
-						query2 = "SELECT * FROM Player WHERE Identifiant_idIdentifiant=" + identifiant;
-						ResultSet rset2 = Query(query2);
-
-						if (rset2.next()) {
-
-							Player p = new Player();
-							p.setIdPlayer(rset2.getInt("idPlayer"));
-							p.setDate(rset2.getString("birthDate"));
-							p.setEmail(rset2.getString("email"));
-							p.setDateinscription(rset2.getString("InscriptionDate"));
-							p.setIdIdentifiant(rset2.getInt("Identifiant_idIdentifiant"));
-							p.setBan(rset2.getInt("ban"));
-						}
-						query3 = "SELECT * FROM Administrator WHERE Identifiant_idIdentifiant=" + identifiant;
-						ResultSet rset2 = Query(query3);
-						if (rset3.next()) {
-							Administrator
-						}
-					}
-				}
- */
 
 	/*
                 FONCTION infoPlayer
@@ -82,6 +61,14 @@ public class Gestion_JEEz_JDBC{
 			RENVOI tableau d'entier, où le premier entier contient l'identifiant dans al classe Identifiant de la BDD, le deuxieme 0 ou 1 pour savoir si c'est un admin ou un joueur.
 			Si le login/password ne convient pas, renvoi null
 		 */
+
+
+/*
+	FONCTION Connect
+	PARAMETRE  login, password
+
+
+ */
 
 	public ArrayList<Integer> Connect(String login, String password) {
 		this.database.Connection();
@@ -136,19 +123,11 @@ public class Gestion_JEEz_JDBC{
 
 			String start = rset1.getString(1);
 			String end = rset2.getString(2);
-
-
-
 			LocalDate dateStart = LocalDate.parse(start);
 			LocalDate dateEnd = LocalDate.parse(end);
-
 			Period period = Period.between(dateStart, dateEnd);
 			int diff = period.getDays();
 			resString = Integer.toString(diff);
-
-
-
-
 
 			try{
 				rset1.close();
@@ -186,7 +165,7 @@ public class Gestion_JEEz_JDBC{
 
 	public void EndGame(int idPlay, String end) {
 		this.database.Connection();
-		String query = "UPDATE Play SET end="+end+"WHERE idPlay="+idPlay; // On informe la BDD de la date de fin pouyr la partie d'identifiant idPlay passé en paramètre
+		String query = "UPDATE Play SET end='"+end+"' WHERE idPlay="+idPlay; // On informe la BDD de la date de fin pouyr la partie d'identifiant idPlay passé en paramètre
 		database.update(query);
 		this.database.Deconnection();
 	}
@@ -340,7 +319,7 @@ public class Gestion_JEEz_JDBC{
 	public void updatePlayer(int idPlayer, String birthDate, String mail){
 
 		this.database.Connection();
-		String query = "UPDATE Player SET birthDate="+birthDate+" AND mail="+mail+" WHERE idPlayer="+idPlayer; // On selectionne les parties en cour
+		String query = "UPDATE Player SET birthDate='"+birthDate+"' AND mail='"+mail+"' WHERE idPlayer="+idPlayer; // On selectionne les parties en cour
 		database.update(query);
 		this.database.Deconnection();
 	}
@@ -351,14 +330,14 @@ public class Gestion_JEEz_JDBC{
 		this.database.Connection();
 		ResultSet rset=null;
 		try{
-			String query = "INSERT INTO Identifiant VALUES (default,"+login+","+password+",0"; // On selectionne les parties en cour
+			String query = "INSERT INTO Identifiant VALUES (default,'"+login+"','"+password+"',0"; // On selectionne les parties en cour
 			database.update(query);
 
-			String query2 = "SELECT * FROM Identifiant where login="+login; // On selectionne les parties en cour
+			String query2 = "SELECT * FROM Identifiant where login='"+login+"'"; // On selectionne les parties en cour
 			rset=database.Query(query2);
 			int id = rset.getInt(1);
 
-			String query3 = "INSERT INTO Player VALUES (default,"+birthdate+","+mail+","+id+","+inscriptionDate+",0"; // On selectionne les parties en cour
+			String query3 = "INSERT INTO Player VALUES (default,'"+birthdate+"','"+mail+"',"+id+",'"+inscriptionDate+"',0"; // On selectionne les parties en cour
 			database.update(query);
 		}catch ( SQLException e ) {
 			e.printStackTrace();
