@@ -21,7 +21,7 @@
 <%
 	ArrayList<Game> games = (ArrayList<Game>) request.getAttribute("games");
 	for(int i=0;i<games.size();i++) {
-        out.println("<button id=\"gamebutton\" onclick=\"window.location.href = './JEEprojet.?id=<% out.println(\"id\") %>';\" type=\"submit\">jouer games.get(i).getName()</button>");
+        out.println("<button id=\"gamebutton\" onclick=\"window.location.href = './JEEprojet.jsp';\" type=\"submit\">\"jouer à \" + games.get(i).getName()</button>");
     }
 %>
 </li>
