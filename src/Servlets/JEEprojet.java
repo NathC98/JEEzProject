@@ -19,12 +19,13 @@ public class JEEprojet extends HttpServlet {
         String login  = request.getParameter("uname");
         String psw = request.getParameter("psw");
         id.connexion(login,psw);
+        request.setAttribute("Identifiant", id.getidIdentifiant().toString());
         if (id.getAdmin() == 0){
             JEEprojetGAMECHOICE nouvservlet = new JEEprojetGAMECHOICE();
-            nouvservlet.getServletContext().getRequestDispatcher("/WEB-INF/JEEprojetGAMECHOICE.jsp?id="+id.getidIdentifiant().toString()).forward(request,response);
+            nouvservlet.getServletContext().getRequestDispatcher("/WEB-INF/JEEprojetGAMECHOICE.jsp").forward(request,response);
         }else{
             JEEprojetaccueiladmin nouvservlet = new JEEprojetaccueiladmin();
-            nouvservlet.getServletContext().getRequestDispatcher("/WEB-INF/JEEprojetaccueiladmin.jsp?id="+id.getidIdentifiant().toString()).forward(request,response);
+            nouvservlet.getServletContext().getRequestDispatcher("/WEB-INF/JEEprojetaccueiladmin.jsp").forward(request,response);
         }
     }
 
