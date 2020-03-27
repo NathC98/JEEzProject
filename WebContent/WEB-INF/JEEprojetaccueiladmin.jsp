@@ -1,3 +1,4 @@
+@@ -1,40 +0,0 @@
 <%@ page import="AppClasses.*" %>
 <%@ page import="java.util.ArrayList" %>
 <%@ page pageEncoding="UTF-8" %>
