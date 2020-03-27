@@ -15,12 +15,12 @@
 <div id=containergamefav><font size="+2">Choisissez un jeu parmis vos favoris</font>
     <li>
         <%
-
+            Gestion_JEEz_JDBC b = new Gestion_JEEz_JDBC();
             ArrayList<Game> games = (ArrayList<Game>) request.getAttribute("games");
             int id = (int) request.getAttribute("Identifiant");
-            ArrayList<Player_has_Game> phg = null
+            ArrayList<Player_has_Game> phg = null;
             for(int i=0;i<games.size();i++){
-                phg = GameFromPlayerHasGame(games.get(i).getIdGame());
+                phg = b.GameFromPlayerHasGame(games.get(i).getIdGame());
                 for(int j=0;j<phg.size();j++) {
                     if (phg.get(j).getIdPlayer() == id && phg.get(j).isFavorite()) {
                         out.println("<button id=\"gamebutton\" onclick=\"window.location.href = './JEEprojetplaying.jsp';\" type=\"submit\">\"jouer à \" + games.get(i).getName()</button>");
@@ -33,15 +33,12 @@
 <div id=containergame><font size="+2">Choisissez un jeu parmis tous les jeux</font>
     <li>
         <%
-            ArrayList<Game> games = (ArrayList<Game>) request.getAttribute("games");
-            for(int i=0;i<games.size();i++){
+            games = (ArrayList<Game>) request.getAttribute("games");
+            for(int i=0;i<games.size();i++) {
                 out.println("<button id=\"gamebutton\" onclick=\"window.location.href = './JEEprojetplaying.jsp';\" type=\"submit\">\"jouer à \" + games.get(i).getName()</button>");
-
+            }
         %>
     </li>
 </div>
 </body>
-<div>
-    <button id="modif">Modifier mes informations de compte</button>
-</div>
 </html>

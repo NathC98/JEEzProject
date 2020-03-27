@@ -6,6 +6,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import AppClasses.*;
+import java.util.*;
 
 @WebServlet(name = "JEEprojetGAMECHOICE")
 public class JEEprojetGAMECHOICE extends HttpServlet {
