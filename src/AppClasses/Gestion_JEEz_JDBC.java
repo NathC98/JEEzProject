@@ -326,7 +326,6 @@ public class Gestion_JEEz_JDBC{
 
 
 	public void InsertPlayer(String login, String password, String birthdate, String mail, String inscriptionDate){
-
 		this.database.Connection();
 		ResultSet rset=null;
 		try{
@@ -357,7 +356,6 @@ public class Gestion_JEEz_JDBC{
 	 */
 
 	public ArrayList<Player_has_Game> GameFromPlayerHasGame(int idGame){
-
 		this.database.Connection();
 		ArrayList<Player_has_Game> listPHG = new  ArrayList<Player_has_Game>();
 		ResultSet rset=null;
@@ -403,7 +401,7 @@ public class Gestion_JEEz_JDBC{
 			rset = database.Query(query);
 			str=rset.getString(1);
 
-			rest.close();
+			rset.close();
 			this.database.Deconnection();
 		}catch ( SQLException e ) {
 			e.printStackTrace();
@@ -416,17 +414,15 @@ public class Gestion_JEEz_JDBC{
 	 */
 
 	public String playerFromPlay(int idPlay){
-
 		this.database.Connection();
 		ResultSet rset=null;
 		String str = null;
-
 		try {
 			String query = "SELECT Identifiant.login FROM Play,Player,Identifiant  where Play.idPlay ="+ idPlay +" AND Play.idPlayer=Player.idPlayer AND Identifiant.idIdentifiant=Player.Identifiant_idIdentifiant"; // On selectionne les parties en cour
 			rset = database.Query(query);
 			str=rset.getString(1);
 
-			rest.close();
+			rset.close();
 			this.database.Deconnection();
 		}catch ( SQLException e ) {
 			e.printStackTrace();
