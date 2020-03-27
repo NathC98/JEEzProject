@@ -33,11 +33,11 @@ public class Identifiant {
     public void setPassword(String password) {
         this.password = password;
     }
-    
+
     public void connexion(String login, String password){
-    	ArrayList<Integer> idRole = gestion.connexion(login,password);
-    	this.idIdentifiant = idRole[0];
-    	this.admin = idRole[1];
+        ArrayList<Integer> idRole = gestion.Connect(login,password);
+        this.idIdentifiant = idRole.get(0);
+        this.admin = idRole.get(1);
     }
 
     public int getAdmin() {
