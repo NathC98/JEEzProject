@@ -23,6 +23,6 @@ public class JEEprojetended extends HttpServlet {
         Date end = new Date ();
         b.updatePlay(idjeu,end);
         request.setAttribute("games",b.PlayableGame());
-        this.getServletContext().getRequestDispatcher("/WEB-INF/JEEprojetplaying.jsp").forward(request,response);
+        this.getServletContext().getRequestDispatcher("/WEB-INF/JEEprojetended.jsp").forward(request,response);
     }
 }
