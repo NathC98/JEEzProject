@@ -22,14 +22,15 @@
   </tr>
   <% 
 	ArrayList<Play> plays = (ArrayList<Play>) request.getAttribute("plays");
+	Gestion_JEEz_JDBC a = new Gestion_JEEz_JDBC();
 	String gamename = null ;
 	String playername = null ;
 	String start = null ;
 	for(int i=0;i<plays.size();i++){
-		gamename = NameGameFromId(plays.get(i).getIdGame());
-		playername = NamePlayerFromId(plays.get(i).getIdPLayer());
+		gamename = a.NameGameFromId(plays.get(i).getIdgame());
+		playername = a.NamePlayerFromId(plays.get(i).getIdPlayer());
 		start = plays.get(i).getStart();
-		if(end==null){
+		if(plays.get(i).getEnd() == null){
 		out.println(
 		"<tr>"                                                                        +
 			"<td>" + gamename + "</td>"                           +
