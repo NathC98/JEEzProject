@@ -110,6 +110,14 @@
         <url-pattern>/JEEprojetplaying</url-pattern>
     </servlet-mapping>
 
+    <servlet>
+        <servlet-name>JEEprojetended</servlet-name>
+        <servlet-class>Servlets.JEEprojetended</servlet-class>
+    </servlet>
 
+    <servlet-mapping>
+        <servlet-name>JEEprojetended</servlet-name>
+        <url-pattern>/JEEprojetended</url-pattern>
+    </servlet-mapping>
 
 </web-app>
