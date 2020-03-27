@@ -117,9 +117,11 @@ public class Gestion_JEEz_JDBC{
 		try {
 			String query = "SELECT start FROM Play WHERE idPlay=" + idPlay; // On selectionne les parties en cour
 			ResultSet rset1 = database.Query(query);
+			rset1.next();
 
 			String query2 = "SELECT end FROM Play WHERE idPlay=" + idPlay; // On selectionne les parties en cour
 			ResultSet rset2 = database.Query(query2);
+			rset2.next();
 
 			String start = rset1.getString(1);
 			String end = rset2.getString(2);
@@ -184,6 +186,7 @@ public class Gestion_JEEz_JDBC{
 		try {
 			String query = "SELECT COUNT(*) FROM Play where idPlayer="+idPlayer; // On selectionne les parties en cour
 			rset=database.Query(query);
+			rset.next();
 			n=rset.getInt(1);
 		}
 		catch ( SQLException e ) {
@@ -246,7 +249,7 @@ public class Gestion_JEEz_JDBC{
 
 	public ArrayList<Game> PlayableGame() {
 		this.database.Connection();
-		ResultSet rset=null;
+		ResultSet  =null;
 		ArrayList<Game> gameplayable = new ArrayList<Game>();
 		try {
 			String query = "SELECT * FROM Game where playable=true"; // On selectionne le nom des jeux qui sont disponibles sur le site
@@ -334,6 +337,7 @@ public class Gestion_JEEz_JDBC{
 
 			String query2 = "SELECT * FROM Identifiant where login='"+login+"'"; // On selectionne les parties en cour
 			rset=database.Query(query2);
+			rset.next();
 			int id = rset.getInt(1);
 
 			String query3 = "INSERT INTO Player VALUES (default,'"+birthdate+"','"+mail+"',"+id+",'"+inscriptionDate+"',0"; // On selectionne les parties en cour
@@ -399,6 +403,7 @@ public class Gestion_JEEz_JDBC{
 		try {
 			String query = "SELECT Game.name FROM Play,Game  where Play.idPlay =" + idPlay + " AND Play.idGame=Game.idGame"; // On selectionne les parties en cour
 			rset = database.Query(query);
+			rset.next();
 			str=rset.getString(1);
 
 			rset.close();
@@ -420,6 +425,7 @@ public class Gestion_JEEz_JDBC{
 		try {
 			String query = "SELECT Identifiant.login FROM Play,Player,Identifiant  where Play.idPlay ="+ idPlay +" AND Play.idPlayer=Player.idPlayer AND Identifiant.idIdentifiant=Player.Identifiant_idIdentifiant"; // On selectionne les parties en cour
 			rset = database.Query(query);
+			rset.next();
 			str=rset.getString(1);
 
 			rset.close();
@@ -448,6 +454,7 @@ public class Gestion_JEEz_JDBC{
 
 			query = "SELECT idPlay FROM Play where Game_idGame="+idGame+" AND Player_idPlayer="+idPlayer+"AND start='"+start+"'";
 			rset = database.Query(query);
+			rset.next();
 			idPlay=rset.getInt(1);
 			rset.close();
 
