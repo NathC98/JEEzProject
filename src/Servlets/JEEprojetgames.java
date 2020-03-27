@@ -13,7 +13,14 @@ import java.io.IOException;
 public class JEEprojetgames extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         Gestion_JEEz_JDBC gestionnaire = new Gestion_JEEz_JDBC();
+        String answerplay = request.getParameter("playable");
+        boolean playable = new boolean();
+        
+        if(answerplay == "yes"){playable = true;}
+        else if(answerplay == "no"){playable = false;}
+        else{this.getServletContext().getRequestDispatcher("web/WEB-INF/JEEprojetgames.jsp").forward(request,response);}
 
+        gestionnaire.insertGame("" + request.getParameter("gname"), playable);
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
