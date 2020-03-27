@@ -15,20 +15,30 @@ public class JEEprojet extends HttpServlet {
 	 */
 	private static final long serialVersionUID = 1L;
 
-	/*
-	Cette procédure permet l'authentification, et autorise ou non un joueur ou un administrateur à se connecter au site.
-	 */
+
+    public JEEprojet() {
+        super();
+        // TODO Auto-generated constructor stub
+    }
+
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         Identifiant id = new Identifiant();
         String login  = request.getParameter("uname");
         String psw = request.getParameter("psw");
-        id.connexion(login,psw);
-        request.setAttribute("Identifiant", "" + id.getIdIdentifiant());
-        if (id.getAdmin() == 0){
-            this.getServletContext().getRequestDispatcher("/WEB-INF/JEEprojetGAMECHOICE.jsp").forward(request,response);
-        }else if(id.getAdmin() == 1){
-            this.getServletContext().getRequestDispatcher("/WEB-INF/JEEprojetaccueiladmin.jsp").forward(request,response);
-        }else{this.getServletContext().getRequestDispatcher("/WEB-INF/JEEprojet.jsp").forward(request,response);}
+        /*id.connexion(login,psw);*/
+        id.setAdmin(1);
+        if (id.getAdmin() == 0) {
+            response.sendRedirect("./JEEprojetGAMECHOICE?id=" + id.getIdIdentifiant());
+        }
+        else if (id.getAdmin() == 1) {
+            response.sendRedirect("./JEEprojetaccueiladmin");
+        }
+        else
+        {
+            response.sendRedirect("./JEEprojet");
+        }
+
+
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

@@ -6,9 +6,11 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.time.*;
 import AppClasses.*;
 import java.util.*;
 import java.text.*;
+
 
 @WebServlet(name = "JEEprojetinscription")
 public class JEEprojetinscription extends HttpServlet {
@@ -24,8 +26,7 @@ public class JEEprojetinscription extends HttpServlet {
         //insertion du joueur dans la base de donnée à partir du gestionnaire.
         gestionnaire.InsertPlayer("" + request.getParameter("pseudo"), "" + request.getParameter("psw"),
                 "" + request.getParameter("date"), "" + request.getParameter("email"), "" + dat);
-
-        this.getServletContext().getRequestDispatcher("/WEB-INF/JEEprojet.jsp").forward(request,response);
+        response.sendRedirect("./JEEprojet");
 
     }
 
