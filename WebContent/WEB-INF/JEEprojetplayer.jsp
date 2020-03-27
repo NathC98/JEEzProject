@@ -25,10 +25,14 @@
 	ArrayList<Player> players = (ArrayList<Player>) request.getAttribute(".....");
 	int nbplays;
 	Gestion_JEEz_JDBC b = new Gestion_JEEz_JDBC();
+	String pseudo = null ;
+	String inscriptiondate = null ;
 	for(int i=0;i<players.size();i++){
-		nbplays = NumberPlay(players.get(i).getId());
-		out.println("<tr>"+"<td>players.get(i).getPseudo()</td>"+
-		"<td>players.get(i).getInscriptiondate()</td>"+
+		nbplays = b.NumberPlay(players.get(i).getIdPlayer());
+		inscriptiondate = players.get(i).getDateinscription();
+		pseudo = players.get(i).getIdIdentifiant();
+		out.println("<tr>pseudo</td>"+
+		"<td>inscriptiondate</td>"+
 		"<td>nbplays</td>");
 		if(players.get(i).getBan()){
 			out.println("<td>"+"<button type=\"button\" class=\"cancelbtn\">suspendre</button>"+
