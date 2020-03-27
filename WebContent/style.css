@@ -139,7 +139,8 @@ span.psw {
   background-color:white;
   border: 3px solid #f1f1f1;
   float: right;
-  margin-top: -29%
+  margin-top: -29%;
+  margin-left: 75%;
 }
 
 #back {
