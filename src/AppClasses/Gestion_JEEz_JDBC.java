@@ -456,5 +456,6 @@ public class Gestion_JEEz_JDBC{
 		}
 
 		this.database.Deconnection();
+		return idPlay;
 	}
 }
