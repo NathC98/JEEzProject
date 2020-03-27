@@ -16,11 +16,13 @@ public class JEEprojetgames extends HttpServlet {
         String answerplay = request.getParameter("playable");
         boolean playable = false;
 
-        if(answerplay == "yes"){playable = true;}
-        else if(answerplay == "no"){playable = false;}
-        else{this.getServletContext().getRequestDispatcher("web/WEB-INF/JEEprojetgames.jsp").forward(request,response);}
+        if(answerplay == "yes"){playable = true;
+            gestionnaire.insertGame("" + request.getParameter("gname"), playable);}
+        else if(answerplay == "no"){playable = false;
+            gestionnaire.insertGame("" + request.getParameter("gname"), playable);}
+        response.sendRedirect("web/WEB-INF/JEEprojetgames.jsp");
 
-        gestionnaire.insertGame("" + request.getParameter("gname"), playable);
+
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
