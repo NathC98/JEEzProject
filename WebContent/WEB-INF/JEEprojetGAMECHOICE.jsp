@@ -15,7 +15,7 @@
             ArrayList<Game> games = (ArrayList<Game>) request.getAttribute("games");
             for(int i=0;i<games.size();i++){
                 if(games.get(i).getFavorite()){
-                    out.println(<button id="gamebutton" type="submit">jouer games.get(i).getName()</button>
+                    out.println("<button id=\"gamebutton\" type=\"submit\">jouer games.get(i).getName()</button>");
                 }
             }
         %>
@@ -26,7 +26,7 @@
         <%
             ArrayList<Game> games = (ArrayList<Game>) request.getAttribute("games");
             for(int i=0;i<games.size();i++){
-                out.println(<button id="gamebutton" type="submit">jouer games.get(i).getName()</button>
+                out.println("<button id=\"gamebutton\" type=\"submit\">jouer games.get(i).getName()</button>");
 
         %>
     </li>
