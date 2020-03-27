@@ -15,7 +15,13 @@ public class JEEprojetplaying extends HttpServlet {
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        Gestion_JEEz_JDBC b = new Gestion_JEEz_JDBC();
+    	Gestion_JEEz_JDBC b = new Gestion_JEEz_JDBC();
+        String idjoueur = request.getParameter("id");
+        String idjeu = request.getParameter("idgame");
+        request.setAttribute("Identifiant", idjoueur);
+        request.setAttribute("Idjeu", idjeu);
+        Date d = new Date();
+        int idgame =  b.InsertPlay(d.toString(),idjoueur,idjeu);
         request.setAttribute("games",b.PlayableGame());
         this.getServletContext().getRequestDispatcher("/WEB-INF/JEEprojetplaying.jsp").forward(request,response);
     }
