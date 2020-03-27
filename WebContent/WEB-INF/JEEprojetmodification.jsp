@@ -18,17 +18,17 @@
   </div>
 
   <div class="container">
-    <label for="uname"><b>New email</b></label>
+    <label for="nmail"><b>New email</b></label>
 <br>
-    <input type="text" placeholder="Enter new email" name="uname" required>
+      <input type="text" placeholder="Enter new email" name="uname" id="nmail" required>
 <br>
     <label for="psw"><b>New password</b></label>
 <br>
-    <input type="password" placeholder="Enter New password" name="psw" required>
+    <input type="password" placeholder="Enter New password" name="psw" id="psw" required>
 
     <button type="submit">Enregistrer</button>
 <br>
-
+  </div>
 </form> 
         
 </body>
