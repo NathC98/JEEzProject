@@ -18,9 +18,9 @@ public class JEEprojetgames extends HttpServlet {
 
         if(answerplay == "yes"){playable = true;
             gestionnaire.insertGame("" + request.getParameter("gname"), playable);}
-        else if(answerplay == "no"){playable = false;
+        else{playable = false;
             gestionnaire.insertGame("" + request.getParameter("gname"), playable);}
-        response.sendRedirect("web/WEB-INF/JEEprojetgames.jsp");
+        response.sendRedirect("./JEEprojetgames");
 
 
     }
@@ -28,6 +28,6 @@ public class JEEprojetgames extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         Gestion_JEEz_JDBC b = new Gestion_JEEz_JDBC();
         request.setAttribute("games",b.PlayableGame());
-        this.getServletContext().getRequestDispatcher("web/WEB-INF/JEEprojetgames.jsp").forward(request,response);
+        this.getServletContext().getRequestDispatcher("/WEB-INF/JEEprojetgames.jsp").forward(request,response);
     }
 }
