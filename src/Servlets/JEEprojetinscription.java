@@ -14,6 +14,6 @@ public class JEEprojetinscription extends HttpServlet {
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        this.getServletContext().getRequestDispatcher("web/WEB-INF/JEEprojetinscription.jsp").forward(request,response);
+        this.getServletContext().getRequestDispatcher("/WEB-INF/JEEprojetinscription.jsp").forward(request,response);
     }
 }

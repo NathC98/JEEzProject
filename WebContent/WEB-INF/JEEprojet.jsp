@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <title>JEEz login</title>
-    <link rel="stylesheet" type="text/css" href="./html/style.css">
+    <link rel="stylesheet" type="text/css" href="./style.css">
 </head>
 <body>
  <form action="JEEprojet" method="post">

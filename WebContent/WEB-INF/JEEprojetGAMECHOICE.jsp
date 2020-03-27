@@ -6,7 +6,7 @@
 <head>
     <meta charset="UTF-8">
     <title>JEEz games</title>
-    <link rel="stylesheet" type="text/css" href="./html/style.css">
+    <link rel="stylesheet" type="text/css" href="./style.css">
 </head>
 <body>
 <div id=containergamefav><font size="+2">Choisissez un jeu parmis vos favoris</font>
@@ -15,7 +15,7 @@
             ArrayList<Game> games = (ArrayList<Game>) request.getAttribute("games");
             for(int i=0;i<games.size();i++){
                 if(games.get(i).getFavorite()){
-                    system.out.println(<button id="gamebutton" type="submit">jouer games.get(i).getName()</button>
+                    out.println("<button id=\"gamebutton\" type=\"submit\">jouer games.get(i).getName()</button>");
                 }
             }
         %>
@@ -24,9 +24,9 @@
 <div id=containergame><font size="+2">Choisissez un jeu parmis tous les jeux</font>
     <li>
         <%
-            ArrayList<Game> games = (ArrayList<Game>) request.getAttribute("games");
-            for(int i=0;i<games.size();i++){
-                system.out.println(<button id="gamebutton" type="submit">jouer games.get(i).getName()</button>
+            ArrayList<Game> games2 = (ArrayList<Game>) request.getAttribute("games");
+            for(int i=0;i<games2.size();i++){
+                out.println("<button id=\"gamebutton\" type=\"submit\">jouer games2.get(i).getName()</button>");
 
         %>
     </li>
