@@ -31,18 +31,18 @@
 	String end = null;
 	for(int i=0;i<plays.size();i++){
 		if(plays.get(i).getEnd()!=null){
-		playtime = a.PlayTime(plays.get(i).getIdPlay);
-		gamename = NameGameFromId(plays.get(i).getIdGame());
-		nameplayer = NamePlayerFromId(plays.get(i).getIdPlayer());
+		playtime = a.PlayTime(plays.get(i).getIdPlay());
+		gamename = a.NameGameFromId(plays.get(i).getIdgame());
+		nameplayer = a.NamePlayerFromId(plays.get(i).getIdPlayer());
 		start = plays.get(i).getStart();
 		end = plays.get(i).getEnd();
 			out.println(
 				"<tr>"                                                +
-						"<td>gamename</td>" +
-			   			"<td>nameplayer</td>" +
-						"<td>start</td>"          +
-						"<td>end</td>"                +
-						"<td>playtime</td>"                               +
+						"<td>" + gamename + "</td>" +
+			   			"<td>" + nameplayer + "</td>" +
+						"<td>" + start + "</td>"          +
+						"<td>" + end + "</td>"                +
+						"<td>" + playtime + "</td>"                               +
 					"</tr>");
 	}
 	}

@@ -24,16 +24,16 @@
 
 <div id="container_accueil_admin_games">
 <img src="./gamegestion.jpg" width=100%>
-  <button onclick="window.location.href = './JEEprojetgames?id=<% out.println("id") %>';" type="player">Games gestion</button>
+  <button onclick="window.location.href = './JEEprojetgames';" type="player">Games gestion</button>
 </div>
 
 <div id="container_accueil_admin_current">
 <img src="./currentgames.png" width=90%>
-  <button onclick="window.location.href = './JEEprojetjeuxencours?id=<% out.println("id") %>';" type="player">Current games</button>
+  <button onclick="window.location.href = './JEEprojetjeuxencours';" type="player">Current games</button>
 </div>
 <div id="container_accueil_admin_ended">
 <img src="./endedgames.png" width=100%>
-  <button onclick="window.location.href = './JEEprojetendgames?id=<% out.println("id") %>';" type="player">Ended games</button>
+  <button onclick="window.location.href = './JEEprojetendgames';" type="player">Ended games</button>
 </div>
 
 </div>      
