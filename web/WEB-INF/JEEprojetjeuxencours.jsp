@@ -8,6 +8,9 @@
     <title>JEEz admin player gestion</title>
     <link rel="stylesheet" type="text/css" href="./style.css">
 </head>
+<div id="back">
+	<button onclick="window.location.href = './JEEprojetplayeraccueiladmin';" type="button" class="cancelbtn">Retour</button>
+</div>
 <body>
   <div id="container_player">
 	<table>

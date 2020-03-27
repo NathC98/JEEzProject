@@ -1,3 +1,5 @@
+<%@ page import="AppClasses.*" %>
+<%@ page import="java.util.ArrayList" %>
 <%@ page pageEncoding="UTF-8" %>
 <!DOCTYPE html>
 <html lang="en">
@@ -6,6 +8,9 @@
     <title>JEEz login</title>
     <link rel="stylesheet" type="text/css" href="./style.css">
 </head>
+<div id="back">
+    <button onclick="window.location.href = './JEEprojetplayerhome';" type="button" class="cancelbtn">Retour</button>
+</div>
 <body>
  <form action="JEEprojet" method="post">
   <div class="imgcontainer">

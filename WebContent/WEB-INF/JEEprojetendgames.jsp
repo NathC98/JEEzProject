@@ -27,13 +27,13 @@
 		if(end!=null){
 		date tempsjeu = //parties.get(i).getEnd() - parties.get(i).getStart();
 		out.println(
-		"<tr>"                                                +
-			"<td>parties.get(i).getIdgame()//.getName()</td>" +
-   			"<td>parties.get(i).getIdplayer//.getName()</td>" +
-    			"<td>parties.get(i).getStart()</td>"          +
-			"<td>parties.get(i).getEnd()</td>"                +
-			"<td>tempsjeu</td>"                               +
-		"</tr>");
+				"<tr>"                                                +
+						"<td>parties.get(i).getIdgame()//.getName()</td>" +
+			   			"<td>parties.get(i).getIdplayer//.getName()</td>" +
+			    			"<td>parties.get(i).getStart()</td>"          +
+						"<td>parties.get(i).getEnd()</td>"                +
+						"<td>tempsjeu</td>"                               +
+					"</tr>");
 	}
 	}
 %>

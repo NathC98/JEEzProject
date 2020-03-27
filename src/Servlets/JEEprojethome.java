@@ -1,5 +1,7 @@
 package Servlets;
 
+import AppClasses.Gestion_JEEz_JDBC;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -14,7 +16,8 @@ public class JEEprojethome extends HttpServlet {
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        request.setAttribute("games",PlayableGame());
+        Gestion_JEEz_JDBC b = new Gestion_JEEz_JDBC();
+        request.setAttribute("games",b.PlayableGame());
         this.getServletContext().getRequestDispatcher("web/WEB-INF/JEEprojethome.jsp").forward(request,response);
     }
 }

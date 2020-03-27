@@ -34,12 +34,6 @@ public class Identifiant {
         this.password = password;
     }
 
-    public void connexion(String login, String password){
-        ArrayList<Integer> idRole = gestion.Connect(login,password);
-        this.idIdentifiant = idRole.get(0);
-        this.admin = idRole.get(1);
-    }
-
     public int getAdmin() {
         return admin;
     }
@@ -47,4 +41,19 @@ public class Identifiant {
     public void setAdmin(int admin) {
         this.admin = admin;
     }
+
+    public Gestion_JEEz_JDBC getGestion() {
+        return gestion;
+    }
+
+    public void setGestion(Gestion_JEEz_JDBC gestion) {
+        this.gestion = gestion;
+    }
+
+    public void connexion(String login, String password){
+    	ArrayList<Integer> idRole = gestion.Connect(login,password);
+    	this.idIdentifiant = idRole.get(0);
+    	this.admin = idRole.get(1);
+    }
+    
 }

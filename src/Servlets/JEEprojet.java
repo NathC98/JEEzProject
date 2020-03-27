@@ -6,6 +6,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import AppClasses.*;
 
 @WebServlet(name = " JEEprojet")
 public class JEEprojet extends HttpServlet {
@@ -19,7 +20,7 @@ public class JEEprojet extends HttpServlet {
         String login  = request.getParameter("uname");
         String psw = request.getParameter("psw");
         id.connexion(login,psw);
-        request.setAttribute("Identifiant", id.getidIdentifiant().toString());
+        request.setAttribute("Identifiant", "" + id.getIdIdentifiant());
         if (id.getAdmin() == 0){
             JEEprojetGAMECHOICE nouvservlet = new JEEprojetGAMECHOICE();
             nouvservlet.getServletContext().getRequestDispatcher("/WEB-INF/JEEprojetGAMECHOICE.jsp").forward(request,response);
