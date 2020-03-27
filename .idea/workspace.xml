@@ -101,7 +101,7 @@
       <workItem from="1585259344382" duration="205000" />
       <workItem from="1585279320915" duration="1052000" />
       <workItem from="1585280403533" duration="364000" />
-      <workItem from="1585280798689" duration="910000" />
+      <workItem from="1585280798689" duration="1015000" />
     </task>
     <task id="LOCAL-00001" summary="page de login avec le css">
       <created>1584111388429</created>
@@ -320,7 +320,14 @@
       <option name="project" value="LOCAL" />
       <updated>1585281509506</updated>
     </task>
-    <option name="localTasksCounter" value="32" />
+    <task id="LOCAL-00032" summary="playtim modif ouiouioui">
+      <created>1585281728835</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1585281728835</updated>
+    </task>
+    <option name="localTasksCounter" value="33" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -394,7 +401,8 @@
     <MESSAGE value="LA MODIIIIIIF DE GAMECHOIIIIIIIIIIIIIIICEEEEEEE" />
     <MESSAGE value="c'est l'ajout du bouton d'inscription avec lien quand o nclique sur login et inscription oui mr" />
     <MESSAGE value="les import de modification oui" />
-    <option name="LAST_COMMIT_MESSAGE" value="les import de modification oui" />
+    <MESSAGE value="playtim modif ouiouioui" />
+    <option name="LAST_COMMIT_MESSAGE" value="playtim modif ouiouioui" />
   </component>
   <component name="WindowStateProjectService">
     <state x="361" y="72" key="#Project_Structure" timestamp="1584097652437">
@@ -409,12 +417,12 @@
       <screen x="0" y="34" width="1920" height="1046" />
     </state>
     <state x="768" y="244" width="374" height="632" key="#com.intellij.ide.util.MemberChooser/0.34.1920.1046@0.34.1920.1046" timestamp="1585178274213" />
-    <state x="279" y="27" width="1469" height="824" key="CommitChangelistDialog2" timestamp="1585281509347">
+    <state x="279" y="27" width="1469" height="824" key="CommitChangelistDialog2" timestamp="1585281728661">
       <screen x="67" y="27" width="1299" height="741" />
     </state>
     <state x="67" y="0" width="1469" height="824" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1585277258951" />
     <state x="374" y="34" width="1242" height="1046" key="CommitChangelistDialog2/0.34.1920.1046@0.34.1920.1046" timestamp="1585179164454" />
-    <state x="279" y="27" width="865" height="741" key="CommitChangelistDialog2/67.27.1299.741@67.27.1299.741" timestamp="1585281509347" />
+    <state x="279" y="27" width="865" height="741" key="CommitChangelistDialog2/67.27.1299.741@67.27.1299.741" timestamp="1585281728661" />
     <state x="93" y="93" width="1350" height="638" key="DiffContextDialog" timestamp="1585255908780">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -440,12 +448,12 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="249" y="0" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1584097684877" />
-    <state x="372" y="158" width="800" height="528" key="Vcs.Push.Dialog.v2" timestamp="1585281511447">
+    <state x="372" y="158" width="800" height="528" key="Vcs.Push.Dialog.v2" timestamp="1585281730932">
       <screen x="67" y="27" width="1299" height="741" />
     </state>
     <state x="361" y="146" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1585277265928" />
     <state x="451" y="219" key="Vcs.Push.Dialog.v2/0.34.1920.1046@0.34.1920.1046" timestamp="1585176165740" />
-    <state x="372" y="158" width="800" height="528" key="Vcs.Push.Dialog.v2/67.27.1299.741@67.27.1299.741" timestamp="1585281511447" />
+    <state x="372" y="158" width="800" height="528" key="Vcs.Push.Dialog.v2/67.27.1299.741@67.27.1299.741" timestamp="1585281730932" />
     <state x="372" y="224" key="com.intellij.ide.util.TipDialog" timestamp="1585236207826">
       <screen x="67" y="27" width="1299" height="741" />
     </state>

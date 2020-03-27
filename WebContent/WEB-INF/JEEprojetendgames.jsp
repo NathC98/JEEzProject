@@ -23,6 +23,7 @@
   </tr>
   <% 
 	ArrayList<Play> plays = (ArrayList<Play>) request.getAttribute("plays");
+	Gestion_JEEz_JDBC a = new Gestion_JEEz_JDBC();
 	for(int i=0;i<plays.size();i++){
 		if(end!=null){
 		String playtime = a.PlayTime(plays.get(i).getIdPlay);
