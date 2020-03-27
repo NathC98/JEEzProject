@@ -15,9 +15,10 @@
 <div id=containergamefav><font size="+2">Choisissez un jeu parmis vos favoris</font>
     <li>
         <%
+
             ArrayList<Game> games = (ArrayList<Game>) request.getAttribute("games");
             int id = (int) request.getAttribute("Identifiant");
-            ArrayList<Player_has_game> phg = null
+            ArrayList<Player_has_Game> phg = null
             for(int i=0;i<games.size();i++){
                 phg = GameFromPlayerHasGame(games.get(i).getIdGame());
                 for(int j=0;j<phg.size();j++) {
@@ -40,4 +41,7 @@
     </li>
 </div>
 </body>
+<div>
+    <button id="modif">Modifier mes informations de compte</button>
+</div>
 </html>
