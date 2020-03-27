@@ -2,7 +2,25 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3b1c006e-56c4-47f3-851e-04b11398dde9" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/META-INF/MANIFEST.MF" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/WEB-INF/JEEprojet.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/WEB-INF/JEEprojetGAMECHOICE.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/WEB-INF/JEEprojetaccueiladmin.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/WEB-INF/JEEprojetendgames.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/WEB-INF/JEEprojetgames.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/WEB-INF/JEEprojethome.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/WEB-INF/JEEprojetinscription.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/WEB-INF/JEEprojetjeuxencours.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/WEB-INF/JEEprojetplayer.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/WEB-INF/JEEprojetplaying.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/WEB-INF/web.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/currentgames.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/endedgames.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/fond.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/gamegestion.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/logo.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/playergestion.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/style.css" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -98,6 +116,7 @@
       <workItem from="1585254702306" duration="38000" />
       <workItem from="1585254786953" duration="144000" />
       <workItem from="1585259344382" duration="205000" />
+      <workItem from="1585274673645" duration="631000" />
     </task>
     <task id="LOCAL-00001" summary="page de login avec le css">
       <created>1584111388429</created>
@@ -267,7 +286,21 @@
       <option name="project" value="LOCAL" />
       <updated>1585273189008</updated>
     </task>
-    <option name="localTasksCounter" value="25" />
+    <task id="LOCAL-00025" summary="REMISE EN FORME">
+      <created>1585274742538</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1585274742538</updated>
+    </task>
+    <task id="LOCAL-00026" summary="REMISE EN FORME">
+      <created>1585274788206</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1585274788206</updated>
+    </task>
+    <option name="localTasksCounter" value="27" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -334,7 +367,8 @@
     <MESSAGE value="boutons qui renvoient a une url et playing" />
     <MESSAGE value="Boutons de retour/deconnexion qui mettent a la bonne url a toutes les pages&#10;PS: je décède" />
     <MESSAGE value="import" />
-    <option name="LAST_COMMIT_MESSAGE" value="import" />
+    <MESSAGE value="REMISE EN FORME" />
+    <option name="LAST_COMMIT_MESSAGE" value="REMISE EN FORME" />
   </component>
   <component name="WindowStateProjectService">
     <state x="361" y="72" key="#Project_Structure" timestamp="1584097652437">
@@ -349,12 +383,12 @@
       <screen x="0" y="34" width="1920" height="1046" />
     </state>
     <state x="768" y="244" width="374" height="632" key="#com.intellij.ide.util.MemberChooser/0.34.1920.1046@0.34.1920.1046" timestamp="1585178274213" />
-    <state x="279" y="27" width="1469" height="824" key="CommitChangelistDialog2" timestamp="1585274742030">
+    <state x="279" y="27" width="1469" height="824" key="CommitChangelistDialog2" timestamp="1585274787862">
       <screen x="67" y="27" width="1299" height="741" />
     </state>
     <state x="67" y="0" width="1469" height="824" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1585257242975" />
     <state x="374" y="34" width="1242" height="1046" key="CommitChangelistDialog2/0.34.1920.1046@0.34.1920.1046" timestamp="1585179164454" />
-    <state x="279" y="27" width="865" height="741" key="CommitChangelistDialog2/67.27.1299.741@67.27.1299.741" timestamp="1585274742029" />
+    <state x="279" y="27" width="865" height="741" key="CommitChangelistDialog2/67.27.1299.741@67.27.1299.741" timestamp="1585274787862" />
     <state x="93" y="93" width="1350" height="638" key="DiffContextDialog" timestamp="1585255908780">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -380,22 +414,22 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="249" y="0" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1584097684877" />
-    <state x="372" y="158" width="800" height="528" key="Vcs.Push.Dialog.v2" timestamp="1585274746125">
+    <state x="372" y="158" width="800" height="528" key="Vcs.Push.Dialog.v2" timestamp="1585274791128">
       <screen x="67" y="27" width="1299" height="741" />
     </state>
     <state x="361" y="146" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1585257503365" />
     <state x="451" y="219" key="Vcs.Push.Dialog.v2/0.34.1920.1046@0.34.1920.1046" timestamp="1585176165740" />
-    <state x="372" y="158" width="800" height="528" key="Vcs.Push.Dialog.v2/67.27.1299.741@67.27.1299.741" timestamp="1585274746125" />
+    <state x="372" y="158" width="800" height="528" key="Vcs.Push.Dialog.v2/67.27.1299.741@67.27.1299.741" timestamp="1585274791128" />
     <state x="372" y="224" key="com.intellij.ide.util.TipDialog" timestamp="1585236207826">
       <screen x="67" y="27" width="1299" height="741" />
     </state>
     <state x="372" y="224" key="com.intellij.ide.util.TipDialog/67.27.1299.741@67.27.1299.741" timestamp="1585236207826" />
-    <state x="556" y="324" width="464" height="160" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1585274770947">
+    <state x="556" y="324" width="464" height="160" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1585275304552">
       <screen x="67" y="27" width="1299" height="741" />
     </state>
     <state x="578" y="330" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1536.824@0.0.1536.824" timestamp="1584098090936" />
     <state x="723" y="453" width="464" height="166" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.34.1920.1046@0.34.1920.1046" timestamp="1585257411196" />
-    <state x="556" y="324" width="464" height="160" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/67.27.1299.741@67.27.1299.741" timestamp="1585274770947" />
+    <state x="556" y="324" width="464" height="160" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/67.27.1299.741@67.27.1299.741" timestamp="1585275304552" />
     <state x="493" y="205" key="git4idea.merge.GitPullDialog" timestamp="1585256892430">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
