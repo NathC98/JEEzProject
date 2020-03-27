@@ -39,5 +39,12 @@ public class Identifiant {
     	this.idIdentifiant = idRole[0];
     	this.admin = idRole[1];
     }
-    
+
+    public int getAdmin() {
+        return admin;
+    }
+
+    public void setAdmin(int admin) {
+        this.admin = admin;
+    }
 }
