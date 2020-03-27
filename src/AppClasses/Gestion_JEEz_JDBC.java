@@ -437,10 +437,24 @@ public class Gestion_JEEz_JDBC{
 		this.database.Deconnection();
 	}
 
-	public void insertPlay(String start,int idGame, int idPlayer) {
+	public int insertPlay(String start,int idGame, int idPlayer) {
+		int idPlay=-1;
+
 		this.database.Connection();
-		String query = "INSERT INTO Play VALUES (default," + start + ",null,"+idGame+", "+idPlay")";
+		String query = "INSERT INTO Play VALUES (default,'" + start + "',null,"+idGame+", "+idPlay")";
 		database.update(query);
+		ResultSet rset=null;
+		try{
+
+			String query = "SELECT idPlay FROM Play where Game_idGame="+idGame+" AND Player_idPlayer="+idPlayer+"AND start='"+start"'";
+			rset = database.Query(query);
+			idPlay=rset.getInt(1);
+			rset.close();
+
+		}catch ( SQLException e ) {
+			e.printStackTrace();
+		}
+
 		this.database.Deconnection();
 	}
 }
