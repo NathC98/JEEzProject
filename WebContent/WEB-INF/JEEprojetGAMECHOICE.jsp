@@ -19,11 +19,13 @@
             ArrayList<Game> games = (ArrayList<Game>) request.getAttribute("games");
             int id = (int) request.getAttribute("Identifiant");
             ArrayList<Player_has_Game> phg = null;
+            String gamename = null ;
             for(int i=0;i<games.size();i++){
                 phg = b.GameFromPlayerHasGame(games.get(i).getIdGame());
                 for(int j=0;j<phg.size();j++) {
                     if (phg.get(j).getIdPlayer() == id && phg.get(j).isFavorite()) {
-                        out.println("<button id=\"gamebutton\" onclick=\"window.location.href = './JEEprojetplaying.jsp';\" type=\"submit\">\"jouer à \" + games.get(i).getName()</button>");
+                        gamename = games.get(i).getName();
+                        out.println("<button id=\"gamebutton\" onclick=\"window.location.href = './JEEprojetplaying.jsp';\" type=\"submit\">\"jouer à \" + gamename + \"</button>");
                     }
                 }
             }
@@ -35,7 +37,8 @@
         <%
             games = (ArrayList<Game>) request.getAttribute("games");
             for(int i=0;i<games.size();i++) {
-                out.println("<button id=\"gamebutton\" onclick=\"window.location.href = './JEEprojetplaying.jsp';\" type=\"submit\">\"jouer à \" + games.get(i).getName()</button>");
+                gamename = games.get(i).getName();
+                out.println("<button id=\"gamebutton\" onclick=\"window.location.href = './JEEprojetplaying.jsp';\" type=\"submit\">\"jouer à \" + gamename + \"</button>");
             }
         %>
     </li>
