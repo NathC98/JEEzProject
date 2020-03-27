@@ -14,7 +14,7 @@
 <%
     int idjoueur = Integer.parseInt((String)request.getAttribute("Identifiant"));
     int idjeu = Integer.parseInt((String)request.getAttribute("Idjeu"));
-    out.println("<button id=\"end\" onclick=\"window.location.href = './JEEprojetended?id=" + idjoueur +"&idjeu="+ idjeu +"'; type=\"cancelbtn\">Terminer le jeu</button>");
+    out.println("<button id=\"end\" onclick=\"window.location.href = './JEEprojetended?id=" + idjoueur +"&idjeu="+ idjeu +"';\" type=\"cancelbtn\">Terminer le jeu</button>");
 %>
 <%
     Gestion_JEEz_JDBC b = new Gestion_JEEz_JDBC();
