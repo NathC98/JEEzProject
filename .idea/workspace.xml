@@ -2,9 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3b1c006e-56c4-47f3-851e-04b11398dde9" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/WebContent/WEB-INF/JEEprojetGAMECHOICE.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/WebContent/WEB-INF/JEEprojetGAMECHOICE.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebContent/WEB-INF/JEEprojethome.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/WebContent/WEB-INF/JEEprojethome.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Servlets/JEEprojetGAMECHOICE.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Servlets/JEEprojetGAMECHOICE.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/AppClasses/Gestion_JEEz_JDBC.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/AppClasses/Gestion_JEEz_JDBC.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -24,6 +23,9 @@
     </option>
     <expand />
     <select />
+  </component>
+  <component name="FavoritesManager">
+    <favorites_list name="JEEzP" />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -269,7 +271,14 @@
       <option name="project" value="LOCAL" />
       <updated>1585273189008</updated>
     </task>
-    <option name="localTasksCounter" value="25" />
+    <task id="LOCAL-00025" summary="Changements dans Gestion_JEEz_JDBC">
+      <created>1585277259525</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1585277259525</updated>
+    </task>
+    <option name="localTasksCounter" value="26" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -336,26 +345,26 @@
     <MESSAGE value="boutons qui renvoient a une url et playing" />
     <MESSAGE value="Boutons de retour/deconnexion qui mettent a la bonne url a toutes les pages&#10;PS: je décède" />
     <MESSAGE value="import" />
-    <option name="LAST_COMMIT_MESSAGE" value="import" />
+    <MESSAGE value="Changements dans Gestion_JEEz_JDBC" />
+    <option name="LAST_COMMIT_MESSAGE" value="Changements dans Gestion_JEEz_JDBC" />
   </component>
   <component name="WindowStateProjectService">
     <state x="361" y="72" key="#Project_Structure" timestamp="1584097652437">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="361" y="72" key="#Project_Structure/0.0.1536.824@0.0.1536.824" timestamp="1584097652437" />
-    <state x="256" y="84" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1585277124053">
-      <screen x="67" y="27" width="1299" height="741" />
+    <state x="223" y="68" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1584097619517">
+      <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="223" y="68" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1536.824@0.0.1536.824" timestamp="1584097619517" />
-    <state x="256" y="84" key="#com.intellij.execution.impl.EditConfigurationsDialog/67.27.1299.741@67.27.1299.741" timestamp="1585277124053" />
     <state x="768" y="244" width="374" height="632" key="#com.intellij.ide.util.MemberChooser" timestamp="1585178274213">
       <screen x="0" y="34" width="1920" height="1046" />
     </state>
     <state x="768" y="244" width="374" height="632" key="#com.intellij.ide.util.MemberChooser/0.34.1920.1046@0.34.1920.1046" timestamp="1585178274213" />
-    <state x="279" y="27" width="1469" height="824" key="CommitChangelistDialog2" timestamp="1585274742030">
-      <screen x="67" y="27" width="1299" height="741" />
+    <state x="67" y="0" width="1469" height="824" key="CommitChangelistDialog2" timestamp="1585277258951">
+      <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="67" y="0" width="1469" height="824" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1585257242975" />
+    <state x="67" y="0" width="1469" height="824" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1585277258951" />
     <state x="374" y="34" width="1242" height="1046" key="CommitChangelistDialog2/0.34.1920.1046@0.34.1920.1046" timestamp="1585179164454" />
     <state x="279" y="27" width="865" height="741" key="CommitChangelistDialog2/67.27.1299.741@67.27.1299.741" timestamp="1585274742029" />
     <state x="93" y="93" width="1350" height="638" key="DiffContextDialog" timestamp="1585255908780">
@@ -383,10 +392,10 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="249" y="0" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1584097684877" />
-    <state x="372" y="158" width="800" height="528" key="Vcs.Push.Dialog.v2" timestamp="1585274746125">
-      <screen x="67" y="27" width="1299" height="741" />
+    <state x="361" y="146" width="800" height="528" key="Vcs.Push.Dialog.v2" timestamp="1585277265928">
+      <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="361" y="146" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1585257503365" />
+    <state x="361" y="146" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1585277265928" />
     <state x="451" y="219" key="Vcs.Push.Dialog.v2/0.34.1920.1046@0.34.1920.1046" timestamp="1585176165740" />
     <state x="372" y="158" width="800" height="528" key="Vcs.Push.Dialog.v2/67.27.1299.741@67.27.1299.741" timestamp="1585274746125" />
     <state x="372" y="224" key="com.intellij.ide.util.TipDialog" timestamp="1585236207826">
@@ -399,10 +408,10 @@
     <state x="578" y="330" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1536.824@0.0.1536.824" timestamp="1584098090936" />
     <state x="723" y="453" width="464" height="166" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.34.1920.1046@0.34.1920.1046" timestamp="1585257411196" />
     <state x="556" y="324" width="464" height="160" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/67.27.1299.741@67.27.1299.741" timestamp="1585274770947" />
-    <state x="493" y="205" key="git4idea.merge.GitPullDialog" timestamp="1585256892430">
+    <state x="493" y="205" key="git4idea.merge.GitPullDialog" timestamp="1585277735432">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="493" y="205" key="git4idea.merge.GitPullDialog/0.0.1536.824@0.0.1536.824" timestamp="1585256892430" />
+    <state x="493" y="205" key="git4idea.merge.GitPullDialog/0.0.1536.824@0.0.1536.824" timestamp="1585277735432" />
     <state x="67" y="27" width="1289" height="741" key="new project wizard" timestamp="1585079484135">
       <screen x="67" y="27" width="1299" height="741" />
     </state>
@@ -411,9 +420,5 @@
       <screen x="0" y="34" width="1920" height="1046" />
     </state>
     <state x="880" y="245" key="run.anything.popup/0.34.1920.1046@0.34.1920.1046" timestamp="1585232280384" />
-    <state x="379" y="89" width="672" height="678" key="search.everywhere.popup" timestamp="1585277020014">
-      <screen x="67" y="27" width="1299" height="741" />
-    </state>
-    <state x="379" y="89" width="672" height="678" key="search.everywhere.popup/67.27.1299.741@67.27.1299.741" timestamp="1585277020014" />
   </component>
 </project>

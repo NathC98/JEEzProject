@@ -163,7 +163,11 @@ public class Gestion_JEEz_JDBC{
 		return resString ;
 	}
 
-
+	/*
+	PROCEDURE banPlayer
+	PARAMETRE idPlayer
+	banni un joueur du serveur.
+	 */
 
 	public void banPlayer(int idPlayer) {
 		this.database.Connection();
@@ -324,6 +328,11 @@ public class Gestion_JEEz_JDBC{
 		return listPlayer;
 	}
 
+	/*
+	FONCTION GameFromPlayerHasGame
+	PARAMETRE idGame
+	Permet de récupérer la liste des joueurs ayant une partie en cours pour un jeu en particulier.
+	 */
 	public ArrayList<Player_has_Game> GameFromPlayerHasGame(int idGame){
 
 		this.database.Connection();
