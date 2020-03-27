@@ -11,7 +11,10 @@
 <body>
 <font size="+3">Le jeu est terminé, retour au menu principal</font>
 <br>
-<button id="end" onclick="window.location.href = './JEEprojetGAMECHOICE.jsp';" type="cancelbtn">Retour au menu des jeux</button>
+<%
+	int idjoueur = Integer.parseInt((String)request.getAttribute("Identifiant"));
+    out.println("<button id=\"end\" onclick=\"window.location.href = './JEEprojetGAMECHOICE?id=" + idjoueur +"';\" type=\"cancelbtn\">Retour au menu des jeux</button>");
+%>
 
 <%
     Gestion_JEEz_JDBC b = new Gestion_JEEz_JDBC();
