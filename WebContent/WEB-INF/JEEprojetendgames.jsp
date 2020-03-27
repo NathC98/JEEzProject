@@ -25,14 +25,14 @@
 	ArrayList<Play> plays = (ArrayList<Play>) request.getAttribute("plays");
 	for(int i=0;i<plays.size();i++){
 		if(end!=null){
-		date tempsjeu = //parties.get(i).getEnd() - parties.get(i).getStart();
+		String playtime = a.PlayTime(plays.get(i).getIdPlay);
 		out.println(
 				"<tr>"                                                +
 						"<td>parties.get(i).getIdgame()//.getName()</td>" +
 			   			"<td>parties.get(i).getIdplayer//.getName()</td>" +
 			    			"<td>parties.get(i).getStart()</td>"          +
 						"<td>parties.get(i).getEnd()</td>"                +
-						"<td>tempsjeu</td>"                               +
+						"<td>playtime</td>"                               +
 					"</tr>");
 	}
 	}
