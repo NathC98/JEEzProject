@@ -11,7 +11,7 @@
 <body>
 <font size="+3">Jeux en cours</font>
 
-<button id="end" onclick="window.location.href = './JEEprojetGAMECHOICE';" type="cancelbtn">Terminer le jeu</button>
+<button id="end" onclick="window.location.href = './JEEprojetended?id="+idjoueur+ "&idjeu=" + idjeu +"';" type="cancelbtn">Terminer le jeu</button>
 <%
     Gestion_JEEz_JDBC b = new Gestion_JEEz_JDBC();
     ArrayList<Game> games = (ArrayList<Game>) request.getAttribute("games");
