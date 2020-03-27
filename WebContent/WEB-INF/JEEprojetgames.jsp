@@ -15,9 +15,10 @@
   <div id="container_player">
 	<table>
   <tr>
-    <td width=70%><font size="+1">Nom du jeu</font></td>
-    <td width=24%><font size="+1">Supprimer</font></td>
-    <td width=24%><font size="+1">Jouable</font></td>
+    <td width=46%><font size="+1">Nom du jeu</font></td>
+    <td width=20%><font size="+1">Supprimer</font></td>
+    <td width=20%><font size="+1">Jouable</font></td>
+	  <td width=30%></td>
   </tr>
 <% 
 	ArrayList<Game> games = (ArrayList<Game>) request.getAttribute("games");
@@ -26,14 +27,16 @@
 		"<tr>"                                                                    +
 			"<td>games.get(i).getName()</td>"                                     +
    			"<td><button type=\"button\" class=\"cancelbtn\">Supprimer</button></td>");
-		if(games.get(i).getPlayable()){
+		if(games.get(i).isPlayable()){
 			out.println(
 				"<td>oui</td>" +
+						"<td><button type=\"button\" class=\"cancelbtn\">Rendre non jouable</button></td>" +
 		"</tr>");
 		}
 		else{
 			out.println(
 				"<td>non</td>" +
+						"<td><button type=\"button\" class=\"cancelbtn\">Rendre jouable</button></td>" +
 		"</tr>");
 		}
 	}
