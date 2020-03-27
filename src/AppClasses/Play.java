@@ -8,6 +8,7 @@ public class Play {
     private int idgame;
     private int idPlayer;
 
+
     public int getIdPlay() {
         return idPlay;
     }

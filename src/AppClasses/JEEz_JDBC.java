@@ -1,12 +1,12 @@
-package com.sdzee.bdd;
+package AppClasses;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
+import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
-import javax.servlet.http.HttpServletRequest;
 
 import AppClasses.Play;
 
@@ -52,7 +52,7 @@ public class JEEz_JDBC {
     Fonction d'éxecution de la requête
      */
 
-    public Resulset Query(String query){
+    public ResultSet Query(String query){
 
             ResultSet rset=null;
             try {
