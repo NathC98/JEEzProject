@@ -57,7 +57,7 @@ public class Gestion_JEEz_JDBC{
 				p.setEmail(rset.getString("email"));
 				p.setDateinscription(rset.getString("InscriptionDate"));
 				p.setIdIdentifiant(rset.getInt("Identifiant_idIdentifiant"));
-				p.setBan(rset.getInt("ban"));
+				p.setBan(rset.getBoolean("ban"));
 			}
 			else{
 				p=null;
@@ -263,7 +263,7 @@ public class Gestion_JEEz_JDBC{
 				Game g = new Game();
 
 				g.setIdGame(rset.getInt("idGame"));
-				g.setNom(rset.getString("name"));
+				g.setName(rset.getString("name"));
 				g.setNumberPlayerGame(rset.getInt("numPlayerInGame"));
 				g.setPlayable(rset.getBoolean("playable"));
 
@@ -301,7 +301,7 @@ public class Gestion_JEEz_JDBC{
 				p.setEmail(rset.getString("email"));
 				p.setDateinscription(rset.getString("InscriptionDate"));
 				p.setIdIdentifiant(rset.getInt("Identifiant_idIdentifiant"));
-				p.setBan(rset.getInt("ban"));
+				p.setBan(rset.getBoolean("ban"));
 				listPlayer.add(p);
 			}
 			try{

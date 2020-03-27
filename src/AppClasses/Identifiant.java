@@ -33,11 +33,27 @@ public class Identifiant {
     public void setPassword(String password) {
         this.password = password;
     }
-    
+
+    public int getAdmin() {
+        return admin;
+    }
+
+    public void setAdmin(int admin) {
+        this.admin = admin;
+    }
+
+    public Gestion_JEEz_JDBC getGestion() {
+        return gestion;
+    }
+
+    public void setGestion(Gestion_JEEz_JDBC gestion) {
+        this.gestion = gestion;
+    }
+
     public void connexion(String login, String password){
-    	ArrayList<Integer> idRole = gestion.connexion(login,password);
-    	this.idIdentifiant = idRole[0];
-    	this.admin = idRole[1];
+    	ArrayList<Integer> idRole = gestion.Connect(login,password);
+    	this.idIdentifiant = idRole.get(0);
+    	this.admin = idRole.get(1);
     }
     
 }
