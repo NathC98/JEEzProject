@@ -11,7 +11,11 @@
 <body>
 Jeux en cours
 
-<button onclick="window.location.href = './JEEprojetGAMECHOICE.jsp';" type="player">Terminer le jeu</button>
+<%
+    int idjoueur = Integer.parseInt((String)request.getAttribute("Identifiant"));
+    int idjeu = Integer.parseInt((String)request.getAttribute("Idjeu"));
+    out.println("<button id=\"end\" onclick=\"window.location.href = './JEEprojetended?id=" + idjoueur +"&idjeu="+ idjeu +"';" type="cancelbtn\">Terminer le jeu</button>");
+%>
 
 </body>
 </html>
