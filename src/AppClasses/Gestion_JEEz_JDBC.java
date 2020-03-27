@@ -147,7 +147,7 @@ public class Gestion_JEEz_JDBC{
 
 	public void banPlayer(int idPlayer) {
 		this.database.Connection();
-		String query = "UPDATE Player SET ban="+1+"WHERE idPlayer="+idPlayer;
+		String query = "UPDATE Player SET ban= true WHERE idPlayer="+idPlayer;
 		database.update(query);
 		this.database.Deconnection();
 
@@ -177,7 +177,7 @@ public class Gestion_JEEz_JDBC{
 		int n =0;
 
 		try {
-			String query = "SELECT COUNT(*) FROM Play where idPlayer="+idPlayer;
+			String query = "SELECT COUNT(*) FROM Play where Player_idPlayer="+idPlayer;
 			rset=database.Query(query);
 			rset.next();
 			n=rset.getInt(1);
@@ -394,7 +394,7 @@ public class Gestion_JEEz_JDBC{
 		String str = null;
 
 		try {
-			String query = "SELECT Game.name FROM Play,Game  where Play.idPlay =" + idPlay + " AND Play.idGame=Game.idGame"; // On selectionne les parties en cour
+			String query = "SELECT Game.name FROM Play,Game  where Play.idPlay =" + idPlay + " AND Play.Game_idGame=Game.idGame"; // On selectionne les parties en cour
 			rset = database.Query(query);
 			rset.next();
 			str=rset.getString(1);
@@ -416,7 +416,7 @@ public class Gestion_JEEz_JDBC{
 		ResultSet rset=null;
 		String str = null;
 		try {
-			String query = "SELECT Identifiant.login FROM Play,Player,Identifiant  where Play.idPlay ="+ idPlay +" AND Play.idPlayer=Player.idPlayer AND Identifiant.idIdentifiant=Player.Identifiant_idIdentifiant"; // On selectionne les parties en cour
+			String query = "SELECT Identifiant.login FROM Play,Player,Identifiant  where Play.idPlay ="+ idPlay +" AND Play.Player_idPlayer=Player.idPlayer AND Identifiant.idIdentifiant=Player.Identifiant_idIdentifiant"; // On selectionne les parties en cour
 			rset = database.Query(query);
 			rset.next();
 			str=rset.getString(1);
