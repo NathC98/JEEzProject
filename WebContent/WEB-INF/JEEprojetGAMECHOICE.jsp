@@ -6,7 +6,7 @@
 <head>
     <meta charset="UTF-8">
     <title>JEEz games</title>
-    <link rel="stylesheet" type="text/css" href="./html/style.css">
+    <link rel="stylesheet" type="text/css" href="./style.css">
 </head>
 <body>
 <div id=containergamefav><font size="+2">Choisissez un jeu parmis vos favoris</font>
