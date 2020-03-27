@@ -17,6 +17,72 @@ public class Gestion_JEEz_JDBC{
 
 	}
 
+	public ArrayList<Game> ListAllGame() {
+		this.database.Connection();
+		ResultSet rset =null;
+		ArrayList<Game> gameplayable = new ArrayList<Game>();
+		try {
+			String query = "SELECT * FROM Game"; // On selectionne tous les ejux
+			rset=database.Query(query);
+			while ( rset.next() ) {
+				Game g = new Game();
+
+				g.setIdGame(rset.getInt("idGame"));
+				g.setName(rset.getString("name"));
+				g.setNumberPlayerGame(rset.getInt("numberPlayerInGame"));
+				g.setPlayable(rset.getBoolean("playable"));
+
+				gameplayable.add(g);
+			}
+			try{
+				rset.close();
+				this.database.Deconnection();
+			}catch ( SQLException e ) {
+				e.printStackTrace();
+			}
+
+		} catch ( SQLException e ) {
+			e.printStackTrace();
+		}
+		return gameplayable;
+	}
+
+
+
+	public ArrayList<Play> ListEndedPlay(){
+		this.database.Connection();
+		ArrayList<Play> listPlay = new  ArrayList<Play>();
+		ResultSet rset=null;
+		try {
+			String query = "SELECT * FROM Play where end IS NOT NULL"; // On selectionne les parties en cour
+			rset=database.Query(query);
+			while ( rset.next() ) {
+				Play p = new Play();
+
+				p.setIdPlay(rset.getInt("idPlay"));
+				p.setStart(rset.getString("start"));
+				p.setEnd (rset.getString("end"));
+				p.setIdgame(rset.getInt("idGame"));
+				p.setIdPlayer(rset.getInt("idPlayer"));
+				listPlay.add(p);
+			}
+			try{
+				rset.close();
+				this.database.Deconnection();
+			}catch ( SQLException e ) {
+				e.printStackTrace();
+			}
+
+		}
+		catch ( SQLException e ) {
+		}
+
+		return listPlay;
+
+	}
+
+
+
 	/*
                 FONCTION infoPlayer
                 PARAMETRE login + password
