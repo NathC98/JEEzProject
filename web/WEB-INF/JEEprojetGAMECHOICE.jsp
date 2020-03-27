@@ -15,10 +15,18 @@
 <div id=containergamefav><font size="+2">Choisissez un jeu parmis vos favoris</font>
     <li>
         <%
+            Gestion_JEEz_JDBC b = new Gestion_JEEz_JDBC();
             ArrayList<Game> games = (ArrayList<Game>) request.getAttribute("games");
+            int id = Integer.parseInt((String)request.getAttribute("Identifiant"));
+            ArrayList<Player_has_Game> phg = null;
+            String gamename = null ;
             for(int i=0;i<games.size();i++){
-                if(games.get(i).getFavorite()){
-                    out.println("<button id=\"gamebutton\" onclick=\"window.location.href = './JEEprojetplaying.jsp';\" type=\"submit\">jouer games.get(i).getName()</button>")
+                phg = b.GameFromPlayerHasGame(games.get(i).getIdGame());
+                for(int j=0;j<phg.size();j++) {
+                    if (phg.get(j).getIdPlayer() == id && phg.get(j).isFavorite()) {
+                        gamename = games.get(i).getName();
+                        out.println("<button id=\"gamebutton\" onclick=\"window.location.href = './JEEprojetplaying';\" type=\"submit\">\"jouer à \" + gamename + \"</button>\"");
+                    }
                 }
             }
         %>
@@ -27,10 +35,11 @@
 <div id=containergame><font size="+2">Choisissez un jeu parmis tous les jeux</font>
     <li>
         <%
-            ArrayList<Game> games = (ArrayList<Game>) request.getAttribute("games");
-            for(int i=0;i<games.size();i++){
-                out.println("<button id=\"gamebutton\" onclick=\"window.location.href = './JEEprojetplaying.jsp';\" type=\"submit\">jouer games.get(i).getName()</button>")
-
+            games = (ArrayList<Game>) request.getAttribute("games");
+            for(int i=0;i<games.size();i++) {
+                gamename = games.get(i).getName();
+                out.println("<button id=\"gamebutton\" onclick=\"window.location.href = './JEEprojetplaying';\" type=\"submit\">\"jouer à \" + gamename + \"</button>\"");
+            }
         %>
     </li>
 </div>
