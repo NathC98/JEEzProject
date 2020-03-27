@@ -22,13 +22,19 @@
   </tr>
   <% 
 	ArrayList<Play> plays = (ArrayList<Play>) request.getAttribute("plays");
+	String gamename = null ;
+	String playername = null ;
+	String start = null ;
 	for(int i=0;i<plays.size();i++){
+		gamename = NameGameFromId(plays.get(i).getIdGame());
+		playername = NamePlayerFromId(plays.get(i).getIdPLayer());
+		start = plays.get(i).getStart();
 		if(end==null){
 		out.println(
 		"<tr>"                                                                        +
-			"<td>plays.get(i).getIdgame()//.getName()</td>"                           +
-   			"<td>plays.get(i).getIdplayer//.getName()</td>"                           +
-    			"<td>plays.get(i).getStart()</td>"                                    +
+			"<td>gamename</td>"                           +
+   			"<td>playername</td>"                           +
+    			"<td>start</td>"                                    +
 			"<td><button type=\"button\" class=\"cancelbtn\">Mettre fin</button></td>"+
 		"</tr>");
 	}

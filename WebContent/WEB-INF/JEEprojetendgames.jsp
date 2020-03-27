@@ -24,15 +24,24 @@
   <% 
 	ArrayList<Play> plays = (ArrayList<Play>) request.getAttribute("plays");
 	Gestion_JEEz_JDBC a = new Gestion_JEEz_JDBC();
+	String playtime = null;
+	String gamename = null;
+	String nameplayer = null;
+	String start = null;
+	String end = null;
 	for(int i=0;i<plays.size();i++){
 		if(plays.get(i).getEnd()!=null){
-		String playtime = a.PlayTime(plays.get(i).getIdPlay);
-		out.println(
+		playtime = a.PlayTime(plays.get(i).getIdPlay);
+		gamename = NameGameFromId(plays.get(i).getIdGame());
+		nameplayer = NamePlayerFromId(plays.get(i).getIdPlayer());
+		start = plays.get(i).getStart();
+		end = plays.get(i).getEnd();
+			out.println(
 				"<tr>"                                                +
-						"<td>plays.get(i).getIdgame()//.getName()</td>" +
-			   			"<td>plays.get(i).getIdplayer//.getName()</td>" +
-			    			"<td>plays.get(i).getStart()</td>"          +
-						"<td>plays.get(i).getEnd()</td>"                +
+						"<td>gamename</td>" +
+			   			"<td>nameplayer</td>" +
+						"<td>start</td>"          +
+						"<td>end</td>"                +
 						"<td>playtime</td>"                               +
 					"</tr>");
 	}
