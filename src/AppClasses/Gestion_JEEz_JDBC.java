@@ -17,6 +17,37 @@ public class Gestion_JEEz_JDBC{
 
 	}
 
+	public ArrayList<Game> ListAllGame() {
+		this.database.Connection();
+		ResultSet rset =null;
+		ArrayList<Game> gameplayable = new ArrayList<Game>();
+		try {
+			String query = "SELECT * FROM Game"; // On selectionne tous les ejux
+			rset=database.Query(query);
+			while ( rset.next() ) {
+				Game g = new Game();
+
+				g.setIdGame(rset.getInt("idGame"));
+				g.setName(rset.getString("name"));
+				g.setNumberPlayerGame(rset.getInt("numberPlayerInGame"));
+				g.setPlayable(rset.getBoolean("playable"));
+
+				gameplayable.add(g);
+			}
+			try{
+				rset.close();
+				this.database.Deconnection();
+			}catch ( SQLException e ) {
+				e.printStackTrace();
+			}
+
+		} catch ( SQLException e ) {
+			e.printStackTrace();
+		}
+		return gameplayable;
+	}
+
+
 
 	public ArrayList<Play> ListEndedPlay(){
 		this.database.Connection();
