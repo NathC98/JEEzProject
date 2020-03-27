@@ -20,13 +20,12 @@
             int id = Integer.parseInt((String)request.getAttribute("Identifiant"));
             ArrayList<Player_has_Game> phg = null;
             String gamename = null ;
-            out.println("<p>"+games+"</p>");
             for(int i=0;i<games.size();i++){
                 phg = b.GameFromPlayerHasGame(games.get(i).getIdGame());
                 for(int j=0;j<phg.size();j++) {
                     if (phg.get(j).getIdPlayer() == id && phg.get(j).isFavorite()) {
                         gamename = games.get(i).getName();
-                        out.println("<button id=\"gamebutton\" onclick=\"window.location.href = './JEEprojetplaying';\" type=\"submit\">\"jouer à \" + gamename + \"</button>\"");
+                        out.println("<button id=\"gamebutton\" onclick=\"window.location.href = './JEEprojetplaying"+ id +"';\" type=\"submit\">jouer à " + gamename + "</button>");
                     }
                 }
             }
@@ -39,7 +38,7 @@
             games = (ArrayList<Game>) request.getAttribute("games");
             for(int i=0;i<games.size();i++) {
                 gamename = games.get(i).getName();
-                out.println("<button id=\"gamebutton\" onclick=\"window.location.href = './JEEprojetplaying';\" type=\"submit\">\"jouer à \" + gamename + \"</button>\"");
+                out.println("<button id=\"gamebutton\" onclick=\"window.location.href = './JEEprojetplaying"+ id +"';\" type=\"submit\">jouer à " + gamename + "</button>");
             }
         %>
     </li>

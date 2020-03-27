@@ -256,7 +256,7 @@ public class Gestion_JEEz_JDBC{
 
 				g.setIdGame(rset.getInt("idGame"));
 				g.setName(rset.getString("name"));
-				g.setNumberPlayerGame(rset.getInt("numPlayerInGame"));
+				g.setNumberPlayerGame(rset.getInt("numberPlayerInGame"));
 				g.setPlayable(rset.getBoolean("playable"));
 
 				gameplayable.add(g);
