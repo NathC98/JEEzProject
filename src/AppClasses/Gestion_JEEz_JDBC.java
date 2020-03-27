@@ -4,6 +4,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.time.temporal.ChronoUnit;
 import java.util.ArrayList;
+import java.time;
 
 public class Gestion_JEEz_JDBC{
 
@@ -132,12 +133,17 @@ public class Gestion_JEEz_JDBC{
 
 			String start = rset1.getString(1);
 			String end = rset2.getString(2);
-/*
-			Date dateStart = formatter.parse(start);
-			Date dateEnd = formatter.parse(end);
 
-			long resInDays = ChronoUnit.DAYS.between(dateStart,dateEnd);
-			String resString = toString(resInDays);*/
+
+
+			Date dateStart = Date.parse(start);
+			Date dateEnd = Date.parse(end);
+
+			Period period = Period.between(dateStart, dateEnd);
+			int diff = period.getDays();
+			String resString = toString(diff);
+
+
 
 
 
