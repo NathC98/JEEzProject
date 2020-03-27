@@ -1,12 +1,12 @@
-package com.sdzee.bdd;
+package AppClasses;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
+import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
-import javax.servlet.http.HttpServletRequest;
 
 import AppClasses.Play;
 
@@ -43,12 +43,7 @@ public class JEEz_JDBC {
     public void Deconnection(){
        try{
            this.connexion.close();
-       }catch(SQLException e) {
-            e.printStackTrace();
-       }
-        try{
-            this.statement.close();
-        }catch(SQLException e) {
+       }catchcatch (SQLException e) {
             e.printStackTrace();
         }
     }
@@ -57,7 +52,7 @@ public class JEEz_JDBC {
     Fonction d'éxecution de la requête
      */
 
-    public Resulset Query(String query){
+    public ResultSet Query(String query){
 
             ResultSet rset=null;
             try {
@@ -72,7 +67,6 @@ public class JEEz_JDBC {
         try {
             PreparedStatement prepare = this.connexion.prepareStatement(query);
             prepare.executeUpdate(query);
-            prepare.close();
         } catch (SQLException e) {
             e.printStackTrace();
         }

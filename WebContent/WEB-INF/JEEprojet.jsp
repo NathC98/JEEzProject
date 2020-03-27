@@ -10,7 +10,7 @@
     <button onclick="window.location.href = './JEEprojetplayerhome';" type="button" class="cancelbtn">Retour</button>
 </div>
 <body>
- <form action="action_page.php" method="post">
+ <form action="JEEprojet" method="post">
   <div class="imgcontainer">
     <img src="./logo.png" alt="Avatar" class="avatar">
   </div>
@@ -35,7 +35,7 @@
     <button type="button" class="cancelbtn">Cancel</button>
     <span class="psw">Forgot <a href="#">password?</a></span>
   </div>
-</form> 
+</form>
         
 </body>
 </html>

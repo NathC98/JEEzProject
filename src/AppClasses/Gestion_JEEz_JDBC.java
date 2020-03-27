@@ -1,20 +1,18 @@
 package AppClasses;
-import package com.sdzee.bdd;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.time.temporal.ChronoUnit;
 import java.util.ArrayList;
 
 public class Gestion_JEEz_JDBC{
 
 	private JEEz_JDBC database = new JEEz_JDBC();
-	
+
 	public Gestion_JEEz_JDBC(){
 	}
 
 /*
-
-
 					if(admin==0) {
 						query2 = "SELECT * FROM Player WHERE Identifiant_idIdentifiant=" + identifiant;
 						ResultSet rset2 = Query(query2);
@@ -38,17 +36,22 @@ public class Gestion_JEEz_JDBC{
 				}
  */
 
+	/*
+                FONCTION infoPlayer
+                PARAMETRE login + password
+                RENVOI tableau d'entier, où le premier entier contient l'identifiant dans al classe Identifiant de la BDD, le deuxieme 0 ou 1 pour savoir si c'est un admin ou un joueur.
+                Si le login/password ne convient pas, renvoi null
+             */
 
 	public Player infoPlayer(int idPlayer) {
-		this.JEEz_JDBC.Connection();
+		this.database.Connection();
 		Player p = new Player();
+		ResultSet rset=null;
 		try {
 			String query = "SELECT * FROM Player WHERE idPlayer=" + idPlayer;
-
-
-			ResultSet rset = Query(query);
+			rset = database.Query(query);
 			if (rset.next()) {
-				Player p = new Player();
+				p = new Player();
 				p.setIdPlayer(rset.getInt("idPlayer"));
 				p.setDate(rset.getString("birthDate"));
 				p.setEmail(rset.getString("email"));
@@ -59,11 +62,12 @@ public class Gestion_JEEz_JDBC{
 			else{
 				p=null;
 			}
+		}catch ( SQLException e ) {
+			e.printStackTrace();
 		}
-
 		try{
 			rset.close();
-			this.JEEz_JDBC.Deconnection();
+			this.database.Deconnection();
 		}catch ( SQLException e ) {
 			e.printStackTrace();
 		}
@@ -77,17 +81,16 @@ public class Gestion_JEEz_JDBC{
 			Si le login/password ne convient pas, renvoi null
 		 */
 
-
-
-	public ArrayList<int> Connect(String login, String password) {
-		this.JEEz_JDBC.Connection();
-		ArrayList<int> Info = new ArraList<int>();
+	public ArrayList<Integer> Connect(String login, String password) {
+		this.database.Connection();
+		ArrayList<Integer> Info = new ArrayList<Integer>();
 		int identifiant = 0;
 		int admin = 0;
+		ResultSet rset=null;
 
 		try {
 			String query = "SELECT * FROM Identifiant WHERE (login= " + login + " AND password= " + password;
-			ResultSet rset = Query(query);
+			rset = database.Query(query);
 			if (rset.next()) {
 				identifiant = rset.getInt("idIdentifiant");
 				admin = rset.getInt("admin");
@@ -98,19 +101,17 @@ public class Gestion_JEEz_JDBC{
 				Info=null;
 			}
 		}catch(SQLException e){
-				e.printStackTrace();
+			e.printStackTrace();
 		}
 		try{
 			rset.close();
-			this.JEEz_JDBC.Deconnection();
+			this.database.Deconnection();
 		}catch(SQLException e){
-		e.printStackTrace();
-	}
+			e.printStackTrace();
+		}
 
 		return Info;
 	}
-
-
 
 	/*
 	FONCTION Playtime
@@ -120,49 +121,49 @@ public class Gestion_JEEz_JDBC{
 	 */
 
 	public String PlayTime(int idPlay){
-		this.JEEz_JDBC.Connection();
+		this.database.Connection();
+		String resString="oui";
 		try {
 			String query = "SELECT start FROM Play WHERE idPlay=" + idPlay; // On selectionne les parties en cour
-			ResultSet rset1 = update(query);
+			ResultSet rset1 = database.Query(query);
 
 			String query2 = "SELECT end FROM Play WHERE idPlay=" + idPlay; // On selectionne les parties en cour
-			ResultSet rset2 = update(query2);
+			ResultSet rset2 = database.Query(query2);
 
 			String start = rset1.getString(1);
 			String end = rset2.getString(2);
-
+/*
 			Date dateStart = formatter.parse(start);
 			Date dateEnd = formatter.parse(end);
 
 			long resInDays = ChronoUnit.DAYS.between(dateStart,dateEnd);
-			String resString = toString(resInDays);
-			return resString;
+			String resString = toString(resInDays);*/
+
+
 
 			try{
 				rset1.close();
 				rset2.close();
-				this.JEEz_JDBC.Deconnection();
+				this.database.Deconnection();
+			}
+			catch ( SQLException e ) {
+				e.printStackTrace();
 			}
 
+		}catch ( SQLException e ) {
+			e.printStackTrace();
 		}
-
+		return resString ;
 	}
 
 
 
 	public void banPlayer(int idPlayer) {
-		this.JEEz_JDBC.Connection();
-		try {
-			String query = "UPDATE Player SET ban="+1+"WHERE idPlayer="+idPlayer; // On selectionne les parties en cour
-			ResultSet rset=update(query);
-		} catch ( SQLException e ) {
-		}
-		try{
-			rset.close();
-			this.JEEz_JDBC.Deconnection();
-		}catch ( SQLException e ) {
-			e.printStackTrace();
-		}
+		this.database.Connection();
+		String query = "UPDATE Player SET ban="+1+"WHERE idPlayer="+idPlayer; // On selectionne les parties en cour
+		database.update(query);
+		this.database.Deconnection();
+
 	}
 
 	/*
@@ -171,19 +172,10 @@ public class Gestion_JEEz_JDBC{
 	 */
 
 	public void EndGame(int idPlay, String end) {
-		this.JEEz_JDBC.Connection();
-
-		try {
-			String query = "UPDATE Play SET end="+end+"WHERE idPlay="+idPlay; // On informe la BDD de la date de fin pouyr la partie d'identifiant idPlay passé en paramètre
-			ResultSet rset=update(query);
-		} catch ( SQLException e ) {
-		}
-		try{
-			rset.close();
-			this.JEEz_JDBC.Deconnection();
-		}catch ( SQLException e ) {
-			e.printStackTrace();
-		}
+		this.database.Connection();
+		String query = "UPDATE Play SET end="+end+"WHERE idPlay="+idPlay; // On informe la BDD de la date de fin pouyr la partie d'identifiant idPlay passé en paramètre
+		database.update(query);
+		this.database.Deconnection();
 	}
 
 	/*
@@ -193,12 +185,13 @@ public class Gestion_JEEz_JDBC{
 	 */
 
 	public int NumberPlay(int idPlayer){
-		this.JEEz_JDBC.Connection();
+		this.database.Connection();
+		ResultSet rset=null;
 		int n =0;
 
 		try {
 			String query = "SELECT COUNT(*) FROM Play where idPlayer="+idPlayer; // On selectionne les parties en cour
-			ResultSet rset=Query(query);
+			rset=database.Query(query);
 			n=rset.getInt(1);
 		}
 		catch ( SQLException e ) {
@@ -206,7 +199,7 @@ public class Gestion_JEEz_JDBC{
 
 		try{
 			rset.close();
-			this.JEEz_JDBC.Deconnection();
+			this.database.Deconnection();
 		}catch ( SQLException e ) {
 			e.printStackTrace();
 		}
@@ -222,12 +215,12 @@ public class Gestion_JEEz_JDBC{
 	 */
 
 	public ArrayList<Play> ListPlay(){
-		this.JEEz_JDBC.Connection();
+		this.database.Connection();
 		ArrayList<Play> listPlay = new  ArrayList<Play>();
-
+		ResultSet rset=null;
 		try {
 			String query = "SELECT * FROM Play where end=null"; // On selectionne les parties en cour
-			ResultSet rset=Query(query);
+			rset=database.Query(query);
 			while ( rset.next() ) {
 				Play p = new Play();
 
@@ -240,7 +233,7 @@ public class Gestion_JEEz_JDBC{
 			}
 			try{
 				rset.close();
-				this.JEEz_JDBC.Deconnection();
+				this.database.Deconnection();
 			}catch ( SQLException e ) {
 				e.printStackTrace();
 			}
@@ -260,12 +253,12 @@ public class Gestion_JEEz_JDBC{
 	 */
 
 	public ArrayList<Game> PlayableGame() {
-		this.JEEz_JDBC.Connection();
-
+		this.database.Connection();
+		ResultSet rset=null;
 		ArrayList<Game> gameplayable = new ArrayList<Game>();
 		try {
 			String query = "SELECT * FROM Game where playable=true"; // On selectionne le nom des jeux qui sont disponibles sur le site
-			ResultSet rset=Query(query);
+			rset=database.Query(query);
 			while ( rset.next() ) {
 				Game g = new Game();
 
@@ -278,7 +271,7 @@ public class Gestion_JEEz_JDBC{
 			}
 			try{
 				rset.close();
-				this.JEEz_JDBC.Deconnection();
+				this.database.Deconnection();
 			}catch ( SQLException e ) {
 				e.printStackTrace();
 			}
@@ -295,11 +288,12 @@ public class Gestion_JEEz_JDBC{
 		RENVOI : ArrayList de Player contenant la liste de tous les joueurs
 	 */
 	public ArrayList<Player> ListPlayer() {
-		this.JEEz_JDBC.Connection();
+		this.database.Connection();
+		ResultSet rset=null;
 		ArrayList<Player> listPlayer = new ArrayList<Player>();
 		try {
 			String query="SELECT * FROM Player";
-			ResultSet rset=Query(query);
+			rset=database.Query(query);
 			if(rset.next()) {
 				Player p = new Player();
 				p.setIdPlayer(rset.getInt("idPlayer"));
@@ -312,7 +306,10 @@ public class Gestion_JEEz_JDBC{
 			}
 			try{
 				rset.close();
-				this.JEEz_JDBC.Deconnection();
+				this.database.Deconnection();
+			}
+			catch ( SQLException e ) {
+				e.printStackTrace();
 			}
 		} catch (SQLException e) {
 			e.printStackTrace();

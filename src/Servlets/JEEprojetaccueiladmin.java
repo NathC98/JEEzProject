@@ -7,16 +7,14 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
-@WebServlet(name = " JEEprojetaccueiladmin")
+@WebServlet(name = "JEEprojetaccueiladmin")
 public class JEEprojetaccueiladmin extends HttpServlet {
-    private static final long serialVersionUID = 1L;
+    /**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 
-    public JEEprojetaccueiladmin() {
-        super();
-        // TODO Auto-generated constructor stub
-    }
-
-    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
     }
 
