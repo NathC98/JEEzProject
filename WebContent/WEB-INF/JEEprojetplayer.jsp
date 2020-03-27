@@ -18,7 +18,7 @@
     <td width=21%><font size="+1">Pseudo</font></td>
     <td width=21%><font size="+1">Date d'inscription</font></td>
     <td width=21%><font size="+1">Nombre de parties jouées</font></td>
-	  <td width=21%><font size="+1"><button>interdire</button></font></td>
+	  <td width=21%><font size="+1">interdire</font></td>
     <td width=21%><font size="+1">autorisation</font></td>
   </tr>
 <% 
