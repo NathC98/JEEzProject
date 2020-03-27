@@ -22,7 +22,7 @@
     <td width=21%><font size="+1">autorisation</font></td>
   </tr>
 <% 
-	ArrayList<Player> players = (ArrayList<Player>) request.getAttribute(".....");
+	ArrayList<Player> players = (ArrayList<Player>) request.getAttribute("players");
 	int nbplays;
 	Gestion_JEEz_JDBC b = new Gestion_JEEz_JDBC();
 	String pseudo = null ;
@@ -31,10 +31,10 @@
 		nbplays = b.NumberPlay(players.get(i).getIdPlayer());
 		inscriptiondate = players.get(i).getDateinscription();
 		pseudo = players.get(i).getIdIdentifiant();
-		out.println("<tr>pseudo</td>"+
-		"<td>inscriptiondate</td>"+
-		"<td>nbplays</td>");
-		if(players.get(i).getBan()){
+		out.println("<tr>" + pseudo + "</td>"+
+		"<td>" + inscriptiondate +"</td>"+
+		"<td>" + nbplays + "</td>");
+		if(players.get(i).isBan()){
 			out.println("<td>"+"<button type=\"button\" class=\"cancelbtn\">suspendre</button>"+
 		"</td>"+"<td>oui</td>"+"</tr>");
 		}

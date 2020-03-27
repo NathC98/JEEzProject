@@ -32,9 +32,9 @@
 		if(end==null){
 		out.println(
 		"<tr>"                                                                        +
-			"<td>gamename</td>"                           +
-   			"<td>playername</td>"                           +
-    			"<td>start</td>"                                    +
+			"<td>" + gamename + "</td>"                           +
+   			"<td>" + playername + "</td>"                           +
+    			"<td>" + start + "</td>"                                    +
 			"<td><button type=\"button\" class=\"cancelbtn\">Mettre fin</button></td>"+
 		"</tr>");
 	}
