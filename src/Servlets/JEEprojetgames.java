@@ -12,6 +12,7 @@ import java.io.IOException;
 @WebServlet(name = "JEEprojetgames")
 public class JEEprojetgames extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        Gestion_JEEz_JDBC gestionnaire = new Gestion_JEEz_JDBC();
 
     }
 

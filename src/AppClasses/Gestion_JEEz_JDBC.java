@@ -403,4 +403,61 @@ public class Gestion_JEEz_JDBC{
 		}
 		return listPHG;
 	}
+
+	public void notPlayable(int idGame){
+		this.database.Connection();
+		String query = "UPDATE Game SET playable=0 WHERE idGame="+idGame; // On selectionne les parties en cour
+		database.update(query);
+		this.database.Deconnection();
+
+	}
+
+	public String gameFromPlay(int idPlay){
+
+		this.database.Connection();
+		ResultSet rset=null;
+		String str = null;
+
+		try {
+			String query = "SELECT Game.name FROM Play,Game  where Play.idPlay =" + idPlay + " AND Play.idGame=Game.idGame"; // On selectionne les parties en cour
+			rset = database.Query(query);
+			str=rset.getString(1);
+
+			rest.close();
+			this.database.Deconnection();
+		}catch ( SQLException e ) {
+			e.printStackTrace();
+		}
+		return str;
+	}
+
+	/*
+	renvoi le nom du joueur qui joue à la partie dont l'identifiant est passé en paramètre
+	 */
+
+	public String playerFromPlay(int idPlay){
+
+		this.database.Connection();
+		ResultSet rset=null;
+		String str = null;
+
+		try {
+			String query = "SELECT Identifiant.login FROM Play,Player,Identifiant  where Play.idPlay ="+ idPlay +" AND Play.idPlayer=Player.idPlayer AND Identifiant.idIdentifiant=Player.Identifiant_idIdentifiant"; // On selectionne les parties en cour
+			rset = database.Query(query);
+			str=rset.getString(1);
+
+			rest.close();
+			this.database.Deconnection();
+		}catch ( SQLException e ) {
+			e.printStackTrace();
+		}
+		return str;
+	}
+
+	public void insertGame(String name, boolean playable){
+		this.database.Connection();
+		String query = "INSERT INTO Game VALUES (default,"+name+",0,"+playable+")"; // On insère un nouveau jeu
+		database.update(query);
+		this.database.Deconnection();
+	}
 }
