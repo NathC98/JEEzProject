@@ -15,7 +15,7 @@
 <%
     Gestion_JEEz_JDBC b = new Gestion_JEEz_JDBC();
     ArrayList<Game> games = (ArrayList<Game>) request.getAttribute("games");
-    int id = (int) request.getAttribute("Identifiant");
+    int id = Integer.parseInt((String)request.getAttribute("Identifiant"));
     ArrayList<Player_has_Game> phg = null;
     for(int i=0;i<games.size();i++){
         phg = b.GameFromPlayerHasGame(games.get(i).getIdGame());
