@@ -20,6 +20,7 @@
             int id = Integer.parseInt((String)request.getAttribute("Identifiant"));
             ArrayList<Player_has_Game> phg = null;
             String gamename = null ;
+            out.println("<p>"+games+"</p>");
             for(int i=0;i<games.size();i++){
                 phg = b.GameFromPlayerHasGame(games.get(i).getIdGame());
                 for(int j=0;j<phg.size();j++) {
