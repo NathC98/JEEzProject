@@ -9,7 +9,7 @@
     <link rel="stylesheet" type="text/css" href="./style.css">
 </head>
 <div id="back">
-    <button onclick="window.location.href = './JEEprojetplayerhome';" type="button" class="cancelbtn">Déconnexion</button>
+    <button onclick="window.location.href = './JEEprojethome';" type="button" class="cancelbtn">Déconnexion</button>
 </div>
 <body>
 <div id=containergamefav><font size="+2">Choisissez un jeu parmis vos favoris</font>

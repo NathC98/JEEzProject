@@ -332,7 +332,7 @@ public class Gestion_JEEz_JDBC{
 		this.database.Connection();
 		ResultSet rset=null;
 		try{
-			String query = "INSERT INTO Identifiant VALUES (default,'"+login+"','"+password+"',0"; // On selectionne les parties en cour
+			String query = "INSERT INTO Identifiant VALUES (default,'"+login+"','"+password+"',0)"; // On selectionne les parties en cour
 			database.update(query);
 
 			String query2 = "SELECT * FROM Identifiant where login='"+login+"'"; // On selectionne les parties en cour
@@ -340,8 +340,8 @@ public class Gestion_JEEz_JDBC{
 			rset.next();
 			int id = rset.getInt(1);
 
-			String query3 = "INSERT INTO Player VALUES (default,'"+birthdate+"','"+mail+"',"+id+",'"+inscriptionDate+"',0"; // On selectionne les parties en cour
-			database.update(query);
+			String query3 = "INSERT INTO Player VALUES (default,'"+birthdate+"','"+mail+"',"+id+",0)"; // On selectionne les parties en cour
+			database.update(query3);
 		}catch ( SQLException e ) {
 			e.printStackTrace();
 		}

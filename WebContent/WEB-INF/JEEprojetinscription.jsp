@@ -9,7 +9,7 @@
     <link rel="stylesheet" type="text/css" href="./style.css">
 </head>
 <div id="back">
-    <button onclick="window.location.href = './JEEprojetplayerhome';" type="button" class="cancelbtn">Retour</button>
+    <button onclick="window.location.href = './JEEprojethome';" type="button" class="cancelbtn">Retour</button>
 </div>
 <body>
  <form action="JEEprojetinscription" method="post">
