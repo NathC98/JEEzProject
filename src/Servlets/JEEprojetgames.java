@@ -15,7 +15,7 @@ public class JEEprojetgames extends HttpServlet {
         Gestion_JEEz_JDBC gestionnaire = new Gestion_JEEz_JDBC();
         String answerplay = request.getParameter("playable");
         boolean playable = new boolean();
-        
+
         if(answerplay == "yes"){playable = true;}
         else if(answerplay == "no"){playable = false;}
         else{this.getServletContext().getRequestDispatcher("web/WEB-INF/JEEprojetgames.jsp").forward(request,response);}
