@@ -4,13 +4,14 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.time.temporal.ChronoUnit;
 import java.util.ArrayList;
-import java.time;
+import java.time.*;
 
 public class Gestion_JEEz_JDBC{
 
 	private JEEz_JDBC database = new JEEz_JDBC();
 
 	public Gestion_JEEz_JDBC(){
+
 	}
 
 /*
@@ -321,6 +322,34 @@ public class Gestion_JEEz_JDBC{
 			e.printStackTrace();
 		}
 		return listPlayer;
+	}
+
+	public ArrayList<Player_has_Game> GameFromPlayerHasGame(int idGame){
+
+		this.database.Connection();
+		ArrayList<Player_has_Game> listPHG = new  ArrayList<Player_has_Game>();
+		ResultSet rset=null;
+		try {
+			String query = "SELECT * FROM Play_has_Game where Game_idGame="+idGame; // On selectionne les parties en cour
+			rset=database.Query(query);
+			while ( rset.next() ) {
+				Player_has_Game phd = new Player_has_Game();
+				phd.setIdPlayer(rset.getInt("idPlayer"));
+				phd.setIdGame(rset.getInt("Game_idGame"));
+				setHighscore(rset.getInt("highscore"));
+				setFavorite(rset.getInt("favorite"));
+				listPHG.add(phd);
+			}
+			try{
+				rset.close();
+				this.database.Deconnection();
+			}catch ( SQLException e ) {
+				e.printStackTrace();
+			}
+		}
+		catch ( SQLException e ) {
+		}
+		return listPHG;
 	}
 
 }
