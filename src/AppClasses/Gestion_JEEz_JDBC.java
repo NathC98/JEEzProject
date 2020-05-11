@@ -17,6 +17,72 @@ public class Gestion_JEEz_JDBC{
 
 	}
 
+	public ArrayList<Game> ListAllGame() {
+		this.database.Connection();
+		ResultSet rset =null;
+		ArrayList<Game> gameplayable = new ArrayList<Game>();
+		try {
+			String query = "SELECT * FROM Game"; // On selectionne tous les ejux
+			rset=database.Query(query);
+			while ( rset.next() ) {
+				Game g = new Game();
+
+				g.setIdGame(rset.getInt("idGame"));
+				g.setName(rset.getString("name"));
+				g.setNumberPlayerGame(rset.getInt("numberPlayerInGame"));
+				g.setPlayable(rset.getBoolean("playable"));
+
+				gameplayable.add(g);
+			}
+			try{
+				rset.close();
+				this.database.Deconnection();
+			}catch ( SQLException e ) {
+				e.printStackTrace();
+			}
+
+		} catch ( SQLException e ) {
+			e.printStackTrace();
+		}
+		return gameplayable;
+	}
+
+
+
+	public ArrayList<Play> ListEndedPlay(){
+		this.database.Connection();
+		ArrayList<Play> listPlay = new  ArrayList<Play>();
+		ResultSet rset=null;
+		try {
+			String query = "SELECT * FROM Play where end IS NOT NULL"; // On selectionne les parties en cour
+			rset=database.Query(query);
+			while ( rset.next() ) {
+				Play p = new Play();
+
+				p.setIdPlay(rset.getInt("idPlay"));
+				p.setStart(rset.getString("start"));
+				p.setEnd (rset.getString("end"));
+				p.setIdgame(rset.getInt("idGame"));
+				p.setIdPlayer(rset.getInt("idPlayer"));
+				listPlay.add(p);
+			}
+			try{
+				rset.close();
+				this.database.Deconnection();
+			}catch ( SQLException e ) {
+				e.printStackTrace();
+			}
+
+		}
+		catch ( SQLException e ) {
+		}
+
+		return listPlay;
+
+	}
+
+
+
 	/*
                 FONCTION infoPlayer
                 PARAMETRE login + password
@@ -29,14 +95,13 @@ public class Gestion_JEEz_JDBC{
 		Player p = new Player();
 		ResultSet rset=null;
 		try {
-			String query = "SELECT * FROM Player WHERE idPlayer=" + idPlayer;
+			String query = "SELECT * FROM Player WHERE idPlayer="+idPlayer;
 			rset = database.Query(query);
 			if (rset.next()) {
 				p = new Player();
 				p.setIdPlayer(rset.getInt("idPlayer"));
 				p.setDate(rset.getString("birthDate"));
 				p.setEmail(rset.getString("email"));
-				p.setDateinscription(rset.getString("InscriptionDate"));
 				p.setIdIdentifiant(rset.getInt("Identifiant_idIdentifiant"));
 				p.setBan(rset.getBoolean("ban"));
 			}
@@ -62,13 +127,6 @@ public class Gestion_JEEz_JDBC{
 			Si le login/password ne convient pas, renvoi null
 		 */
 
-
-/*
-	FONCTION Connect
-	PARAMETRE  login, password
-
-
- */
 
 	public ArrayList<Integer> Connect(String login, String password) {
 		this.database.Connection();
@@ -115,11 +173,13 @@ public class Gestion_JEEz_JDBC{
 		this.database.Connection();
 		String resString="oui";
 		try {
-			String query = "SELECT start FROM Play WHERE idPlay=" + idPlay; // On selectionne les parties en cour
+			String query = "SELECT start FROM Play WHERE idPlay=" + idPlay;
 			ResultSet rset1 = database.Query(query);
+			rset1.next();
 
-			String query2 = "SELECT end FROM Play WHERE idPlay=" + idPlay; // On selectionne les parties en cour
+			String query2 = "SELECT end FROM Play WHERE idPlay=" + idPlay;
 			ResultSet rset2 = database.Query(query2);
+			rset2.next();
 
 			String start = rset1.getString(1);
 			String end = rset2.getString(2);
@@ -152,7 +212,7 @@ public class Gestion_JEEz_JDBC{
 
 	public void banPlayer(int idPlayer) {
 		this.database.Connection();
-		String query = "UPDATE Player SET ban="+1+"WHERE idPlayer="+idPlayer; // On selectionne les parties en cour
+		String query = "UPDATE Player SET ban= true WHERE idPlayer="+idPlayer;
 		database.update(query);
 		this.database.Deconnection();
 
@@ -182,8 +242,9 @@ public class Gestion_JEEz_JDBC{
 		int n =0;
 
 		try {
-			String query = "SELECT COUNT(*) FROM Play where idPlayer="+idPlayer; // On selectionne les parties en cour
+			String query = "SELECT COUNT(*) FROM Play where Player_idPlayer="+idPlayer;
 			rset=database.Query(query);
+			rset.next();
 			n=rset.getInt(1);
 		}
 		catch ( SQLException e ) {
@@ -211,7 +272,7 @@ public class Gestion_JEEz_JDBC{
 		ArrayList<Play> listPlay = new  ArrayList<Play>();
 		ResultSet rset=null;
 		try {
-			String query = "SELECT * FROM Play where end=null"; // On selectionne les parties en cour
+			String query = "SELECT * FROM Play where end IS NULL"; // On selectionne les parties en cour
 			rset=database.Query(query);
 			while ( rset.next() ) {
 				Play p = new Play();
@@ -219,8 +280,8 @@ public class Gestion_JEEz_JDBC{
 				p.setIdPlay(rset.getInt("idPlay"));
 				p.setStart(rset.getString("start"));
 				p.setEnd (rset.getString("end"));
-				p.setIdgame(rset.getInt("idGame"));
-				p.setIdPlayer(rset.getInt("idPlayer"));
+				p.setIdgame(rset.getInt("Game_idGame"));
+				p.setIdPlayer(rset.getInt("Player_idPlayer"));
 				listPlay.add(p);
 			}
 			try{
@@ -246,10 +307,10 @@ public class Gestion_JEEz_JDBC{
 
 	public ArrayList<Game> PlayableGame() {
 		this.database.Connection();
-		ResultSet rset=null;
+		ResultSet rset =null;
 		ArrayList<Game> gameplayable = new ArrayList<Game>();
 		try {
-			String query = "SELECT * FROM Game where playable=true"; // On selectionne le nom des jeux qui sont disponibles sur le site
+			String query = "SELECT * FROM Game where playable IS true"; // On selectionne le nom des jeux qui sont disponibles sur le site
 			rset=database.Query(query);
 			while ( rset.next() ) {
 				Game g = new Game();
@@ -291,7 +352,6 @@ public class Gestion_JEEz_JDBC{
 				p.setIdPlayer(rset.getInt("idPlayer"));
 				p.setDate(rset.getString("birthDate"));
 				p.setEmail(rset.getString("email"));
-				p.setDateinscription(rset.getString("InscriptionDate"));
 				p.setIdIdentifiant(rset.getInt("Identifiant_idIdentifiant"));
 				p.setBan(rset.getBoolean("ban"));
 				listPlayer.add(p);
@@ -329,15 +389,16 @@ public class Gestion_JEEz_JDBC{
 		this.database.Connection();
 		ResultSet rset=null;
 		try{
-			String query = "INSERT INTO Identifiant VALUES (default,'"+login+"','"+password+"',0"; // On selectionne les parties en cour
+			String query = "INSERT INTO Identifiant VALUES (default,'"+login+"','"+password+"',false)";
 			database.update(query);
 
 			String query2 = "SELECT * FROM Identifiant where login='"+login+"'"; // On selectionne les parties en cour
 			rset=database.Query(query2);
+			rset.next();
 			int id = rset.getInt(1);
 
-			String query3 = "INSERT INTO Player VALUES (default,'"+birthdate+"','"+mail+"',"+id+",'"+inscriptionDate+"',0"; // On selectionne les parties en cour
-			database.update(query);
+			String query3 = "INSERT INTO Player VALUES (default,'"+birthdate+"','"+mail+"',"+id+",false)";
+			database.update(query3);
 		}catch ( SQLException e ) {
 			e.printStackTrace();
 		}
@@ -384,7 +445,7 @@ public class Gestion_JEEz_JDBC{
 
 	public void notPlayable(int idGame){
 		this.database.Connection();
-		String query = "UPDATE Game SET playable=0 WHERE idGame="+idGame; // On selectionne les parties en cour
+		String query = "UPDATE Game SET playable=false WHERE idGame="+idGame; //
 		database.update(query);
 		this.database.Deconnection();
 
@@ -397,8 +458,9 @@ public class Gestion_JEEz_JDBC{
 		String str = null;
 
 		try {
-			String query = "SELECT Game.name FROM Play,Game  where Play.idPlay =" + idPlay + " AND Play.idGame=Game.idGame"; // On selectionne les parties en cour
+			String query = "SELECT Game.name FROM Play,Game  where Play.idPlay =" + idPlay + " AND Play.Game_idGame=Game.idGame"; // On selectionne les parties en cour
 			rset = database.Query(query);
+			rset.next();
 			str=rset.getString(1);
 
 			rset.close();
@@ -418,8 +480,9 @@ public class Gestion_JEEz_JDBC{
 		ResultSet rset=null;
 		String str = null;
 		try {
-			String query = "SELECT Identifiant.login FROM Play,Player,Identifiant  where Play.idPlay ="+ idPlay +" AND Play.idPlayer=Player.idPlayer AND Identifiant.idIdentifiant=Player.Identifiant_idIdentifiant"; // On selectionne les parties en cour
+			String query = "SELECT Identifiant.login FROM Play,Player,Identifiant  where Play.idPlay ="+ idPlay +" AND Play.Player_idPlayer=Player.idPlayer AND Identifiant.idIdentifiant=Player.Identifiant_idIdentifiant"; // On selectionne les parties en cour
 			rset = database.Query(query);
+			rset.next();
 			str=rset.getString(1);
 
 			rset.close();
@@ -441,13 +504,14 @@ public class Gestion_JEEz_JDBC{
 		int idPlay=-1;
 
 		this.database.Connection();
-		String query = "INSERT INTO Play VALUES (default,'" + start + "',null,"+idGame+", "+idPlay")";
+		String query = "INSERT INTO Play VALUES (default,'" + start + "',NULL,"+idGame+", "+idPlayer+")";
 		database.update(query);
 		ResultSet rset=null;
 		try{
 
-			String query = "SELECT idPlay FROM Play where Game_idGame="+idGame+" AND Player_idPlayer="+idPlayer+"AND start='"+start"'";
+			query = "SELECT idPlay FROM Play where Game_idGame="+idGame+" AND Player_idPlayer="+idPlayer+" AND start='"+start+"'";
 			rset = database.Query(query);
+			rset.next();
 			idPlay=rset.getInt(1);
 			rset.close();
 

@@ -18,6 +18,6 @@ public class JEEprojethome extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         Gestion_JEEz_JDBC b = new Gestion_JEEz_JDBC();
         request.setAttribute("games",b.PlayableGame());
-        this.getServletContext().getRequestDispatcher("web/WEB-INF/JEEprojethome.jsp").forward(request,response);
+        this.getServletContext().getRequestDispatcher("/WEB-INF/JEEprojethome.jsp").forward(request,response);
     }
 }

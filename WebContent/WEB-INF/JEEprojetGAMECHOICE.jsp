@@ -9,7 +9,7 @@
     <link rel="stylesheet" type="text/css" href="./style.css">
 </head>
 <div id="back">
-    <button onclick="window.location.href = './JEEprojetplayerhome';" type="button" class="cancelbtn">Déconnexion</button>
+    <button onclick="window.location.href = './JEEprojethome';" type="button" class="cancelbtn">Déconnexion</button>
 </div>
 <body>
 <div id=containergamefav><font size="+2">Choisissez un jeu parmis vos favoris</font>
@@ -25,7 +25,7 @@
                 for(int j=0;j<phg.size();j++) {
                     if (phg.get(j).getIdPlayer() == id && phg.get(j).isFavorite()) {
                         gamename = games.get(i).getName();
-                        out.println("<button id=\"gamebutton\" onclick=\"window.location.href = './JEEprojetplaying?id="+ id +"';\" type=\"submit\">jouer à " + gamename + "</button>");
+                        out.println("<button id=\"gamebutton\" onclick=\"window.location.href = './JEEprojetplaying?id="+ id +"&idgame=" + games.get(i).getIdGame() + "';\" type=\"submit\">jouer à " + gamename + "</button>");
                     }
                 }
             }
@@ -38,7 +38,7 @@
             games = (ArrayList<Game>) request.getAttribute("games");
             for(int i=0;i<games.size();i++) {
                 gamename = games.get(i).getName();
-                out.println("<button id=\"gamebutton\" onclick=\"window.location.href = './JEEprojetplaying?id="+ id +"';\" type=\"submit\">jouer à " + gamename + "</button>");
+                out.println("<button id=\"gamebutton\" onclick=\"window.location.href = './JEEprojetplaying?id="+ id +"&idgame=" + games.get(i).getIdGame() + "';\" type=\"submit\">jouer à " + gamename + "</button>");
             }
         %>
     </li>

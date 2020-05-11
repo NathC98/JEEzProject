@@ -18,14 +18,14 @@
     <td width=21%><font size="+1">Pseudo</font></td>
     <td width=21%><font size="+1">Date d'inscription</font></td>
     <td width=21%><font size="+1">Nombre de parties jouées</font></td>
-	  <td width=21%><font size="+1"><button>interdire</button></font></td>
+	  <td width=21%><font size="+1">interdire</font></td>
     <td width=21%><font size="+1">autorisation</font></td>
   </tr>
 <% 
 	ArrayList<Player> players = (ArrayList<Player>) request.getAttribute("players");
 	int nbplays;
 	Gestion_JEEz_JDBC b = new Gestion_JEEz_JDBC();
-	String pseudo = null ;
+	int pseudo = -1 ;
 	String inscriptiondate = null ;
 	for(int i=0;i<players.size();i++){
 		nbplays = b.NumberPlay(players.get(i).getIdPlayer());

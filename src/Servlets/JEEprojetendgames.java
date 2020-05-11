@@ -18,6 +18,6 @@ public class JEEprojetendgames extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         Gestion_JEEz_JDBC b = new Gestion_JEEz_JDBC();
         request.setAttribute("plays",b.ListPlay());
-        this.getServletContext().getRequestDispatcher("web/WEB-INF/JEEprojetendgames.jsp").forward(request,response);
+        this.getServletContext().getRequestDispatcher("/WEB-INF/JEEprojetendgames.jsp").forward(request,response);
     }
 }
