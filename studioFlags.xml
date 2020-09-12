@@ -3,6 +3,7 @@
     <option name="data">
       <map>
         <entry key="gradle.ide.new.sync" value="false" />
+        <entry key="gradle.ide.single.variant.sync" value="false" />
       </map>
     </option>
   </component>
