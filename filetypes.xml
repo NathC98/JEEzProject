@@ -1,0 +1,10 @@
+<application>
+  <component name="FileTypeManager" version="17">
+    <extensionMap>
+      <mapping pattern="JEEZ_JDBC" type="CLASS" />
+      <mapping pattern="JEEZ_JDBC.java" type="CLASS" />
+      <mapping pattern="JEEz_JDBC" type="JAVA" />
+      <mapping pattern="Gestion_JEEz_JDBC" type="JAVA" />
+    </extensionMap>
+  </component>
+</application>
